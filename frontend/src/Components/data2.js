@@ -1,0 +1,20 @@
+export default [
+    {
+        id:1,
+        username:"abc312",
+        name:"john",
+        points:34,        
+    },
+    {
+        id:2,
+        username:"abc31142",
+        name:"mark",
+        points:22,
+    },
+    {
+        id:3,
+        username:"abc3132",
+        name:"chris",
+        points:43,
+    }
+]
