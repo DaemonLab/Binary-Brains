@@ -14,7 +14,8 @@ function Homepage() {
     <div>             
       <Poster />        
       <Schedule /> 
-      <Rankings />                 
+      <Rankings />     
+      <Footer />            
     </div>
   )
 }

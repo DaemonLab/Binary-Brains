@@ -5,41 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>SignUpPage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css" />
-  <!-- <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500&family=Nunito+Sans:wght@200;300&family=Ubuntu:wght@300;500&display=swap"
-    rel="stylesheet"
-  /> -->
+  <link rel="stylesheet" href="./css/style.css" />  
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
     crossorigin="anonymous"
-  />
-  <!-- <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-  /> -->
+  /> 
 </head>
-<body>
-  <div class="navi">
-    <a class="navbar-brand" href="/"
-      ><img src="images/logo.png" alt="" style="width: 100px"
-    /></a>
-    <div class="homeButton"><a href="index.html">HOME</a></div>
-    <div class="loginButton"><a href="login.html">LOGIN</a></div>
-  </div>
-  <div class="container outer">
+<body>  
+  <div className="container outer">
     <form
-      class="needs-validation"
+      className="needs-validation"
       action="/login"
       method="post"
       novalidate
     >
-      <div class="whitebox signup_container">
-        <h1 class="text-center heading">SIGNUP</h1>
-        <div class="mb-3 inputs" style="text-align: left">
-          <label class="form-label auth" for="name">NAME</label
+      <div className="whitebox signup_container">
+        <h1 className="text-center heading">SIGNUP</h1>
+        <div className="mb-3 inputs" style="text-align: left">
+          <label className="form-label auth" for="name">Name</label
           ><br />
           <input
             type="text"
@@ -50,8 +35,8 @@
             required
           /><br />
         </div>
-        <div class="mb-3 inputs" style="text-align: left">
-          <label class="form-label auth" for="email">EMAIL</label
+        <div className="mb-3 inputs" style="text-align: left">
+          <label className="form-label auth" for="email">E-Mail</label
           ><br />
           <input
             type="email"
@@ -62,8 +47,8 @@
             required
           /><br />
         </div>
-        <div class="mb-3 inputs" style="text-align: left">
-          <label class="form-label auth" for="phone">PHONE</label
+        <div className="mb-3 inputs" style="text-align: left">
+          <label className="form-label auth" for="phone">Phone</label
           ><br />
           <input
             type="tel"
@@ -74,8 +59,8 @@
             required
           /><br />
         </div>
-        <div class="mb-3 inputs" style="text-align: left">
-          <label class="form-label auth" for="username">USERNAME</label
+        <div className="mb-3 inputs" style="text-align: left">
+          <label className="form-label auth" for="username">Username</label
           ><br />
           <input
             type="text"
@@ -86,12 +71,12 @@
             required
           /><br />
         </div>
-        <div class="mb-3 inputs" style="text-align: left">
+        <div className="mb-3 inputs" style="text-align: left">
           <label
             for="password"
-            class="form-label auth"
+            className="form-label auth"
             style="text-align: left"
-            >PASSWORD</label
+            >Password</label
           ><br />
           <input
             type="password"
@@ -101,13 +86,12 @@
             style="color: black"
             required
           /><br />
-          <div class="mb-3 inputs" style="text-align: left"></div>
+          <div className="mb-3 inputs" style="text-align: left"></div>
             <label
               for="confirm_password"
-              class="form-label auth"
-              style="text-align: left"
-              >CONFIRM PASSWORD</label
-            ><br />
+              className="form-label auth"
+              style="text-align: left">Confirm Password</label>
+              <br />
             <input
               type="password"
               name="confirm_password"
@@ -117,15 +101,11 @@
               required
             /><br />
           </div>
-          <button class="button signup_button" type="submit">SIGNUP</button>
-        </div>
-      </div>
+          <button className="button signup_button" type="submit">SIGNUP</button>
+        </div>      
     </form>
   </div>
-  <!-- jquery plugins here-->
-  <!-- <script src="/js/jquery-1.12.1.min.js"></script> -->
   <script src="./js/signup.js"></script>
-  <!-- bootstrap js -->
   <script src="/js/bootstrap.min.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"

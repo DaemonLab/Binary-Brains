@@ -23,7 +23,7 @@ function Navbar() {
                 <Link to="/yourprofile" className="nav-link">Your Profile</Link>
             </li>
             <li className="nav-item active">
-                <Link to="/login" className="nav-link">Login/SignUp</Link>
+                <Link to="/signup" className="nav-link">Login/SignUp</Link>
             </li>
             </ul>
         </div>  
