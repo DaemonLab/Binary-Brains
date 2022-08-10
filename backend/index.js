@@ -6,6 +6,7 @@ const cors = require("cors");
 const axios = require("axios");
 
 const User = require("./models/User.js");
+const Contest = require("./models/Contest.js");
 
 const connectionurl =
   "mongodb+srv://admin:admin@cluster0.0odqg.mongodb.net/?retryWrites=true&w=majority";
@@ -24,6 +25,7 @@ app.post("/register", (req, res) => {
     email: req.body.email,
     password: req.body.password,
     codeforces_handle: req.body.codeforces_handle,
+    phone: req.body.phone,
   });
 
   newUser.save((err) => {
@@ -68,7 +70,7 @@ app.post("/login", (req, res) => {
   });
 });
 
-app.get("/points", (req, res) => {
+app.get("/profile", (req, res) => {
   jwt.verify(req.headers.token, "secretkey", (err, dec) => {
     if (err) {
       return res.status(401).json({
@@ -88,13 +90,35 @@ app.get("/points", (req, res) => {
         title: "Success",
         points: user.total_points,
         history: user.history,
+        username: user.codeforces_handle,
+        name: user.name,
       });
     });
   });
 });
 
 app.post("/contest", (req, res) => {
-  const date_obj = new Date();
+  const newContest = new Contest({
+    contest: req.body.contest,
+    date: req.body.date,
+    name: req.body.name,
+    desc: req.body.desc
+  });
+
+  newContest.save((err) => {
+    if (err) {
+      return res.status(400).json({
+        title: "error",
+        error: "CONTEST already exists!",
+      });
+    }
+    return res.status(200).json({
+      title: "Contest Created",
+    });
+  });
+});
+
+app.post("/updatePoints", (req, res)=>{
   base_url = `https://codeforces.com/api/contest.standings?contestId=${req.body.contest}&from=1&count=10`;
   axios
     .get(base_url)
@@ -105,7 +129,10 @@ app.post("/contest", (req, res) => {
           {
             $inc: { total_points: (11 - row.rank) * 10 },
             $push: {
-              history: { date: date_obj.toISOString(), points: (11 - row.rank) * 10 },
+              history: {
+                date: date_obj.toISOString(),
+                points: (11 - row.rank) * 10,
+              },
             },
           },
           (err, data) => {
@@ -124,6 +151,69 @@ app.post("/contest", (req, res) => {
     .catch((err) => {
       console.log(err);
     });
+});
+
+app.get("/profile", (req, res) => {
+  User.findOne({ _id: dec.userId }, (err, user) => {
+    if (err)
+      return res.status(400).json({
+        title: "Error",
+        error: err,
+      });
+
+    return res.status(200).json({
+      title: "Success",
+      points: user.total_points,
+      history: user.history,
+      username: user.codeforces_handle,
+      name: user.name,
+    });
+  });
+});
+
+app.get("/leaderboard", (req, res) => {
+  User.find(
+    {},
+    null,
+    { sort: { total_points: "desc" }, limit: 10 },
+    (err, users) => {
+      if (err)
+        return res.status(400).json({
+          title: "Error",
+          error: err,
+        });
+      const calUsers = [];
+      users.forEach((user) => {
+        const calUser = {
+          points: user.total_points,
+          username: user.codeforces_handle,
+          name: user.name,
+        };
+        calUsers.push(calUser);
+      });
+      return res.status(200).json({
+        title: "Success",
+        users: calUsers
+      });
+    }
+  );
+});
+
+app.get("/contests", (req, res) => {
+  Contest.find(
+    {},
+    (err, contests) => {
+      if (err)
+        return res.status(400).json({
+          title: "Error",
+          error: err,
+        });
+      return res.status(200).json({
+        title: "Success",
+        contests: contests
+      });
+    }
+  );
 });
 
 const PORT = process.env.PORT || 5000;

@@ -1,13 +1,23 @@
-import React, {useState} from 'react'
+import * as React from 'react'
 import data from './data'
 import data2 from './data2'
 import { Link } from 'react-router-dom'
-
+import axios from 'axios'
 
 function Rankings() {
 
-  const [contests, setContests] = useState(data)
-  const [ranks, setRanks] = useState(data2)
+  const [contests, setContests] = React.useState(data)
+  const [ranks, setRanks] = React.useState(data2)
+
+  React.useEffect(() => {
+    axios
+      .get("http://localhost:5000/leaderboard")
+      .then((res) => {
+        if (res.status === 200) {
+          setRanks(res.data.users);
+        }
+      });
+  }, []);
 
   return (
     

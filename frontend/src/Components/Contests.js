@@ -1,41 +1,65 @@
-import React, {useState} from 'react'
-import Navbar from './Navbar'
-import Footer from './Footer'
-import data from './data'
-
+import * as React from "react";
+import Footer from "./Footer";
+import data from "./data";
+import axios from "axios";
 
 function Contests() {
-    const [contests, Setcontests] = useState(data)
-  return (    
+  const today = new Date();
+  const [contests, setContests] = React.useState(data);
+  React.useEffect(() => {
+    axios.get("http://localhost:5000/contests").then((res) => {
+      if (res.status === 200) {
+        setContests(res.data.contests);
+      }
+    });
+  }, []);
+  return (
     <div>
-        <div className="container">                
-        <h4 className='upc'>Upcoming</h4>
-            {
-                contests.map((contest) => {
-                    return(
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">{`${contest.name} ${contest.id}`}</h3>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <p>(If upcoming or In-progress)Time: {contest.date}</p>
-                            <a href="#" class="btn btn-primary">Contest(CF link)</a>
-                        </div>
-                    </div> 
-                    )
-                })
-            }    
-            <h4 className='upc2'>Past Contests</h4>                
-            <div class="card">            
+      <div className="container">
+        <h4 className="upc">Upcoming</h4>
+        {contests.map((contest) => {
+          const date = new Date(contest.date);
+          return date > today ? (
+            <>
+              <div class="card">
                 <div class="card-body">
-                    <h3 class="card-title">Contest 3</h3>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>                    
-                    <a href="#" class="btn btn-primary">Contest(CF link)</a>
+                  <h3 class="card-title">{`${contest.name}`}</h3>
+                  <p class="card-text">{contest.desc}</p>
+                  <p>Time: {date.toISOString()}</p>
+                  <a href={`https://codeforces.com/contest/${contest.contest}`} class="btn btn-primary" target={"_blank"}>
+                    Contest(CF link)
+                  </a>
                 </div>
-            </div>            
-        </div>    
-        <Footer />
-    </div>         
-  )
+              </div>
+            </>
+          ) : (
+            <></>
+          );
+        })}
+        <h4 className="upc2">Past Contests</h4>
+        {contests.map((contest) => {
+          const date = new Date(contest.date);
+          return date <= today ? (
+            <>
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title">{`${contest.contest}: ${contest.name}`}</h3>
+                  <p class="card-text">{contest.desc}</p>
+                  <p>Time: {date.toISOString()}</p>
+                  <a href={`https://codeforces.com/contest/${contest.contest}`} class="btn btn-primary" target={"_blank"}>
+                    Contest(CF link)
+                  </a>
+                </div>
+              </div>
+            </>
+          ) : (
+            <></>
+          );
+        })}
+      </div>
+      <Footer />
+    </div>
+  );
 }
 
-export default Contests
+export default Contests;
