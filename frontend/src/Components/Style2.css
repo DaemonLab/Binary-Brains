@@ -2,6 +2,11 @@
   background-color: #f2f0f0;
   padding-bottom: 50px;
 }
+.login{
+  overflow: hidden;
+  background-color: #f2f0f0;
+  padding-bottom: 13%;  
+}
 .navi{  
   font-family: 'Inter';
 }
@@ -104,8 +109,19 @@
   background: #212529;
   border-radius: 5px;
 }
+.whitebox2{
+  width: 1800px;
+  height: 450px;
+  position:relative;
+  margin: 10px;
+  background: #212529;
+  border-radius: 5px;
+}
 .signup_container{
   height: 890px;    
+}
+.signup_container2{
+  height: 420px;    
 }
 .register_container{
   height: 650px;
@@ -180,6 +196,21 @@ input{
 }
 @media (min-width: 576px) {
   .whitebox{
+      width: 450px;
+      padding-left: 20px;
+      padding-right: 20px;
+      box-shadow: 3px 3px 15px black;
+  }
+}
+@media (min-width: 300px) {
+  .whitebox2{
+      width: 350px;
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+}
+@media (min-width: 576px) {
+  .whitebox2{
       width: 450px;
       padding-left: 20px;
       padding-right: 20px;
