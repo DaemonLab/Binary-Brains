@@ -36,8 +36,7 @@ table{
     margin-top: 35px;
     margin-bottom: 35px;
     max-width: 100%;  
-    height: auto;
-    
+    height: auto;    
 }
 
 .card{   
@@ -67,10 +66,6 @@ table{
     transform: translate(-50%,50%);
 }
 
-.btnx:hover{
-    font-size: 26px;
-}
-
 .btnmore{
     position: relative;
     color: white;
@@ -87,15 +82,30 @@ table{
     transform: translate(-50%,0%);
 }
 
-
-.btnmore:hover{
-    font-size: 21px;
+.btncont{    
+    color: white;
+    background-color: rgb(44, 50, 76);
+    box-shadow: 2px 2px 5px black;
+    border: none;    
+    margin-bottom: 10px;
+    margin-left:4%;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    left:50%;        
 }
 
+.sm{
+    margin-left: 4%;
+}
 
 .conts{    
     position: relative;     
 }
+
+
 
 .btnnav{
     float:right;    
@@ -126,7 +136,7 @@ table{
 
 .contestname{
     text-decoration: underline;
-    margin-left: 20px;
+    margin-left: 4%;
 }
 
 .contestrank{

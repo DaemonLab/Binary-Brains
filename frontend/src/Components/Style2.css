@@ -13,6 +13,12 @@
 .navi>a{
   margin-left: 50px;
 }
+.th{
+  font-weight: 400;
+}
+.responsive{
+  padding-bottom: 30px;
+}
 .homeButton{
   display: inline-block;
   font-size: 1.5rem;
@@ -129,16 +135,16 @@
 .whitebox2{
   width: 1800px;
   height: 450px;
-  position:relative;
+  position:relative;  
   margin: 10px;
   background: #212529;
   border-radius: 5px;
 }
 .signup_container{
-  height: 890px;    
+  height: 920px;    
 }
-.signup_container2{
-  height: 420px;    
+.signup_container2{  
+  height: 450px;    
 }
 .register_container{
   height: 650px;
@@ -203,12 +209,45 @@ input{
   color:black;
   opacity:.9;
 }
-
 @media (min-width: 300px) {
   .whitebox{
       width: 350px;
       padding-left: 20px;
       padding-right: 20px;
+  }
+}
+@media(max-width: 992px){
+  .contestname{
+    font-size: 25px;
+  }  
+  .btnmore{
+    font-size: 15px;
+  }
+  .btnx{
+    margin-bottom: 5%;
+  }
+}
+@media(max-width: 500px){
+  .btncont{
+    font-size: 18px;
+  }
+  .btnx{
+    font-size: 10px;
+  }
+  .btnmore{
+    font-size: 12px;
+  }
+}
+@media(max-width: 768px){  
+  .btncont{
+    font-size: 15px;
+  }
+  .btnmore{
+    font-size: 12px;
+  }
+  .btnx{
+    font-size: 20px;
+    margin-bottom: 5%;
   }
 }
 @media (min-width: 576px) {
