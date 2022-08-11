@@ -41,7 +41,10 @@ function SignUp() {
   return (
     <div>
       <div className="signup">
-        <div className="container outer">
+        <div className="alert alert-danger" role="alert" >
+          error or whateverglkwehfeiwrh oho
+        </div>
+        <div className="container outer">       
           <div className="whitebox signup_container">
             <h1 className="text-center heading">SIGNUP</h1>
             <div className="mb-3 inputs" style={{ textAlign: "left" }}>
@@ -102,6 +105,23 @@ function SignUp() {
                 required
                 onChange={(e) => setUsername(e.target.value)}
               />
+              <br />
+            </div>
+            <div className="mb-3 inputs" style={{ textAlign: "left" }}>
+              <label className="form-label auth">Difficulty</label>
+              <br />
+              <select
+                type="text"
+                name="difficulty"
+                id="difficulty"
+                className="inputbox"                
+                style={{ color: "black" }}
+                required
+                onChange={(e) => setUsername(e.target.value)}
+              >
+                <option value="beginner">Beginner</option>
+                <option value="advanced">Advanced</option>
+                </select>
               <br />
             </div>
             <div className="mb-3 inputs" style={{ textAlign: "left" }}>

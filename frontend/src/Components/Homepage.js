@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from './Navbar';
 import Poster from './Poster';
 import Schedule from './Schedule';
 import Rankings from './Rankings';
