@@ -21,7 +21,8 @@ function Rankings() {
 
   return (
     
-    <div className='container contestcont'>
+    // <div className='container contestcont'>
+    <div className='container gridContainer'>
       <div className="card contestcard" >       
         <div className="card-body"> 
           <h2 className="card-title">Upcoming Contests</h2>     
@@ -48,7 +49,8 @@ function Rankings() {
           <hr/>
         </div>
         <Link to="contests"><button className='btnmore' >View All</button></Link>
-      </div>    
+      </div> 
+
       <div className="card contestcard-2 col-sm-12" >       
       <div className="container ">
       <h2 className="card-title contesttitle-2">Leaderboard</h2>

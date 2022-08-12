@@ -204,7 +204,19 @@ input{
   padding-top: 30px;
   margin: 30px;
 }
-
+.gridContainer{
+  display: grid;
+  grid-template-columns: 50%, 50%;
+  grid-template-areas: 
+  "cont cont2";
+}
+.contestcard{
+  grid-area: cont;
+}
+.contestcard-2{
+  grid-area: cont2;
+  width: 100%;
+}
 ::placeholder{
   color:black;
   opacity:.9;
@@ -248,6 +260,12 @@ input{
   .btnx{
     font-size: 20px;
     margin-bottom: 5%;
+  }
+}
+
+@media (max-width: 500px) {
+  .btnx{
+    font-size: 13px;
   }
 }
 @media (min-width: 576px) {
@@ -301,6 +319,16 @@ input{
     margin-left: 9vw;
     /* margin-left: 0; */
     font-size: 1rem;
+  }
+  .contestcard-2 {
+    margin-left: 0;
+  }
+  .gridContainer{
+    /* display: grid; */
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "cont"
+    "cont2";
   }
 }
 

@@ -126,11 +126,11 @@ table{
 }
 
 .contestcard{
-    max-width: 48%;       
+    /* max-width: 48%;        */
 }
 
 .contestcard-2{
-    max-width: 48%;     
+    /* max-width: 48%;      */
     margin-left: 5%;
 }
 
