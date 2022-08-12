@@ -127,24 +127,22 @@
 .whitebox{
   width: 1800px;
   height: 450px;
-  position:relative;
-  margin: 10px;
+  position:relative;  
   background: #212529;
   border-radius: 5px;
 }
 .whitebox2{
   width: 1800px;
   height: 450px;
-  position:relative;  
-  margin: 10px;
+  position:relative;    
   background: #212529;
   border-radius: 5px;
 }
 .signup_container{
-  height: 920px;    
+  height: 1000px;    
 }
 .signup_container2{  
-  height: 450px;    
+  height: 420px;    
 }
 .register_container{
   height: 650px;
@@ -154,7 +152,7 @@
   text-align: left;
 }
 
-input{
+input, select{
   width: 100%;
   border: 0;
   padding: 10px 10px;
@@ -201,8 +199,7 @@ input{
 
 .heading{
   color: white;
-  padding-top: 30px;
-  margin: 30px;
+  padding-top: 30px;  
 }
 .gridContainer{
   display: grid;
@@ -262,7 +259,12 @@ input{
     margin-bottom: 5%;
   }
 }
-
+@media(max-width:576px){
+  .alert{
+    max-width: 60%;
+    transform: translate(36%, 0%);
+  }
+}
 @media (max-width: 500px) {
   .btnx{
     font-size: 13px;

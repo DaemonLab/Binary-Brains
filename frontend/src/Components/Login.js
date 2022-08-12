@@ -33,6 +33,9 @@ function Login() {
   return (
     <div>
       <div className="login">
+      <div className="alert alert-danger" role="alert" >
+          error or whateverglkwehfeiwrh oho
+        </div>
         <div className="container outer">
           <div className="whitebox2 signup_container2">
             <h1 className="text-center heading">LOGIN</h1>

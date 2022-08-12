@@ -29,18 +29,18 @@ function Rankings() {
           <hr />
           <div className="">            
             <div className="card-body contestbody" key={1}>
-              <h3 className='contestname'>{` Contest ${contests[0].id} - ${contests[0].name}`}</h3>                            
-              <h4 className='sm'>{contests[0].date}</h4>
+              <h3 className='contestname'>{` Contest ${contests[0].id} - ${contests[0].name}`}</h3>  
+              <h4 className='sm'>(Beginner) {contests[0].date}</h4>                                        
               <button className="btncont">CF Page</button>
             </div>                                    
             <div className="card-body contestbody" key={2}>
               <h3 className='contestname'>{` Contest ${contests[1].id} - ${contests[1].name}`}</h3>                            
-              <h4 className='sm'>{contests[1].date}</h4>
+              <h4 className='sm'>(Advanced) {contests[1].date}</h4>                    
               <button className="btncont">CF Page</button>
             </div>                                    
             <div className="card-body contestbody" key={3}>
               <h3 className='contestname'>{` Contest ${contests[2].id} - ${contests[2].name}`}</h3>                            
-              <h4 className='sm'>{contests[2].date}</h4>
+              <h4 className='sm'>(Advanced) {contests[2].date}</h4>                    
               <button className="btncont">CF Page</button>
             </div>
           </div>                             
