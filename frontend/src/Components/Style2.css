@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Poppins&family=Raleway:wght@400;600&display=swap');
 .signup{  
   background-color: #f2f0f0;
   padding-bottom: 50px;
@@ -214,9 +215,78 @@ input, select{
   grid-area: cont2;
   width: 100%;
 }
+.courseDetailsHead{
+  font-family: 'Poppins', sans-serif;
+  background-color: #30D5C8;
+}
+.courseDetailsHead2{
+  background-color: #30D5C8;
+  font-family: 'Poppins', sans-serif;
+}
+.courseDetailsTime{
+  font-family: 'Poppins', sans-serif;
+}
+.pointsCourse{
+  font-family: 'Montserrat', sans-serif;
+}
+.lectureTime{
+  font-family: 'Montserrat', sans-serif;
+}
+.upcomingContestHead{
+  background-color: #30D5C8;
+  font-family: 'Poppins', sans-serif;
+}
+.leaderboardHead{
+  background-clip: content-box;
+  background-color: #30D5C8;
+}
+.leaderboardHead{
+  font-family: 'Poppins', sans-serif;
+}
+.contestname{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+.contestInfo{
+  font-weight: 250;
+  font-family: 'Montserrat', sans-serif;
+}
+.leaderTH{
+  font-family: 'Raleway', sans-serif;
+}
+.leaderTD{
+  font-family: 'Montserrat', sans-serif;
+}
 ::placeholder{
   color:black;
   opacity:.9;
+}
+@media (min-width: 1200px) {
+  .courseDetailsHead2{
+    font-size: 2rem;
+  }
+  .courseDetailsHead{
+    font-size: 2.5rem;
+  }
+  /* h3{
+    font-size: 2rem;
+  } */
+  .courseDetailsTime{
+    font-size: 1.75rem;
+  }
+  .pointsCourse>h4{
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .pointsCourse>h4{
+    font-size: 1rem;
+  }
+  .lectureTime>h5{
+    font-size: 1rem;
+
+  }
+
 }
 @media (min-width: 300px) {
   .whitebox{

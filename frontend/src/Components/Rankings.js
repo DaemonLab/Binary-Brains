@@ -25,22 +25,22 @@ function Rankings() {
     <div className='container gridContainer'>
       <div className="card contestcard" >       
         <div className="card-body"> 
-          <h2 className="card-title">Upcoming Contests</h2>     
+          <h2 className="card-title upcomingContestHead">Upcoming Contests</h2>     
           <hr />
           <div className="">            
             <div className="card-body contestbody" key={1}>
               <h3 className='contestname'>{` Contest ${contests[0].id} - ${contests[0].name}`}</h3>  
-              <h4 className='sm'>(Beginner) {contests[0].date}</h4>                                        
+              <h4 className='sm contestInfo'>(Beginner) {contests[0].date}</h4>                                        
               <button className="btncont">CF Page</button>
             </div>                                    
             <div className="card-body contestbody" key={2}>
               <h3 className='contestname'>{` Contest ${contests[1].id} - ${contests[1].name}`}</h3>                            
-              <h4 className='sm'>(Advanced) {contests[1].date}</h4>                    
+              <h4 className='sm contestInfo'>(Advanced) {contests[1].date}</h4>                    
               <button className="btncont">CF Page</button>
             </div>                                    
             <div className="card-body contestbody" key={3}>
               <h3 className='contestname'>{` Contest ${contests[2].id} - ${contests[2].name}`}</h3>                            
-              <h4 className='sm'>(Advanced) {contests[2].date}</h4>                    
+              <h4 className='sm contestInfo'>(Advanced) {contests[2].date}</h4>                    
               <button className="btncont">CF Page</button>
             </div>
           </div>                             
@@ -53,24 +53,24 @@ function Rankings() {
 
       <div className="card contestcard-2 col-sm-12" >       
       <div className="container ">
-      <h2 className="card-title contesttitle-2">Leaderboard</h2>
+      <h2 className="card-title contesttitle-2 leaderboardHead">Leaderboard</h2>
       <hr/>
-      <h3 align="center">Beginner</h3>
+      <h3 className="leaderboardHead" align="center">Beginner</h3>
       <div className="responsive">
         <table className='leaderboard'>
           <tbody>
             <tr>
-              <th className='th'>Name</th>
-              <th className='th'>Username</th>
-              <th className='th'>Points</th>
+              <th className='th leaderTH'>Name</th>
+              <th className='th leaderTH'>Username</th>
+              <th className='th leaderTH'>Points</th>
             </tr>
             {
               ranks.map((rank, id) => {
                 return(
                   <tr key={id}>
-                    <td className='td'>{rank.name}</td>
-                    <td className='td'>{rank.username}</td>
-                    <td className='td'>{rank.points}</td>
+                    <td className='td leaderTD'>{rank.name}</td>
+                    <td className='td leaderTD'>{rank.username}</td>
+                    <td className='td leaderTD'>{rank.points}</td>
                   </tr>
                 )
               })
@@ -79,22 +79,22 @@ function Rankings() {
         </table>
         <h1></h1>
         </div>
-        <h3 align="center">Advanced</h3>        
+        <h3 className="leaderboardHead" align="center">Advanced</h3>        
         <div className="responsive leaderboard">
           <table>
             <tbody>
               <tr>
-                <th className='th'>Name</th>
-                <th className='th'>Username</th>
-                <th className='th'>Points</th>
+                <th className='th leaderTH'>Name</th>
+                <th className='th leaderTH'>Username</th>
+                <th className='th leaderTH'>Points</th>
               </tr>
               {
                 ranks.map((rank, id) => {
                   return(
                     <tr key={id}>
-                      <td className='td'>{rank.name}</td>
-                      <td className='td'>{rank.username}</td>
-                      <td className='td'>{rank.points}</td>
+                      <td className='td leaderTD'>{rank.name}</td>
+                      <td className='td leaderTD'>{rank.username}</td>
+                      <td className='td leaderTD'>{rank.points}</td>
                     </tr>
                   )
                 })

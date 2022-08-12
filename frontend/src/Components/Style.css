@@ -169,9 +169,9 @@ table{
     color: rgb(214, 214, 214);
 }
 
-.contestcard{
+/* .contestcard{ */
     /* max-width: 48%;        */
-}
+/* } */
 
 .contestcard-2{
     /* max-width: 48%;      */
@@ -179,7 +179,7 @@ table{
 }
 
 .contestname{
-    text-decoration: underline;
+    /* text-decoration: underline; */
     margin-left: 4%;
 }
 
