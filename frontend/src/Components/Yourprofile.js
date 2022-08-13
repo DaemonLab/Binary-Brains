@@ -1,9 +1,10 @@
 import Footer2 from "./Footer2";
 import axios from "axios";
 import * as React from "react";
-
+import data2 from "./data2";
 
 function Yourprofile() {
+  const [pts, setPts] = React.useState(data2);
   const [state, setState] = React.useState(false);
   React.useEffect(() => {
     axios
@@ -19,11 +20,34 @@ function Yourprofile() {
   return (
     <div>
       <div className="container ypcont mt-4 pb-5">
+      <div className="history card2 responsive">        
+        <h4 className="mt-2" align="center">Points History</h4>
+        <hr/>
+          <table className="typ">
+            <tr>
+              <th className="th2">Points</th>
+              <th className="th2">Date</th>
+            </tr>
+          {
+            pts.map((pt,id) => {
+              return (
+                <tr key={id}>
+                  <td className="td2 leaderTD">{pt.points}</td>
+                  <td className="td2 leaderTD">{pt.date}</td>                      
+                </tr>
+              )
+            })
+          }
+          </table>
+        </div>        
         <h2 align="center" style={{"color":"white"}}>Your Details</h2>
+        <br/>        
         <h3 className="h2x">Welcome {state.name}</h3>
         <h3 className="h2x">CF Username:- {state.username}</h3>
-        <h3 className="h2x">Points:- {state.points}</h3>
-        <hr style={{"color": "white"}}/>
+        <h3 className="h2x">Points:- {state.points}</h3>   
+        <br/>
+        <br/>     
+        <hr style={{"color": "white"}}/>        
         <h2 className="stm">Study Material</h2>
         <div className="container">
           <div className="row">

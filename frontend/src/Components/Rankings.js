@@ -70,16 +70,16 @@ function Rankings() {
             <table className="leaderboard">
               <tbody>
                 <tr>
-                  <th className="th leaderTH">Name</th>
-                  <th className="th leaderTH">Username</th>
-                  <th className="th leaderTH">Points</th>
+                  <th className="th1 leaderTH">Name</th>
+                  <th className="th1 leaderTH">Username</th>
+                  <th className="th1 leaderTH">Points</th>
                 </tr>
                 {beginner.map((rank, id) => {
                   return (
                     <tr key={id}>
-                      <td className="td leaderTD">{rank.name}</td>
-                      <td className="td leaderTD">{rank.username}</td>
-                      <td className="td leaderTD">{rank.points}</td>
+                      <td className="td1 leaderTD">{rank.name}</td>
+                      <td className="td1 leaderTD">{rank.username}</td>
+                      <td className="td1 leaderTD">{rank.points}</td>
                     </tr>
                   );
                 })}
@@ -93,16 +93,16 @@ function Rankings() {
             <table>
               <tbody>
                 <tr>
-                  <th className="th leaderTH">Name</th>
-                  <th className="th leaderTH">Username</th>
-                  <th className="th leaderTH">Points</th>
+                  <th className="th1 leaderTH">Name</th>
+                  <th className="th1 leaderTH">Username</th>
+                  <th className="th1 leaderTH">Points</th>
                 </tr>
                 {advanced.map((rank, id) => {
                   return (
                     <tr key={id}>
-                      <td className="td leaderTD">{rank.name}</td>
-                      <td className="td leaderTD">{rank.username}</td>
-                      <td className="td leaderTD">{rank.points}</td>
+                      <td className="td1 leaderTD">{rank.name}</td>
+                      <td className="td1 leaderTD">{rank.username}</td>
+                      <td className="td1 leaderTD">{rank.points}</td>
                     </tr>
                   );
                 })}
