@@ -26,6 +26,7 @@ app.post("/register", (req, res) => {
     password: req.body.password,
     codeforces_handle: req.body.codeforces_handle,
     phone: req.body.phone,
+    difficulty: req.body.difficulty,
   });
 
   newUser.save((err) => {
@@ -102,7 +103,8 @@ app.post("/contest", (req, res) => {
     contest: req.body.contest,
     date: req.body.date,
     name: req.body.name,
-    desc: req.body.desc
+    desc: req.body.desc,
+    category: req.body.category,
   });
 
   newContest.save((err) => {
@@ -118,7 +120,7 @@ app.post("/contest", (req, res) => {
   });
 });
 
-app.post("/updatePoints", (req, res)=>{
+app.post("/updatePoints", (req, res) => {
   base_url = `https://codeforces.com/api/contest.standings?contestId=${req.body.contest}&from=1&count=10`;
   axios
     .get(base_url)
@@ -182,38 +184,46 @@ app.get("/leaderboard", (req, res) => {
           title: "Error",
           error: err,
         });
-      const calUsers = [];
+      const beginnerUsers = [];
+      const advancedUsers = [];
       users.forEach((user) => {
-        const calUser = {
-          points: user.total_points,
-          username: user.codeforces_handle,
-          name: user.name,
-        };
-        calUsers.push(calUser);
+        if (user.difficulty === "beginner") {
+          const beginnerUser = {
+            points: user.total_points,
+            username: user.codeforces_handle,
+            name: user.name,
+          };
+          beginnerUsers.push(beginnerUser);
+        } else {
+          const advancedUser = {
+            points: user.total_points,
+            username: user.codeforces_handle,
+            name: user.name,
+          };
+          advancedUsers.push(advancedUser);
+        }
       });
       return res.status(200).json({
         title: "Success",
-        users: calUsers
+        beginnerUsers: beginnerUsers,
+        advancedUsers: advancedUsers,
       });
     }
   );
 });
 
 app.get("/contests", (req, res) => {
-  Contest.find(
-    {},
-    (err, contests) => {
-      if (err)
-        return res.status(400).json({
-          title: "Error",
-          error: err,
-        });
-      return res.status(200).json({
-        title: "Success",
-        contests: contests
+  Contest.find({}, (err, contests) => {
+    if (err)
+      return res.status(400).json({
+        title: "Error",
+        error: err,
       });
-    }
-  );
+    return res.status(200).json({
+      title: "Success",
+      contests: contests,
+    });
+  });
 });
 
 const PORT = process.env.PORT || 5000;

@@ -22,6 +22,7 @@ const userSchema = mongoose.Schema({
     },
   ],
   phone: Number,
+  difficulty: String,
 });
 
 const User = mongoose.model("User", userSchema);

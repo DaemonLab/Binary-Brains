@@ -1,7 +1,7 @@
 import React from "react";
 import "./Style2.css";
 import Footer2 from "./Footer2";
-import axios from 'axios';
+import axios from "axios";
 
 function SignUp() {
   const [name, setName] = React.useState("");
@@ -11,40 +11,42 @@ function SignUp() {
   const [phone, setPhone] = React.useState("");
   const [username, setUsername] = React.useState("");
   const [disabled, setDisabled] = React.useState(true);
-
+  const [difficulty, setDifficulty] = React.useState("beginner");
   const handleRegister = () => {
-    axios.post('http://localhost:5000/register', {
-      name: name,
-      email: email,
-      password: password,
-      phone: phone,
-      codeforces_handle: username,
-
-    }).then(res => {
-      if (res.status === 200) {
-        window.location.href = '/';
-      }
-      else {
-        console.log("failed")
-      }
-    }).catch(() => {
-      console.log("failed");
-    });
+    axios
+      .post("http://localhost:5000/register", {
+        name: name,
+        email: email,
+        password: password,
+        phone: phone,
+        codeforces_handle: username,
+        difficulty: difficulty,
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          window.location.href = "/";
+        } else {
+          console.log("failed");
+        }
+      })
+      .catch(() => {
+        console.log("failed");
+      });
   };
 
   React.useEffect(() => {
     if (password === confirmPassword) setDisabled(false);
     else setDisabled(true);
-    if(name==="" || email==="" || password==="") setDisabled(true);
+    if (name === "" || email === "" || password === "") setDisabled(true);
   }, [password, confirmPassword]);
 
   return (
     <div>
       <div className="signup">
-        <div className="alert alert-danger" role="alert" >
+        <div className="alert alert-danger" role="alert">
           error or whateverglkwehfeiwrh oho
         </div>
-        <div className="container outer">       
+        <div className="container outer">
           <div className="whitebox signup_container">
             <h1 className="text-center heading">SIGNUP</h1>
             <div className="mb-3 inputs" style={{ textAlign: "left" }}>
@@ -114,14 +116,14 @@ function SignUp() {
                 type="text"
                 name="difficulty"
                 id="difficulty"
-                className="inputbox"                
+                className="inputbox"
                 style={{ color: "black" }}
                 required
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={(e) => setDifficulty(e.target.value)}
               >
                 <option value="beginner">Beginner</option>
                 <option value="advanced">Advanced</option>
-                </select>
+              </select>
               <br />
             </div>
             <div className="mb-3 inputs" style={{ textAlign: "left" }}>
@@ -157,7 +159,12 @@ function SignUp() {
               />
               <br />
             </div>
-            <button className="btnsignup" type="submit" onClick={handleRegister} disabled={disabled}>
+            <button
+              className="btnsignup"
+              type="submit"
+              onClick={handleRegister}
+              disabled={disabled}
+            >
               SIGNUP
             </button>
           </div>

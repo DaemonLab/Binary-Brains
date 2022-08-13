@@ -7,7 +7,8 @@ const contestSchema = mongoose.Schema({
   },
   name: String,
   desc: String,
-  date: String
+  date: String,
+  category: String,
 });
 
 const Contest = mongoose.model("Contest", contestSchema);
