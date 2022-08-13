@@ -23,6 +23,11 @@ function Navbar() {
                     Your Profile
                 </button> 
             </Link>
+            <Link to="yourprofile"> 
+                <button className="btnnav">
+                    Logout
+                </button> 
+            </Link>
             <Link to="login"> 
                 <button className="btnnav2">
                     Login
