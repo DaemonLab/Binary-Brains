@@ -25,24 +25,24 @@ function Yourprofile() {
         <h3 className="h2x">Points:- {state.points}</h3>
         <hr style={{"color": "white"}}/>
         <h2 className="stm">Study Material</h2>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm slidecont">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm slidecont">
               <h3>Slide Topic</h3>
               <h4>Slide 1 link</h4>
               <p>Upload Date</p>
             </div>
-            <div class="col-sm slidecont">
+            <div className="col-sm slidecont">
               <h3>Slide Topic</h3>
               <h4>Slide 2 link</h4>
               <p>Upload Date</p>
             </div>
-            <div class="col-sm slidecont">
+            <div className="col-sm slidecont">
               <h3 >Slide Topic</h3>
               <h4 >Slide 3 link</h4>
               <p>Upload Date</p>
             </div>
-            <div class="col-sm slidecont">
+            <div className="col-sm slidecont">
               <h3>Slide Topic</h3>
               <h4>Slide 4 link</h4>
               <p>Upload Date</p>

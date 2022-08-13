@@ -76,8 +76,7 @@ function Rankings() {
               })
             }     
           </tbody>   
-        </table>
-        <h1></h1>
+        </table>        
         </div>
         <h3 className="leaderboardHead" align="center">Advanced</h3>        
         <div className="responsive leaderboard">

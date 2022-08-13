@@ -238,6 +238,7 @@ input, select{
 }
 .leaderboardHead{
   background-clip: content-box;
+  border-radius: 5px;
   background-color: #30D5C8;
 }
 .leaderboardHead{
@@ -397,7 +398,7 @@ input, select{
   }
   .gridContainer{
     /* display: grid; */
-    grid-template-columns: 100%;
+    grid-template-columns: 80%;
     grid-template-areas: 
     "cont"
     "cont2";
