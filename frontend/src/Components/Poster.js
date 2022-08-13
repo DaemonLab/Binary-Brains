@@ -6,7 +6,7 @@ function Poster() {
   return (
     <div className="container conts">
         <img src={img1} className="poster"/>
-        <Link to="/register"><button className="btnx">Register For The Course!</button></Link>
+        <Link to="/signup"><button className="btnx">Register For The Course!</button></Link>
     </div>
   )
 }
