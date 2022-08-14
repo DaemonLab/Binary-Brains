@@ -1,40 +1,48 @@
 import * as React from "react";
 import "./Style2.css";
 import Footer2 from "./Footer2";
-import axios from 'axios';
+import axios from "axios";
 
 function Login() {
-  const token = localStorage.getItem('token');
-  if(token){
-    window.location.href = '/yourprofile';
+  const token = localStorage.getItem("token");
+  if (token) {
+    window.location.href = "/yourprofile";
   }
 
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  
+  const [alert, setAlert] = React.useState("none");
   const handleLogin = () => {
-    axios.post('http://localhost:5000/login', {
-      email: email,
-      password: password
-    }).then(res => {
-      if (res.status === 200) {
-        const token = res.data.token;
-        localStorage.setItem('token', token);
-        window.location.href = '/yourprofile';
-      }
-      else {
-        console.log("failed")
-      }
-    }).catch(() => {
-      console.log("failed");
-    });
+    axios
+      .post("http://localhost:5000/login", {
+        email: email,
+        password: password,
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          const token = res.data.token;
+          localStorage.setItem("token", token);
+          window.location.href = "/yourprofile";
+        } else {
+          console.log("failed");
+          setAlert("block");
+        }
+      })
+      .catch(() => {
+        console.log("failed");
+        setAlert("block");
+      });
   };
 
   return (
     <div>
       <div className="login">
-      <div className="alert alert-danger" role="alert" >
-          error or whateverglkwehfeiwrh oho
+        <div
+          className="alert alert-danger"
+          role="alert"
+          style={{ display: alert }}
+        >
+          Something went wrong! Please Try Again!
         </div>
         <div className="container outer">
           <div className="whitebox2 signup_container2">

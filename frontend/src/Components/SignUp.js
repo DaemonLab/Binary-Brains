@@ -4,6 +4,10 @@ import Footer2 from "./Footer2";
 import axios from "axios";
 
 function SignUp() {
+  const token = localStorage.getItem("token");
+  if (token) {
+    window.location.href = "/yourprofile";
+  }
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -12,6 +16,7 @@ function SignUp() {
   const [username, setUsername] = React.useState("");
   const [disabled, setDisabled] = React.useState(true);
   const [difficulty, setDifficulty] = React.useState("beginner");
+  const [alert, setAlert] = React.useState("none");
   const handleRegister = () => {
     axios
       .post("http://localhost:5000/register", {
@@ -27,10 +32,12 @@ function SignUp() {
           window.location.href = "/";
         } else {
           console.log("failed");
+          setAlert("block");
         }
       })
       .catch(() => {
         console.log("failed");
+        setAlert("block");
       });
   };
 
@@ -43,8 +50,12 @@ function SignUp() {
   return (
     <div>
       <div className="signup">
-        <div className="alert alert-danger" role="alert">
-          error or whateverglkwehfeiwrh oho
+        <div
+          className="alert alert-danger"
+          role="alert"
+          style={{ display: alert }}
+        >
+          Something went wrong! Please Try Again!
         </div>
         <div className="container outer">
           <div className="whitebox signup_container">

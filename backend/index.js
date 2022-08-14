@@ -7,6 +7,7 @@ const axios = require("axios");
 
 const User = require("./models/User.js");
 const Contest = require("./models/Contest.js");
+const Notes = require("./models/Notes.js");
 
 const connectionurl =
   "mongodb+srv://admin:admin@cluster0.0odqg.mongodb.net/?retryWrites=true&w=majority";
@@ -108,6 +109,27 @@ app.post("/contest", (req, res) => {
   });
 
   newContest.save((err) => {
+    if (err) {
+      return res.status(400).json({
+        title: "error",
+        error: "CONTEST already exists!",
+      });
+    }
+    return res.status(200).json({
+      title: "Contest Created",
+    });
+  });
+});
+
+app.post("/notes", (req, res) => {
+  const newNotes = new Notes({
+    name: req.body.name,
+    date: req.body.date,
+    category: req.body.category,
+    link: req.body.link,
+  });
+
+  newNotes.save((err) => {
     if (err) {
       return res.status(400).json({
         title: "error",
@@ -222,6 +244,20 @@ app.get("/contests", (req, res) => {
     return res.status(200).json({
       title: "Success",
       contests: contests,
+    });
+  });
+});
+
+app.get("/getnotes", (req, res) => {
+  Notes.find({category: req.body.category}, (err, notes) => {
+    if (err)
+      return res.status(400).json({
+        title: "Error",
+        error: err,
+      });
+    return res.status(200).json({
+      title: "Success",
+      notes: notes,
     });
   });
 });
