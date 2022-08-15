@@ -22,6 +22,9 @@ table{
     border-spacing: 0;
     width: 100%;    
 }
+.contpast{
+    padding-bottom: 100px;
+}
 
 .nav-left{
     transform: translate(50%,0%);
@@ -40,7 +43,34 @@ table{
     background-color: rgb(0, 0, 0);
     color: white;
 }
+.btnpastdp{    
+    color:white;
+    font-size: 25px;
+    background-color: rgb(44, 50, 76);
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 8px;
+    border: none;
+    box-shadow: 2px 2px 5px black;    
+    width: 30%;
+    transform: translate(110%,0);
+}
+.btnxxx:hover{
+    color: #e4e4e4;
 
+}
+.btnxxx{
+    text-decoration: none;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    background-color: rgb(44, 50, 76);
+}
 .poster{    
     border-radius: 20px;    
     margin-top: 35px;
@@ -48,7 +78,18 @@ table{
     max-width: 100%;  
     height: auto;    
 }
-
+.btndp{
+    float: right;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-right: 10px;
+    border-radius: 5px;    
+    border: none;
+    background-color: rgb(44, 50, 76);
+    box-shadow: 2px 2px 5px black;
+    color: white;
+    padding: 10px;
+}
 .card{   
     width: 100%;
     margin-bottom: 30px;
@@ -351,4 +392,32 @@ table{
         padding-left: 0px;
         padding-right: 0px;
     }
+}
+@media(max-width:548px){
+    .leaderboardHead-2{
+        font-size: 23px;
+    }
+}
+
+@media(max-width:768px){
+    .leaderboardHead-2{
+        font-size: 23px;
+    }
+    .h2x{
+        font-size: 25px;
+    }
+    .btnpastdp{
+        font-size: 20px;
+    }
+}
+@media(max-width:450px){
+    .leaderboardHead-2{
+        font-size: 18px;
+    }
+    .h2x{
+        font-size: 18px;
+    }
+    .th2{
+        font-size: 18px;
+    }    
 }

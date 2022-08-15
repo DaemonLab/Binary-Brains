@@ -22,7 +22,5 @@ export default [
         rank2: "jim",
         rank3: "brown",
         date: "25-8-22",
-    },
-    
-    
+    },        
 ]

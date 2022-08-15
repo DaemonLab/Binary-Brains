@@ -12,26 +12,5 @@ export default [
         name:"mark",
         points:22,
         date:"20-2-22",   
-    },
-    {
-        id:3,
-        username:"abc3132",
-        name:"chris",
-        points:43,
-        date:"15-2-22",   
-    },
-    {
-        id:4,
-        username:"abc3132",
-        name:"chris",
-        points:43,
-        date:"10-2-22",   
-    },    
-    {
-        id:5,
-        username:"abc3132",
-        name:"chris",
-        points:43,
-        date:"10-2-22",   
-    },  
+    },   
 ]

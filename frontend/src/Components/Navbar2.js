@@ -14,7 +14,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <Link to="/">
-          <img src={img1} className="navimg" />
+          <img src={img1} className="navimg" alt="..."/>
         </Link>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
@@ -32,6 +32,11 @@ function Navbar() {
             ) : (
               <></>
             )}
+            <li className="nav-item">
+              <Link to="/about" className="nav-link">
+                About
+              </Link>
+            </li>
           </ul>
         </div>
         {token ? (

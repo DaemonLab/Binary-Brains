@@ -33,7 +33,7 @@ function Contests() {
                   <p>Time: {date.toISOString()}</p>
                   <a
                     href={`https://codeforces.com/contest/${contest.contest}`}
-                    class="btn btn-primary"
+                    class="btnxxx"
                     target={"_blank"}
                   >
                     Contest(CF link)
@@ -57,7 +57,7 @@ function Contests() {
                   <p>Time: {moment(date).fromNow()}</p>
                   <a
                     href={`https://codeforces.com/contest/${contest.contest}`}
-                    class="btn btn-primary"
+                    class="btnxxx"
                     target={"_blank"}
                   >
                     Contest(CF link)

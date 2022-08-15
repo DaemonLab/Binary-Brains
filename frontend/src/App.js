@@ -2,15 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 import './Components/Style.css';
 import Homepage from './Components/Homepage';
-import Navbar from './Components/Navbar';
+import AboutUs from './Components/AboutUs';
 import Navbar2 from './Components/Navbar2';
 import Contests from './Components/Contests';
 import Login from './Components/Login';
 import Yourprofile from './Components/Yourprofile';
 import SignUp from './Components/SignUp';
-import Footer from './Components/Footer';
+import Dailyprob from './Components/Dailyprob';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Routes, Route ,Link} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -23,7 +23,9 @@ function App() {
           <Route path="contests" element={<Contests />} />                 
           <Route path="login" element={<Login />} />                         
           <Route path="yourprofile" element={<Yourprofile />} />
-          <Route path="signup" element={<SignUp />}/>          
+          <Route path="signup" element={<SignUp />}/>   
+          <Route path="dailyprob" element={<Dailyprob />}/>        
+          <Route path="about" element={<AboutUs />}/> 
           <Route path="*" />
         </Routes>                          
         </div>

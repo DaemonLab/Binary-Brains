@@ -197,7 +197,11 @@ input, select{
   background-color: black ;
   color: white;
 }
-
+.carddp{
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 15px;
+}
 .heading{
   color: white;
   padding-top: 30px;  
@@ -237,13 +241,24 @@ input, select{
   font-family: 'Poppins', sans-serif;
 }
 .leaderboardHead{
-  background-clip: content-box;
-  border-radius: 5px;
+  background-clip: content-box;  
   background-color: #30D5C8;
+}
+.ypcont{
+  font-family: 'Poppins','sans-serif';
 }
 .leaderboardHead{
   font-family: 'Poppins', sans-serif;
 }
+.leaderboardHead-2{
+  background-clip: content-box;
+  padding-left: 5%;
+  text-align: center;
+  max-width: 95%;  
+  background-color: #30D5C8;
+  font-family: 'Poppins', sans-serif;
+}
+
 .contestname{
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
