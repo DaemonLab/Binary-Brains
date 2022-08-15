@@ -214,11 +214,16 @@ input, select{
 }
 .contestcard{
   grid-area: cont;
+  width: 97%;
+  margin-right: 2.5%;
 }
 .contestcard-2{
   grid-area: cont2;
-  width: 100%;
+  /* width: 100%; */
+  width: 97%;
+  margin-left: 2.5%;
 }
+
 .courseDetailsHead{
   font-family: 'Poppins', sans-serif;
   background-color: #30D5C8;
@@ -408,12 +413,17 @@ input, select{
     /* margin-left: 0; */
     font-size: 1rem;
   }
+  .contestcard {
+    margin-right: 0;
+    width: 100%;
+  }
   .contestcard-2 {
     margin-left: 0;
+    width: 100%;
   }
   .gridContainer{
     /* display: grid; */
-    grid-template-columns: 80%;
+    grid-template-columns: 100%;
     grid-template-areas: 
     "cont"
     "cont2";
