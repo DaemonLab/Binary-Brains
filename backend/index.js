@@ -8,6 +8,7 @@ const axios = require("axios");
 const User = require("./models/User.js");
 const Contest = require("./models/Contest.js");
 const Notes = require("./models/Notes.js");
+const DailyProblem = require("./models/DailyProblem.js");
 
 const connectionurl =
   "mongodb+srv://admin:admin@cluster0.0odqg.mongodb.net/?retryWrites=true&w=majority";
@@ -94,6 +95,7 @@ app.get("/profile", (req, res) => {
         history: user.history,
         username: user.codeforces_handle,
         name: user.name,
+        difficulty: user.difficulty
       });
     });
   });
@@ -117,6 +119,28 @@ app.post("/contest", (req, res) => {
     }
     return res.status(200).json({
       title: "Contest Created",
+    });
+  });
+});
+
+app.post("/dailyproblem", (req, res) => {
+  const newDailyProblem = new DailyProblem({
+    link: req.body.link,
+    date: req.body.date,
+    name: req.body.name,
+    desc: req.body.desc,
+    category: req.body.category,
+  });
+
+  newDailyProblem.save((err) => {
+    if (err) {
+      return res.status(400).json({
+        title: "error",
+        error: "Daily Problem already exists!",
+      });
+    }
+    return res.status(200).json({
+      title: "Daily Problem Created",
     });
   });
 });
@@ -248,7 +272,7 @@ app.get("/contests", (req, res) => {
   });
 });
 
-app.get("/getnotes", (req, res) => {
+app.post("/getnotes", (req, res) => {
   Notes.find({category: req.body.category}, (err, notes) => {
     if (err)
       return res.status(400).json({
@@ -258,6 +282,20 @@ app.get("/getnotes", (req, res) => {
     return res.status(200).json({
       title: "Success",
       notes: notes,
+    });
+  });
+});
+
+app.post("/getdailyproblem", (req, res) => {
+  DailyProblem.find({category: req.body.category}, (err, dailyproblems) => {
+    if (err)
+      return res.status(400).json({
+        title: "Error",
+        error: err,
+      });
+    return res.status(200).json({
+      title: "Success",
+      dailyproblems: dailyproblems,
     });
   });
 });

@@ -14,7 +14,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <Link to="/">
-          <img src={img1} className="navimg" alt="..."/>
+          <img src={img1} className="navimg" alt="..." />
         </Link>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
@@ -55,12 +55,20 @@ function Navbar() {
         ) : (
           <></>
         )}
-        <Link to="login">
-          <button className="btnnav2">Login</button>
-        </Link>
-        <Link to="signup">
-          <button className=" btnnav2">Signup</button>
-        </Link>
+        {!token ? (
+          <Link to="login">
+            <button className="btnnav2">Login</button>
+          </Link>
+        ) : (
+          <></>
+        )}
+        {!token ? (
+          <Link to="signup">
+            <button className=" btnnav2">Signup</button>
+          </Link>
+        ) : (
+          <></>
+        )}
       </div>
     </nav>
   );
