@@ -8,6 +8,15 @@
 
 .end{        
     background-color: rgb(43, 47, 50);
+    height:200px
+}
+
+.aboutBody{
+    background-color: rgb(43, 47, 50) !important;
+    color: white !important;
+}
+.aboutHead{
+    color: turquoise;    
 }
 
 .navimg{

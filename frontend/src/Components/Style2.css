@@ -140,7 +140,7 @@
   border-radius: 5px;
 }
 .signup_container{
-  height: 1000px;    
+  height: 1050px;    
 }
 .signup_container2{  
   height: 420px;    
@@ -212,6 +212,15 @@ input, select{
   grid-template-areas: 
   "cont cont2";
 }
+.signfaq{
+  font-size: 15px;
+  padding:0;
+  color: white;  
+}
+.signfaq2{
+  color: white;
+  text-decoration: none;
+}
 .contestcard{
   grid-area: cont;
   width: 97%;
@@ -237,6 +246,13 @@ input, select{
 }
 .pointsCourse{
   font-family: 'Montserrat', sans-serif;
+}
+.prizeCourse{
+  font-family: 'Montserrat', sans-serif;
+  align-content: left;
+  align-items: left;
+  justify-content: left;
+  width: 50%;
 }
 .lectureTime{
   font-family: 'Montserrat', sans-serif;

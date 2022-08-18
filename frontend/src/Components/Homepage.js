@@ -2,6 +2,7 @@ import React from 'react';
 import Poster from './Poster';
 import Schedule from './Schedule';
 import Rankings from './Rankings';
+import Prizes from './Prizes';
 import Footer from './Footer';
 
 import './Style.css'
@@ -14,7 +15,8 @@ function Homepage() {
       <Poster />        
       <Schedule /> 
       <Rankings />     
-      <Footer />            
+      <Prizes />
+      <Footer />                  
     </div>
   )
 }

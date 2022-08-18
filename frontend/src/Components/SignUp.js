@@ -1,5 +1,6 @@
 import React from "react";
 import "./Style2.css";
+import {Link} from 'react-router-dom'
 import Footer2 from "./Footer2";
 import axios from "axios";
 
@@ -122,7 +123,7 @@ function SignUp() {
             </div>
             <div className="mb-3 inputs" style={{ textAlign: "left" }}>
               <label className="form-label auth">Difficulty</label>
-              <br />
+              <p className="signfaq"> &nbsp;Confused what to choose? <Link to="/faq" className="signfaq2">Click here</Link></p>                
               <select
                 type="text"
                 name="difficulty"
@@ -134,8 +135,7 @@ function SignUp() {
               >
                 <option value="beginner">Beginner</option>
                 <option value="advanced">Advanced</option>
-              </select>
-              <br />
+              </select>                          
             </div>
             <div className="mb-3 inputs" style={{ textAlign: "left" }}>
               <label className="form-label auth" style={{ textAlign: "left" }}>

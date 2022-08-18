@@ -8,6 +8,7 @@ import Contests from './Components/Contests';
 import Login from './Components/Login';
 import Yourprofile from './Components/Yourprofile';
 import SignUp from './Components/SignUp';
+import FAQs from './Components/FAQs';
 import Dailyprob from './Components/Dailyprob';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -26,6 +27,7 @@ function App() {
           <Route path="signup" element={<SignUp />}/>   
           <Route path="dailyprob" element={<Dailyprob />}/>        
           <Route path="about" element={<AboutUs />}/> 
+          <Route path="faq" element={<FAQs />}/>
           <Route path="*" />
         </Routes>                          
         </div>
