@@ -399,6 +399,9 @@ table{
         font-size: 25px;
     }
     .btnpastdp{
+        font-size: 18px;
+    }
+    .btndp{
         font-size: 20px;
     }
 }
@@ -411,5 +414,12 @@ table{
     }
     .th2{
         font-size: 18px;
-    }    
+    }   
+    .btndp{
+        font-size: 15px;
+        margin-top: 0%;
+    }
+    .btnpastdp{
+        font-size: 15px;
+    } 
 }
