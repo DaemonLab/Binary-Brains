@@ -202,6 +202,55 @@ input, select{
   padding-left: 20px;
   padding-bottom: 15px;
 }
+.btnpr{
+  position: relative;
+  color: white;
+  background-color: rgb(44, 50, 76);  
+  border: none;    
+  margin-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  left:50%;    
+  bottom: 0%;
+  box-shadow: 2px 2px 5px black;
+  transform: translate(-50%,0%);
+}
+.prizecard-1{
+  width: 46%;
+}
+.col{
+  text-align: center;
+  margin-right: 20px;
+}
+.pr{
+  color: white;
+  text-align: center;
+}
+.subyp{
+  float: right;
+  color: white;   
+}
+.btnred{
+  width:25%;
+  position: relative;
+  color: white;
+  background-color: rgb(44, 50, 76);  
+  border: none;   
+  margin-bottom: 3%; 
+  margin-right: 2%;  
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  left:14%;    
+  bottom: 0%;
+  box-shadow: 2px 2px 5px black;
+  transform: translate(-50%,0%);
+}
 .heading{
   color: white;
   padding-top: 30px;  
@@ -226,17 +275,43 @@ input, select{
   width: 97%;
   margin-right: 2.5%;
 }
+.btnpts{
+  color: white;
+  background-color: rgb(44, 50, 76);  
+  border: none;    
+  font-size: 20px;
+  margin-left: 2%;  
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  padding-top: 10px;  
+  padding-bottom: 10px;   
+  bottom: 0%;
+  box-shadow: 2px 2px 5px black;  
+}
 .contestcard-2{
   grid-area: cont2;
   /* width: 100%; */
   width: 97%;
   margin-left: 2.5%;
 }
-
+.FaqHead{
+  font-family: 'Poppins', sans-serif;
+  font-size: 35px;
+  background-color: #30D5C8;
+}
 .courseDetailsHead{
   font-family: 'Poppins', sans-serif;
   background-color: #30D5C8;
 }
+.prizex{
+  position: relative;
+}
+.prizebody{
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 4%;  
+}
+
 .courseDetailsHead2{
   background-color: #30D5C8;
   font-family: 'Poppins', sans-serif;
@@ -247,15 +322,15 @@ input, select{
 .pointsCourse{
   font-family: 'Montserrat', sans-serif;
 }
-.prizeCourse{
+.prizeCourse p{  
   font-family: 'Montserrat', sans-serif;
-  align-content: left;
-  align-items: left;
-  justify-content: left;
-  width: 50%;
+  font-size: 30px;
 }
 .lectureTime{
   font-family: 'Montserrat', sans-serif;
+}
+.h5prize{
+  font-size: 25px;
 }
 .upcomingContestHead{
   background-color: #30D5C8;
@@ -264,6 +339,19 @@ input, select{
 .leaderboardHead{
   background-clip: content-box;  
   background-color: #30D5C8;
+}
+.tdtop{
+  font-size: 25px;
+}
+.tabletop{
+  padding-left: 5%;
+}
+.thtop{
+  padding-left: 10%;
+  font-size: 40px;
+  font-weight: 500;
+  text-decoration: underline;
+  padding-bottom: 2%;
 }
 .ypcont{
   font-family: 'Poppins','sans-serif';
@@ -342,6 +430,45 @@ input, select{
   .btnx{
     margin-bottom: 5%;
   }
+  .btnred{
+    font-size: 15px;
+    margin-right: 10px;
+  }  
+  .thtop{
+    font-size: 30px;
+  }
+  .tdtop{
+    font-size: 20px;
+  }
+}
+@media(min-width:768px){
+  .card-img-top{   
+    position: relative;
+    left:12%;    
+    width:150px;
+    height:auto;
+  }
+  .card-img-top-2{   
+    position: relative;
+    left:25%;
+    width:150px;
+    height:auto;
+  } 
+}
+@media(min-width:992px){
+  .card-img-top{   
+    position: relative;
+    left:3%;
+    width:100px;
+    height:auto;
+  }
+  .card-img-top-2{   
+    position: relative;
+    left:37%;
+    width:150px;
+    height:auto;
+  }  
+
 }
 @media(max-width: 500px){
   .btncont{
@@ -352,6 +479,31 @@ input, select{
   }
   .btnmore{
     font-size: 12px;
+  }
+  .prizebody{
+    font-size: 14px;
+  }
+  .btnred{    
+    margin-right: 5px;
+    padding-left: 5px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .card-img-top{
+    padding: 0;
+  }
+  .h5x{
+    font-size: 20px;
+  }
+  .thtop{    
+    padding-left: 2%;
+    font-size: 25px;    
+  }
+  .tdtop{
+    font-size: 20px;
+  }
+  .h5prize{
+    font-size: 10px;
   }
 }
 @media(max-width: 768px){  
@@ -364,17 +516,32 @@ input, select{
   .btnx{
     font-size: 20px;
     margin-bottom: 5%;
+  }  
+  .btnred{
+    padding-left: 9%;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .h5prize{
+    font-size: 20px;
   }
 }
 @media(max-width:576px){
   .alert{
     max-width: 60%;
     transform: translate(36%, 0%);
-  }
+  } 
 }
 @media (max-width: 500px) {
   .btnx{
     font-size: 13px;
+  }
+  .prc{
+    font-size: 10px;
+  }
+  .h5prize{
+    margin-top: 8%;
+    font-size: 12px;
   }
 }
 @media (min-width: 576px) {

@@ -114,7 +114,7 @@ function Yourprofile() {
         <br />
         <h3 className="h2x">Welcome {state.name}</h3>
         <h3 className="h2x">CF Username:- {state.username}</h3>
-        <h3 className="h2x">Points:- {state.points}</h3>
+        <h3 className="h2x">Points:- {state.points} <Link to="/viewprize"><button className="btnpts">Redeem</button></Link></h3>
         <br />
         <br />
         {dailyproblem.length !== 0 ? (

@@ -5,22 +5,16 @@ function FAQs() {
     <div className='container mt-4'>
       <div className="card" >       
         <div className="card-body">
-          <h2 className="card-title courseDetailsHead">Difference Between Advanced and Beginners</h2>
+          <h3 className="card-title FaqHead">Difference Between Advanced and Beginners</h3>
           <div className="container pointsCourse">
-            <h4>1) Points About Course</h4>
-            <h4>2) Points About Course</h4>
-            <h4>3) Points About Course</h4> 
-          </div>              
-          <br/>
-          <div className="container pointsCourse">
-            <h4>1) Points About Course</h4>
-            <h4>2) Points About Course</h4>
-            <h4>3) Points About Course</h4> 
-            <h4>4) Points About Course</h4> 
-          </div>        
+          <p className="details-2">&bull; The difficulty level of problems in beginner batch is from 900 to 1300 (with reference to Codeforces) &nbsp;&nbsp;and that of the advanced is 1500 to 1800.</p>
+          <p className="details-2">&bull; There are no prerequisites required for the beginner level but for the advanced level, you are expected &nbsp;&nbsp;&nbsp;to know all the topics included in the beginners batch. </p>            
+          <p className="details-2">&bull; Though the levels are different, the prizes would be same for all the students.</p>
+          </div>                        
         </div>
       </div>
       <div className="end"></div>
+      <div className="end"></div> 
     </div>
   ) 
 }

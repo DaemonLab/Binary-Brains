@@ -1,5 +1,5 @@
 import React from 'react'
-import img1 from '../cpposter.png'
+import img1 from './BBposter.png'
 import { Link } from 'react-router-dom'
 
 function Poster() {

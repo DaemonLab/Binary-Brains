@@ -66,15 +66,15 @@ function AboutUs() {
         <div class="row">
             <div class="col-sm">
                 <img class="rounded-circle z-depth-2 mb-3" alt="100x100" src={img} style={{"width": "150px"}} data-holder-rendered="true" />
-                <h5 class="mb-2"><strong>P.V.Sekhar</strong></h5>
-            </div>
-            <div class="col-sm">
-                <img class="rounded-circle z-depth-2 mb-3" alt="100x100" src={img} style={{"width": "150px"}} data-holder-rendered="true" />
                 <h5 class="mb-2"><strong>Sarthak Nandre</strong></h5>
             </div>
             <div class="col-sm">
                 <img class="rounded-circle z-depth-2 mb-3" alt="100x100" src={img} style={{"width": "150px"}} data-holder-rendered="true" />
                 <h5 class="mb-2"><strong>Krish Agarwal</strong></h5>
+            </div>
+            <div class="col-sm">
+                <img class="rounded-circle z-depth-2 mb-3" alt="100x100" src={img} style={{"width": "150px"}} data-holder-rendered="true" />
+                <h5 class="mb-2"><strong>P.V.Sekhar</strong></h5>
             </div>
         </div>
     </div>

@@ -8,6 +8,7 @@ import Contests from './Components/Contests';
 import Login from './Components/Login';
 import Yourprofile from './Components/Yourprofile';
 import SignUp from './Components/SignUp';
+import Viewprizes from './Components/Viewprizes';
 import FAQs from './Components/FAQs';
 import Dailyprob from './Components/Dailyprob';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -28,6 +29,7 @@ function App() {
           <Route path="dailyprob" element={<Dailyprob />}/>        
           <Route path="about" element={<AboutUs />}/> 
           <Route path="faq" element={<FAQs />}/>
+          <Route path="viewprize" element={<Viewprizes />}/>
           <Route path="*" />
         </Routes>                          
         </div>

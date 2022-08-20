@@ -34,6 +34,12 @@ table{
 .contpast{
     padding-bottom: 100px;
 }
+.h4x{
+    font-weight: 550;
+    font-size: 22px;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
 
 .nav-left{
     transform: translate(50%,0%);
@@ -46,7 +52,21 @@ table{
     padding-left: 10px;
     padding-right: 10px;
 }
-
+.details{       
+    padding-top: 1%;
+    padding-left: 2%; 
+    padding-right: 2%;
+    font-size:24px;
+}
+.pr2{    
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+.details-2{
+    margin-left: 5%;
+    font-size: 22px;
+}
 .nav-item:hover{
     border-radius: 5px;
     background-color: rgb(0, 0, 0);
@@ -70,6 +90,11 @@ table{
     color: #e4e4e4;
 
 }
+.linkfaq{
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+}
 .btnxxx{
     text-decoration: none;
     color: white;
@@ -82,7 +107,7 @@ table{
 }
 .poster{    
     border-radius: 20px;    
-    margin-top: 35px;
+    margin-top: 25px;
     margin-bottom: 35px;
     max-width: 100%;  
     height: auto;    
@@ -392,6 +417,17 @@ table{
     .slidecont{
         padding-left: 0px;
         padding-right: 0px;
+    }
+}
+@media(max-width:500px){
+    .details{
+        font-size: 20px;
+    }
+    .details-2{
+        font-size: 18px;
+    }
+    .h4x{
+        font-size: 20px;
     }
 }
 @media(max-width:548px){

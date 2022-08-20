@@ -1,5 +1,6 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
+import './Style2.css'
 
 function Prizes() {
   return (
@@ -8,9 +9,12 @@ function Prizes() {
       <div className="card-body">
         <h2 className="card-title courseDetailsHead">Prizes</h2>
         <div className="container prizeCourse">
-          <h4>Win <strong>Exciting Prizes!!</strong> by earning points.</h4>          
-          <h4>Prizes will be awarded based on points redemption system.</h4>
-          <h4>You can redeem points from the <strong>Redeem</strong> option from Your Profile page.</h4>          
+          <p className='prc'>Every action has an equal and opposite reaction, 
+            so for every problem you solve here, you get a reward 
+            from us in form of <strong>Points.</strong> By redeeming the points you can win  
+            <strong> Exciting Prizes</strong> of your choice. The exact point system would be revealed later, so stay tuned!
+          </p>      
+          <Link to="/viewprize"><button className="btnpr">View Prizes</button></Link>
         </div>        
       </div>
     </div>
