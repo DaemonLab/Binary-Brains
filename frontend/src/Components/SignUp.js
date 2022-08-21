@@ -77,7 +77,7 @@ function SignUp() {
               <br />
             </div>
             <div className="mb-3 inputs" style={{ textAlign: "left" }}>
-              <label className="form-label auth">E-Mail</label>
+              <label className="form-label auth">E-Mail <span className="smallx">(use IITI Email only)</span></label>
               <br />
               <input
                 type="email"
