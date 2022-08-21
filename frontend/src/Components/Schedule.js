@@ -28,9 +28,16 @@ function Schedule() {
                   <th className='thtop'>Beginner</th>                
                   <th className='thtop'>Advanced</th>                  
                 </tr>                                
-                <tr>
+                {/* <tr>
+                  <div class="container no-oldie">
+                      <p class="arrow_box">&bull; C++ Basics I</p>
+                  </div>
+                  <div class="arrow"><span>&bull; C++ Basics I</span></div>
                   <td className="tdtop">&bull; C++ Basics I</td>  
                   <td className="tdtop">&bull; Binary Search + Interactive Problems</td>
+                  <div class="container no-oldie">
+                      <p class="arrow_box">&bull; Binary Search + Interactive Problems</p>
+                  </div>
                 </tr>                
                 <tr>
                   <td className="tdtop">&bull; C++ Basics II</td>  
@@ -71,7 +78,44 @@ function Schedule() {
                 <tr>
                   <td className="tdtop">&bull; Bit Manipulation</td>  
                   <td className="tdtop">&bull; Range Questions</td>
-                </tr>                
+                </tr>                 */}
+                <tr>
+                  <td className="tdtop">
+                    <div class="anythinglisting4">
+                    <ul>
+                        <li>C++ Basics I</li>
+                        <li>C++ Basics II</li>
+                        <li>Time Complexity And Basic Problem Solving</li>
+                        <li>Recursion Backtracking</li>
+                        <li>Searching Sorting And Two Pointers</li>
+                        <li>STL I</li>
+                        <li>STL II</li>
+                        <li>Prefix Sum, Circular Arrys And Difference Arrays</li>
+                        <li>Number Theory I</li>
+                        <li>Number Theory II</li>
+                        <li>Bit Manipulation</li>
+                    </ul>
+                    </div>
+                  </td>
+                  <td className="tdtop">
+                    <div class="anythinglisting4">
+                    <ul>
+                        <li>Binary Search + Interactive Problems</li>
+                        <li>Number Theory I</li>
+                        <li>Number Theory II</li>
+                        <li>Trees I</li>
+                        <li>Trees II</li>
+                        <li>Dynamic Programming I</li>
+                        <li>Dynamic Programming II</li>
+                        <li>Dynamic Programming III</li>
+                        <li>Graphs I</li>
+                        <li>Graphs II</li>
+                        <li>Range Questions</li>
+                    </ul>
+                    </div>
+                  </td>
+                  
+                </tr>
               </tbody>
             </table> 
           </div>

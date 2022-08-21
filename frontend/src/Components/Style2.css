@@ -293,7 +293,7 @@ input, select{
   grid-area: cont2;
   /* width: 100%; */
   width: 97%;
-  margin-left: 2.5%;
+  /* margin-left: 2.5%; */
 }
 .FaqHead{
   font-family: 'Poppins', sans-serif;
@@ -324,7 +324,7 @@ input, select{
 }
 .prizeCourse p{  
   font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
+  font-size: 25px;
 }
 .lectureTime{
   font-family: 'Montserrat', sans-serif;
@@ -386,6 +386,119 @@ input, select{
   color:black;
   opacity:.9;
 }
+.card{
+  background-color: #0c407a !important;
+  color: white !important;
+}
+.courseDetailsHead,.courseDetailsHead2,.leaderboardHead,.container>h3,.upcomingContestHead{
+  color: black !important;
+}
+.thanksNote{
+  color: white !important;
+}
+.thtop{
+  color: whitesmoke;
+}
+.no-oldie .arrow_box {
+	display: inline-block;
+	position: relative;
+	background: white;
+	width:auto;
+	height:auto;
+	top:0;
+	left:0;
+	/* padding: 0 10px 0 40px; */
+  padding: 0 !important;
+  padding-left: 0 !important;
+	line-height: 60px;
+	color: #0c407a;
+	font-size: 20px;
+  margin-bottom: 0px !important;
+}
+.no-oldie .arrow_box:after {
+	left: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(66, 170, 225, 0);
+	border-left-color: white;
+	border-width: 30px;
+	top: 50%;
+	margin-top: -30px;
+}
+.anythinglisting4 {
+  padding: 15px 30px;
+}
+
+.anythinglisting4 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: number;
+  position: relative;
+}
+
+.anythinglisting4 ul::before {
+  border-left: 4px solid #0bf;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 17px;
+  height: 100%;
+  z-index: 0;
+}
+
+.anythinglisting4 ul li {
+  position: relative;
+  font-size: 25px;
+  color: white;
+  padding: 15px 0 15px 50px;
+}
+
+.anythinglisting4 ul li::before {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background: #0bf;
+  left: 0;
+  text-align: center;
+  top: 8px;
+  content: '';
+  border-radius: 50%;
+  counter-increment: number;
+  color: #fff;
+  content: counter(number);
+  font-size: 22px;
+  line-height: 38px;
+}
+
+/* .no-oldie .arrow_box:before {
+	left: 0;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(66, 170, 225, 0);
+	border-left-color: #ffcc51;
+	border-width: 30px;
+	top: 50%;
+	margin-top: -30px;
+} */
+.no-oldie{
+  padding-left: 0px !important;
+}
+table {
+  border-collapse: separate !important;
+  border-spacing: 0 2em;
+}
+/* tr{
+  padding-bottom: 30px;
+} */
 @media (min-width: 1200px) {
   .courseDetailsHead2{
     font-size: 2rem;
@@ -542,6 +655,9 @@ input, select{
   .h5prize{
     margin-top: 8%;
     font-size: 12px;
+  }
+  .prizeCourse p{
+    font-size: 20px;
   }
 }
 @media (min-width: 576px) {
