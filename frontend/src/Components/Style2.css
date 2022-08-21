@@ -3,9 +3,22 @@
   background-color: #f2f0f0;
   padding-bottom: 50px;
 }
+.loginHead{
+  font-family: 'Poppins';
+  color: white;
+  text-align: center;
+}
+.logincont{
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-radius: 10px;
+  background-color: #212529;
+}
 .login{
-  overflow: hidden;
-  background-color: #f2f0f0;
+  overflow: hidden;  
+  background-color: white;
   padding-bottom: 13%;  
 }
 .navi{  
@@ -343,6 +356,9 @@ input, select{
 .tdtop{
   font-size: 25px;
 }
+.tdtop-2{
+  font-size: 22px;
+}
 .tabletop{
   padding-left: 5%;
 }
@@ -399,38 +415,8 @@ input, select{
 .thtop{
   color: whitesmoke;
 }
-.no-oldie .arrow_box {
-	display: inline-block;
-	position: relative;
-	background: white;
-	width:auto;
-	height:auto;
-	top:0;
-	left:0;
-	/* padding: 0 10px 0 40px; */
-  padding: 0 !important;
-  padding-left: 0 !important;
-	line-height: 60px;
-	color: #0c407a;
-	font-size: 20px;
-  margin-bottom: 0px !important;
-}
-.no-oldie .arrow_box:after {
-	left: 100%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-	border-color: rgba(66, 170, 225, 0);
-	border-left-color: white;
-	border-width: 30px;
-	top: 50%;
-	margin-top: -30px;
-}
 .anythinglisting4 {
-  padding: 15px 30px;
+  padding: 10px;
 }
 
 .anythinglisting4 ul {
@@ -475,22 +461,8 @@ input, select{
   line-height: 38px;
 }
 
-/* .no-oldie .arrow_box:before {
-	left: 0;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-	border-color: rgba(66, 170, 225, 0);
-	border-left-color: #ffcc51;
-	border-width: 30px;
-	top: 50%;
-	margin-top: -30px;
-} */
-.no-oldie{
-  padding-left: 0px !important;
+.tdbeg{
+  padding-right: 20px;
 }
 table {
   border-collapse: separate !important;
@@ -515,6 +487,7 @@ table {
   .pointsCourse>h4{
     font-size: 1.5rem;
   }
+  
 }
 @media (max-width: 600px) {
   .pointsCourse>h4{
@@ -553,6 +526,9 @@ table {
   .tdtop{
     font-size: 20px;
   }
+  .tdtop-2{
+    font-size: 20px;
+  }
 }
 @media(min-width:768px){
   .card-img-top{   
@@ -566,7 +542,7 @@ table {
     left:25%;
     width:150px;
     height:auto;
-  } 
+  }   
 }
 @media(min-width:992px){
   .card-img-top{   
@@ -580,8 +556,7 @@ table {
     left:37%;
     width:150px;
     height:auto;
-  }  
-
+  }
 }
 @media(max-width: 500px){
   .btncont{
@@ -608,15 +583,27 @@ table {
   .h5x{
     font-size: 20px;
   }
+  .tabletop{
+    margin:0;    
+  }
   .thtop{    
     padding-left: 2%;
-    font-size: 25px;    
-  }
+    font-size: 22px;    
+  }  
   .tdtop{
-    font-size: 20px;
+    font-size: 15px;
   }
   .h5prize{
     font-size: 10px;
+  }
+  .tdtop-2{
+    font-size: 15px;
+  }
+  .courseDetailsHead{
+    font-size:25px;
+  }
+  .courseDetailsHead2{
+    font-size: 20px;
   }
 }
 @media(max-width: 768px){  
@@ -637,6 +624,9 @@ table {
   }
   .h5prize{
     font-size: 20px;
+  }  
+  .anythinglisting4 ul li{
+    font-size: 15px;
   }
 }
 @media(max-width:576px){

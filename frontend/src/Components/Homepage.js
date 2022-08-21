@@ -3,6 +3,7 @@ import Poster from './Poster';
 import Schedule from './Schedule';
 import Rankings from './Rankings';
 import Prizes from './Prizes';
+import Prizeposter from './Prizeposter';
 import Footer from './Footer';
 
 import './Style.css'
@@ -14,8 +15,8 @@ function Homepage() {
     <div>             
       <Poster />        
       <Schedule /> 
-      <Rankings />     
-      <Prizes />
+      {/* <Rankings />      */}
+      <Prizeposter />
       <Footer />                  
     </div>
   )
