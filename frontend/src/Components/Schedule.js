@@ -36,9 +36,9 @@ function Schedule() {
             </table>
             <br/>
             <h3 className="courseDetailsHead2" align="center">Topics to be covered</h3>
-            <div className="responsive">
+            <div className="responsive scrollTable">
 
-            <table className='tabtop leaderboard'>
+            <table className='tabtop leaderboard scrollTable'>
               <tbody>
                 <tr>
                   <th className='thtop'>Beginner</th>                

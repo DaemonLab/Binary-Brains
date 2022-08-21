@@ -439,7 +439,7 @@ input, select{
 
 .anythinglisting4 ul li {
   position: relative;
-  font-size: 25px;
+  font-size: 20px;
   color: white;
   padding: 15px 0 15px 50px;
 }
@@ -468,9 +468,9 @@ table {
   border-collapse: separate !important;
   border-spacing: 0 2em;
 }
-/* tr{
-  padding-bottom: 30px;
-} */
+.scrollTable{
+  overflow-x: hidden;
+}
 @media (min-width: 1200px) {
   .courseDetailsHead2{
     font-size: 2rem;
@@ -604,6 +604,9 @@ table {
   }
   .courseDetailsHead2{
     font-size: 20px;
+  }
+  .scrollTable{
+    overflow-x: auto;
   }
 }
 @media(max-width: 768px){  
