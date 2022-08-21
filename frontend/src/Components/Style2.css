@@ -3,9 +3,22 @@
   background-color: #f2f0f0;
   padding-bottom: 50px;
 }
+.loginHead{
+  font-family: 'Poppins';
+  color: white;
+  text-align: center;
+}
+.logincont{
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-radius: 10px;
+  background-color: #212529;
+}
 .login{
-  overflow: hidden;
-  background-color: #f2f0f0;
+  overflow: hidden;  
+  background-color: white;
   padding-bottom: 13%;  
 }
 .navi{  
@@ -343,6 +356,9 @@ input, select{
 .tdtop{
   font-size: 25px;
 }
+.tdtop-2{
+  font-size: 22px;
+}
 .tabletop{
   padding-left: 5%;
 }
@@ -402,6 +418,7 @@ input, select{
   .pointsCourse>h4{
     font-size: 1.5rem;
   }
+  
 }
 @media (max-width: 600px) {
   .pointsCourse>h4{
@@ -440,6 +457,9 @@ input, select{
   .tdtop{
     font-size: 20px;
   }
+  .tdtop-2{
+    font-size: 20px;
+  }
 }
 @media(min-width:768px){
   .card-img-top{   
@@ -453,7 +473,7 @@ input, select{
     left:25%;
     width:150px;
     height:auto;
-  } 
+  }   
 }
 @media(min-width:992px){
   .card-img-top{   
@@ -495,15 +515,27 @@ input, select{
   .h5x{
     font-size: 20px;
   }
+  .tabletop{
+    margin:0;    
+  }
   .thtop{    
     padding-left: 2%;
-    font-size: 25px;    
-  }
+    font-size: 22px;    
+  }  
   .tdtop{
-    font-size: 20px;
+    font-size: 15px;
   }
   .h5prize{
     font-size: 10px;
+  }
+  .tdtop-2{
+    font-size: 15px;
+  }
+  .courseDetailsHead{
+    font-size:25px;
+  }
+  .courseDetailsHead2{
+    font-size: 20px;
   }
 }
 @media(max-width: 768px){  
