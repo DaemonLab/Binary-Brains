@@ -353,11 +353,20 @@ input, select{
   background-clip: content-box;  
   background-color: #30D5C8;
 }
+.tabtop{
+  padding-right: 2%;
+}
 .tdtop{
   font-size: 25px;
 }
-.tdtop-2{
-  font-size: 22px;
+.tdtop-2{  
+  font-size: 22px;    
+}
+.tdbeg{  
+  border-right: solid 1px white;
+}
+.tda{
+  padding-left: 4%;
 }
 .tabletop{
   padding-left: 5%;

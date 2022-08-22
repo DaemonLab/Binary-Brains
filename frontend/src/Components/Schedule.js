@@ -30,7 +30,7 @@ function Schedule() {
               </tr>
               <tr>
                   <td className="tdtop-2 tdbeg"> This level is for complete beginners and is <br/>intended to get your CP journey kick started from <br/>absolute scratch. <br/>A major focus in this level will be on making <br/> students comfortable in thinking about various <br/>approaches to solve problems, reasoning on <br/>good and bad ideas, and finally being able to<br/> implement them on their own. There are no prerequisites for beginners level.</td>  
-                  <td className="tdtop-2"> This level is for people who are comfortable<br/> in solving at least 2 problems in most Div2 rounds. <br/>This level is language independant. After <br/>completing this course, students can expect to be <br/>comfortable in approaching most problems rated <br/>greater than 1600 on codeforces. <br/> Here, we will focus on making you comfortable in <br/>solving the 3rd problem in codeforces Div2 Rounds. <br/>For advanced level you need to know all the topics covered in beginners level.</td>
+                  <td className="tdtop-2 tda"> This level is for people who are comfortable<br/> in solving at least 2 problems in most Div2 rounds <br/>in codeforces. After completing this course, <br/>students can expect to be comfortable in <br/>approaching most problems rated greater than 1600 on codeforces. <br/> Here, we will focus on making you comfortable <br/>in  solving the 3rd problem in codeforces Div2 Rounds.<br/> For advanced level you need to know all the topics covered in beginners level.</td>
                 </tr> 
               </tbody>               
             </table>
@@ -46,7 +46,7 @@ function Schedule() {
                 </tr>                          
                 <tr>
                   <td className="tdtop">
-                    <div class="anythinglisting4">
+                    <div className="anythinglisting4">
                     <ul>
                         <li>C++ Basics I</li>
                         <li>C++ Basics II</li>
@@ -63,7 +63,7 @@ function Schedule() {
                     </div>
                   </td>
                   <td className="tdtop">
-                    <div class="anythinglisting4">
+                    <div className="anythinglisting4">
                     <ul>
                         <li>Binary Search + Interactive Problems</li>
                         <li>Number Theory I</li>

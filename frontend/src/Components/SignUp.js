@@ -123,7 +123,7 @@ function SignUp() {
             </div>
             <div className="mb-3 inputs" style={{ textAlign: "left" }}>
               <label className="form-label auth">Difficulty</label>
-              <p className="signfaq"> &nbsp;Confused what to choose? <Link to="/faq" className="signfaq2">Click here</Link></p>                
+              <p className="signfaq"> &nbsp;Confused what to choose? <Link to="/" className="signfaq2">Click here</Link></p>                
               <select
                 type="text"
                 name="difficulty"
