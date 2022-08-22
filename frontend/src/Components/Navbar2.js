@@ -39,7 +39,7 @@ function Navbar() {
             </li> */}
             <li className="nav-item">
               <Link to="/about" className="nav-link">
-                About
+                Our Teams
               </Link>
             </li>            
           </ul>

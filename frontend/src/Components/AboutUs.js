@@ -6,6 +6,7 @@ import AK from '../images/AK.jpg'
 import DSJ from '../images/DSJ.jpg'
 import GM from '../images/GM.jpg'
 import IP from '../images/IP.jpg'
+import JS from '../images/JS.jpg'
 import KA from '../images/KA.jpg'
 import KS from '../images/KS.jpg'
 import KT from '../images/KT.jpg'
@@ -25,7 +26,7 @@ function AboutUs() {
     <div className="container aboutBody">
         <div className="container mt-4">
             <h3 className="aboutHead2 mb-2" align="Center"><strong>Organizer</strong></h3>                                       
-            <img className=" z-depth-2 mb-3 mt-2 img-o" alt="100x100" src={org} data-holder-rendered="true" />
+            <img className=" z-depth-2 mb-3 mt-2 img-o" alt="100x100" src={JS} data-holder-rendered="true" />
             <h5 align="center"><strong>Jaskaran Singh</strong></h5>
         </div>
       <div className="p-5 text-center">
@@ -33,7 +34,7 @@ function AboutUs() {
         <br/>    
         <div className="row">
             <div className="col-sm">
-                <img className=" z-depth-2 mb-3" alt="100x100" src={org} style={{"width": "150px", "borderRadius":"10px"}} data-holder-rendered="true" />
+                <img className=" z-depth-2 mb-3" alt="100x100" src={JS} style={{"width": "150px", "borderRadius":"10px"}} data-holder-rendered="true" />
                 <h5 className="mb-2"><strong>Jaskaran Singh</strong></h5>
             </div>
             <div className="col-sm">
@@ -99,7 +100,7 @@ function AboutUs() {
         <br/>
         <div className="row">
             <div className="col-sm">
-                <img className=" z-depth-2 mb-3" alt="100x100" src={org} style={{"width": "200px", "borderRadius":"10px"}} data-holder-rendered="true" />
+                <img className=" z-depth-2 mb-3" alt="100x100" src={JS} style={{"width": "200px", "borderRadius":"10px"}} data-holder-rendered="true" />
                 <h5 className="mb-2"><strong>Jaskaran Singh</strong></h5>
             </div>
             <div className="col-sm">
