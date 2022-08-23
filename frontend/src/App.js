@@ -11,8 +11,10 @@ import SignUp from './Components/SignUp';
 import Viewprizes from './Components/Viewprizes';
 import FAQs from './Components/FAQs';
 import Dailyprob from './Components/Dailyprob';
+import Confirmation from './Components/Confirmation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
           <Route path="about" element={<AboutUs />}/> 
           <Route path="faq" element={<FAQs />}/>
           <Route path="viewprize" element={<Viewprizes />}/>
+          <Route path="confirmation" element={<Confirmation />}/>
           <Route path="*" />
         </Routes>                          
         </div>

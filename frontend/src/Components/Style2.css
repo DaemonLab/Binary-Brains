@@ -98,6 +98,7 @@
 }
 .btnsignup:hover{
   font-size: 21px;
+  cursor: pointer;
 }
 
 .btnsignup{
@@ -115,8 +116,12 @@
   bottom: 0%;
   transform: translate(-50%,0%);
 }
+.btnlogin:hover{
+  cursor: pointer;
+}
 
 .btnlogin{
+  font-family: 'Poppins';
   position: relative;
   color: black;
   background-color: white;  
@@ -598,7 +603,7 @@ footer{
   }
   .tdtop-2{
     font-size: 20px;
-  }
+  }  
 }
 @media(min-width:768px){
   .card-img-top{   
@@ -668,6 +673,10 @@ footer{
   .tabletop{
     margin:0;    
   }
+  .tabtop{
+    padding-left: 0;
+    text-align: left;
+  }
   .thtop{    
     padding-left: 2%;
     font-size: 22px;    
@@ -734,6 +743,9 @@ footer{
 @media (max-width: 500px) {
   .btnx{
     font-size: 13px;
+    padding: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
   }
   .prc{
     font-size: 10px;
