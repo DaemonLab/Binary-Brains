@@ -17,14 +17,14 @@ function Yourprofile() {
   const [points, setPoints] = React.useState([]);
   React.useEffect(() => {
     (async () => {
-      const res1 = await axios.get("http://localhost:5000/profile", {
+      const res1 = await axios.get("https://p-club-iiti-cp.herokuapp.com/profile", {
         headers: { token: localStorage.getItem("token") },
       });
       const [res2, res3] = await Promise.all([
-        axios.post("http://localhost:5000/getnotes", {
+        axios.post("https://p-club-iiti-cp.herokuapp.com/getnotes", {
           category: res1.data.difficulty,
         }),
-        axios.post("http://localhost:5000/getdailyproblem", {
+        axios.post("https://p-club-iiti-cp.herokuapp.com/getdailyproblem", {
           category: res1.data.difficulty,
         }),
       ]);
@@ -36,14 +36,14 @@ function Yourprofile() {
   }, []);
   // React.useEffect(() => {
   //   async () => {
-  //     const res1 = await axios.get("http://localhost:5000/profile", {
+  //     const res1 = await axios.get("https://p-club-iiti-cp.herokuapp.com/profile", {
   //       headers: { token: localStorage.getItem("token") },
   //     });
   //     const [res2, res3] = await Promise.all([
-  //       axios.get("http://localhost:5000/getnotes", {
+  //       axios.get("https://p-club-iiti-cp.herokuapp.com/getnotes", {
   //         category: res1.data.difficulty,
   //       }),
-  //       axios.get("http://localhost:5000/getdailyproblem", {
+  //       axios.get("https://p-club-iiti-cp.herokuapp.com/getdailyproblem", {
   //         category: res1.data.difficulty,
   //       }),
   //     ]);
@@ -52,21 +52,21 @@ function Yourprofile() {
   //     console.log(res3.data);
   //   };
   //   // axios
-  //   //   .get("http://localhost:5000/profile", {
+  //   //   .get("https://p-club-iiti-cp.herokuapp.com/profile", {
   //   //     headers: { token: localStorage.getItem("token") },
   //   //   })
   //   //   .then((res) => {
   //   //     if (res.status === 200) {
   //   //       setState(res.data);
   //   //       axios
-  //   //         .get("http://localhost:5000/getnotes", {
+  //   //         .get("https://p-club-iiti-cp.herokuapp.com/getnotes", {
   //   //           category: res.data.difficulty,
   //   //         })
   //   //         .then((res2) => {
   //   //           if (res2.status === 200) {
   //   //             setNotes(res2.data.notes);
   //   //             axios
-  //   //               .get("http://localhost:5000/getdailyproblem", {
+  //   //               .get("https://p-club-iiti-cp.herokuapp.com/getdailyproblem", {
   //   //                 category: res.data.difficulty,
   //   //               })
   //   //               .then((res3) => {

@@ -6,6 +6,15 @@ const userSchema = mongoose.Schema({
     unique: true,
     type: String,
   },
+  status: {
+    type: String,
+    enum: ["Pending", "Active"],
+    default: "Pending",
+  },
+  confirmationCode: {
+    type: String,
+    unique: true,
+  },
   codeforces_handle: {
     unique: true,
     type: String,
