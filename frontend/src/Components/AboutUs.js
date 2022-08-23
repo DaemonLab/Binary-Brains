@@ -1,6 +1,4 @@
 import React from 'react'
-import img from './logo.png'
-import org from './Org.jpg'
 import AA from '../images/AA.jpg'
 import AK from '../images/AK.jpg'
 import DSJ from '../images/DSJ.jpg'
