@@ -1,7 +1,17 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
+import axios from 'axios';
 
 function Confirmation() {
+  let {code} = useParams();
+  console.log(code);
+  React.useEffect(() => {
+    axios.post("https://p-club-iiti-cp.herokuapp.com/confirm", {code: code}).then((res) => {
+      if (res.status !== 200) {
+        console.log("Failed")
+      }
+    });
+  }, []);
   return (
     <div className="login">
     <div className="container outer">

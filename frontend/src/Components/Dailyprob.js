@@ -13,7 +13,7 @@ function Dailyprob() {
   const dailyprob = location.state.dailyproblem;
   const [posts, setPosts] = React.useState(dailyprob);
   //   React.useEffect(() => {
-  //     axios.post("http://localhost:5000/getdailyproblems").then((res) => {
+  //     axios.post("https://p-club-iiti-cp.herokuapp.com/getdailyproblems").then((res) => {
   //       if (res.status === 200) {
   //         setPosts(res.data.dailyproblems);
   //       }

@@ -10,13 +10,13 @@ function Rankings() {
   const [beginner, setbeginner] = React.useState(data2);
   const [advanced, setadvanced] = React.useState(data2);
   React.useEffect(() => {
-    axios.get("http://localhost:5000/leaderboard").then((res) => {
+    axios.get("https://p-club-iiti-cp.herokuapp.com/leaderboard").then((res) => {
       if (res.status === 200) {
         setbeginner(res.data.beginnerUsers);
         setadvanced(res.data.advancedUsers);
       }
     });
-    axios.get("http://localhost:5000/contests").then((res) => {
+    axios.get("https://p-club-iiti-cp.herokuapp.com/contests").then((res) => {
       if (res.status === 200) {
         setContests(res.data.contests);
       }

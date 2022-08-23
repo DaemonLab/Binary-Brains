@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const axios = require("axios");
+const config = require("./config");
+const nodemailer = require("./nodemailer.config");
 
 const User = require("./models/User.js");
 const Contest = require("./models/Contest.js");
@@ -11,17 +13,22 @@ const Notes = require("./models/Notes.js");
 const DailyProblem = require("./models/DailyProblem.js");
 
 const connectionurl =
-  "mongodb+srv://admin:admin@cluster0.0odqg.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://admin:admin@cluster0.oumfbze.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(connectionurl);
 
 const app = express();
 
+const corsOptions = {
+  origin: "*",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors());
-
 app.post("/register", (req, res) => {
+  const token = jwt.sign({ email: req.body.email }, config.secret);
   const newUser = new User({
     name: req.body.name,
     email: req.body.email,
@@ -29,13 +36,8 @@ app.post("/register", (req, res) => {
     codeforces_handle: req.body.codeforces_handle,
     phone: req.body.phone,
     difficulty: req.body.difficulty,
+    confirmationCode: token,
   });
-  if(newUser.email.split("@").at(-1)!=="iiti.ac.in"){
-    return res.status(400).json({
-      title: "error",
-      error: "Invalid Email",
-    });
-  }
   newUser.save((err) => {
     if (err) {
       return res.status(400).json({
@@ -43,6 +45,11 @@ app.post("/register", (req, res) => {
         error: "EMAIL already exists!",
       });
     }
+    nodemailer.sendConfirmationEmail(
+      newUser.name,
+      newUser.email,
+      newUser.confirmationCode
+    );
     return res.status(200).json({
       title: "User Created",
     });
@@ -51,6 +58,12 @@ app.post("/register", (req, res) => {
 
 app.post("/login", (req, res) => {
   User.findOne({ email: req.body.email }, (err, user) => {
+    if (user.status != "Active") {
+      return res.status(401).json({
+        message: "Pending Account. Please Verify Your Email!",
+        error: "Email Not Activated!",
+      });
+    }
     if (err)
       return res.status(500).json({
         title: "Error",
@@ -68,13 +81,36 @@ app.post("/login", (req, res) => {
         error: "Invalid Username or Password",
       });
     }
-
-    let token = jwt.sign({ userId: user._id }, "secretkey");
     return res.status(200).json({
       title: "Login Successful",
       token: token,
       name: user.name,
     });
+  });
+});
+
+app.post("/confirm", (req, res) => {
+  User.findOne({ confirmationCode: req.body.code }, (err, user) => {
+    user.status = "Active";
+    user.save((err) => {
+      if (err) {
+        res.status(500).send({ message: err });
+        return res.status(401).json({
+          title: "Not Authorized, Please Login Again",
+          error: err,
+        });
+      }
+      return res.status(200).json({
+        title: "Success",
+      });
+    });
+    if (err) {
+      res.status(500).send({ message: err });
+      return res.status(401).json({
+        title: "Not Authorized, Please Login Again",
+        error: err,
+      });
+    }
   });
 });
 
@@ -100,7 +136,7 @@ app.get("/profile", (req, res) => {
         history: user.history,
         username: user.codeforces_handle,
         name: user.name,
-        difficulty: user.difficulty
+        difficulty: user.difficulty,
       });
     });
   });
@@ -278,7 +314,7 @@ app.get("/contests", (req, res) => {
 });
 
 app.post("/getnotes", (req, res) => {
-  Notes.find({category: req.body.category}, (err, notes) => {
+  Notes.find({ category: req.body.category }, (err, notes) => {
     if (err)
       return res.status(400).json({
         title: "Error",
@@ -292,7 +328,7 @@ app.post("/getnotes", (req, res) => {
 });
 
 app.post("/getdailyproblem", (req, res) => {
-  DailyProblem.find({category: req.body.category}, (err, dailyproblems) => {
+  DailyProblem.find({ category: req.body.category }, (err, dailyproblems) => {
     if (err)
       return res.status(400).json({
         title: "Error",

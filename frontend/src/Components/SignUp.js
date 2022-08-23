@@ -20,7 +20,7 @@ function SignUp() {
   const [alert, setAlert] = React.useState("none");
   const handleRegister = () => {
     axios
-      .post("http://localhost:5000/register", {
+      .post("https://p-club-iiti-cp.herokuapp.com/register", {
         name: name,
         email: email,
         password: password,
@@ -46,6 +46,7 @@ function SignUp() {
     if (password === confirmPassword) setDisabled(false);
     else setDisabled(true);
     if (name === "" || email === "" || password === "") setDisabled(true);
+    if (email.split("@").at(-1) !== "iiti.ac.in") setDisabled(true);
   }, [password, confirmPassword]);
 
   return (

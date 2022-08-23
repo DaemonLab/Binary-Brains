@@ -32,7 +32,7 @@ function App() {
           <Route path="about" element={<AboutUs />}/> 
           <Route path="faq" element={<FAQs />}/>
           <Route path="viewprize" element={<Viewprizes />}/>
-          <Route path="confirmation" element={<Confirmation />}/>
+          <Route path="confirmation/:code" element={<Confirmation />}/>
           <Route path="*" />
         </Routes>                          
         </div>

@@ -14,7 +14,7 @@ function Login() {
   const [alert, setAlert] = React.useState("none");
   const handleLogin = () => {
     axios
-      .post("http://localhost:5000/login", {
+      .post("https://p-club-iiti-cp.herokuapp.com/login", {
         email: email,
         password: password,
       })

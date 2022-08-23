@@ -12,7 +12,7 @@ function Contests() {
   const today = new Date();
   const [contests, setContests] = React.useState(data);
   React.useEffect(() => {
-    axios.get("http://localhost:5000/contests").then((res) => {
+    axios.get("https://p-club-iiti-cp.herokuapp.com/contests").then((res) => {
       if (res.status === 200) {
         setContests(res.data.contests);
       }
