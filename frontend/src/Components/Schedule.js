@@ -29,8 +29,8 @@ function Schedule() {
                 <th className='thtop'>Advanced</th>                                    
               </tr>
               <tr>
-                  <td className="tdtop-2 tdbeg"> This level is for complete beginners and is <br/>intended to get your CP journey kick started from <br/>absolute scratch. <br/>A major focus in this level will be on making <br/> students comfortable in thinking about various <br/>approaches to solve problems, reasoning on <br/>good and bad ideas, and finally being able to<br/> implement them on their own. There are no prerequisites for beginners level.</td>  
-                  <td className="tdtop-2 tda"> This level is for people who are comfortable<br/> in solving at least 2 problems in most Div2 rounds <br/>in codeforces. After completing this course, <br/>students can expect to be comfortable in <br/>approaching most problems rated greater than 1600 on codeforces. <br/> Here, we will focus on making you comfortable <br/>in  solving the 3rd problem in codeforces Div2 Rounds.<br/> For advanced level you need to know all the topics covered in beginners level.</td>
+                  <td className="tdtop-2 tdbeg"> This level is for complete beginners and is intended to get your CP journey kick started from absolute scratch. A major focus in this level will be on making students comfortable in thinking about various approaches to solve problems, reasoning on good and bad ideas, and finally being able to implement them on their own. There are no prerequisites for beginners level.</td>  
+                  <td className="tdtop-2 tda"> This level is for people who are comfortable in solving at least 2 problems in most Div2 rounds in codeforces. After completing this course, students can expect to be comfortable in approaching most problems rated greater than 1600 on codeforces. Here, we will focus on making you comfortable in  solving the 3rd problem in codeforces Div2 Rounds. For advanced level you need to know all the topics covered in beginners level.</td>
                 </tr> 
               </tbody>               
             </table>

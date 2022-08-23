@@ -374,6 +374,9 @@ table{
     padding-top: 20px;
     box-shadow: 0px 0px 15px rgb(30, 30, 30);
 }
+.toleft{
+    float: left;
+}
 .insta{
     padding-bottom: 10px;
 }
@@ -426,10 +429,21 @@ table{
 {  
   padding: 0
 }
+@media(min-width:992px){
+    .toleft{
+        float:left;
+    }
+}
 @media(max-width: 992px){
     .slidecont{
         margin-left: 10px;
         margin-right: 10px;
+    }
+    .toleft{
+        margin-right: auto;
+    }
+    .aboutHead2{
+        font-size: 30px;
     }
 }
 

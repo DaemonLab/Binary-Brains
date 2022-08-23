@@ -1,14 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Style.css";
 import img1 from "./BBlogo.png";
 
+function useWindowSize() {
+  const [size, setSize] = useState([window.innerHeight, window.innerWidth]);
+  useEffect(() =>{
+    const handleResize = () => {
+      setSize([window.innerHeight, window.innerWidth]);
+    }
+    window.addEventListener("resize", handleResize);
+  },[])
+  return size;
+}
+
 function Navbar() {
+  const [height,width] = useWindowSize();
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     window.location.href = "/";
   };
   const token = localStorage.getItem("token");
+  
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -16,8 +31,8 @@ function Navbar() {
         <Link to="/">
           <img src={img1} className="navimg" alt="..." />
         </Link>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">        
+          <ul className="navbar-nav mr">
             <li className="nav-item">
               <Link to="/" className="nav-link">
                 Home
@@ -41,8 +56,8 @@ function Navbar() {
               <Link to="/about" className="nav-link">
                 Our Teams
               </Link>
-            </li>            
-          </ul>
+            </li>
+          </ul> 
         </div>
         {token ? (
           <Link to="yourprofile">
@@ -60,16 +75,30 @@ function Navbar() {
         ) : (
           <></>
         )}
-        {!token ? (
+        { width < "992" ? (          
+            <Link to="">
+                <button className="btnnav2 toleft">Home</button>
+            </Link>
+          ):(
+          <></>
+          )}
+        { width < "992" ? (          
+            <Link to="about">
+                <button className="btnnav2 toleft">Our Teams</button>
+            </Link>
+          ):(
+          <></>
+          )}
+        {/* {!token ? (
           <Link to="login">
             <button className="btnnav2">Login</button>
           </Link>
         ) : (
           <></>
-        )}
+        )} */}
         {!token ? (
           <Link to="signup">
-            <button className=" btnnav2">Signup</button>
+            <button className=" btnnav2">Register</button>
           </Link>
         ) : (
           <></>

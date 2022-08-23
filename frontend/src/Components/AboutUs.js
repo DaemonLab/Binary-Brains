@@ -28,7 +28,7 @@ function AboutUs() {
             <h5 align="center"><strong>Jaskaran Singh</strong></h5>
         </div>
       <div className="p-5 text-center">
-        <h1 className="mb-3 aboutHead2"><strong>Our Teaching Team</strong></h1>     
+        <h1 className="mb-3 aboutHead2"><strong>Teaching Team</strong></h1>     
         <br/>    
         <div className="row">
             <div className="col-sm">

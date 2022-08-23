@@ -117,6 +117,7 @@
 }
 
 .btnlogin{
+  font-family: 'Poppins';
   position: relative;
   color: black;
   background-color: white;  
@@ -595,6 +596,10 @@ table {
   .tabletop{
     margin:0;    
   }
+  .tabtop{
+    padding-left: 0;
+    text-align: left;
+  }
   .thtop{    
     padding-left: 2%;
     font-size: 22px;    
@@ -616,6 +621,9 @@ table {
   }
   .scrollTable{
     overflow-x: auto;
+  }
+  .signup_container{
+    height:1020px
   }
 }
 @media(max-width: 768px){  
@@ -650,6 +658,9 @@ table {
 @media (max-width: 500px) {
   .btnx{
     font-size: 13px;
+    padding: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
   }
   .prc{
     font-size: 10px;
