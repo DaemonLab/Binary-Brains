@@ -60,7 +60,7 @@ function SignUp() {
         </div>
         <div className="container outer">
           <div className="whitebox signup_container">
-            <h1 className="text-center heading">SIGNUP</h1>
+            <h1 className="text-center heading">REGISTER</h1>
             <div className="mb-3 inputs" style={{ textAlign: "left" }}>
               <label className="form-label auth">Name</label>
               <br />
@@ -176,7 +176,7 @@ function SignUp() {
               onClick={handleRegister}
               disabled={disabled}
             >
-              SIGNUP
+              Register
             </button>
           </div>
         </div>

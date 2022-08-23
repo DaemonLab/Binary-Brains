@@ -408,6 +408,28 @@ table{
 
 
 }
+.contact{
+    padding-top: 20px;
+}
+.btninsta:hover{
+    background-color: black;
+}
+.btnfb:hover{
+    background-color: black;
+}
+.btninsta{
+    background-color: #202528;
+    border:solid 1px white;
+    border-radius: 10px;
+    padding-top: 5px;
+    margin-right: 10px;
+}
+.btnfb{
+    background-color: #202528;
+    border:solid 1px white;
+    border-radius: 10px;
+    padding-top: 8px;
+}
 .history{
     width:40%;
     float: right;
@@ -428,11 +450,6 @@ table{
 .typ 
 {  
   padding: 0
-}
-@media(min-width:992px){
-    .toleft{
-        float:left;
-    }
 }
 @media(max-width: 992px){
     .slidecont{
@@ -470,6 +487,22 @@ table{
     }
     .h4x{
         font-size: 20px;
+    }    
+    .instalink{        
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        background-clip: text;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+        background-image: linear-gradient(45deg, #ff1aff, #db52bb, #f3ec78, #fff307);
+    }
+    .discord{        
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        background-clip: text;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+        background-image: linear-gradient(45deg, #0084ff,cyan, #ffffff);        
     }
 }
 @media(max-width:548px){
@@ -479,6 +512,19 @@ table{
 }
 
 @media(max-width:768px){
+    .btninsta h5{
+        font-size: 15px;
+    }
+    .btninsta{
+        padding-bottom: 0px;
+    }
+    .btnfb h5{
+        font-size: 15px;
+    }
+    .btnfb{
+        padding-bottom: 0px;
+    }
+
     .leaderboardHead-2{
         font-size: 23px;
     }

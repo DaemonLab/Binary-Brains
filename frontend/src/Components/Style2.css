@@ -98,6 +98,7 @@
 }
 .btnsignup:hover{
   font-size: 21px;
+  cursor: pointer;
 }
 
 .btnsignup{
@@ -114,6 +115,9 @@
   left:50%;    
   bottom: 0%;
   transform: translate(-50%,0%);
+}
+.btnlogin:hover{
+  cursor: pointer;
 }
 
 .btnlogin{
@@ -538,7 +542,7 @@ table {
   }
   .tdtop-2{
     font-size: 20px;
-  }
+  }  
 }
 @media(min-width:768px){
   .card-img-top{   
@@ -626,7 +630,7 @@ table {
     height:1020px
   }
 }
-@media(max-width: 768px){  
+@media(max-width: 768px){   
   .btncont{
     font-size: 15px;
   }

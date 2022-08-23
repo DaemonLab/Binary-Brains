@@ -23,7 +23,8 @@ function AboutUs() {
   return (
     <div className="container aboutBody">
         <div className="container mt-4">
-            <h3 className="aboutHead2 mb-2" align="Center"><strong>Organizer</strong></h3>                                       
+            <h3 className="aboutHead2 mb-2" align="Center"><strong>Organizer</strong></h3>                    
+            <br/>                   
             <img className=" z-depth-2 mb-3 mt-2 img-o" alt="100x100" src={JS} data-holder-rendered="true" />
             <h5 align="center"><strong>Jaskaran Singh</strong></h5>
         </div>
@@ -32,19 +33,19 @@ function AboutUs() {
         <br/>    
         <div className="row">
             <div className="col-sm">
-                <img className=" z-depth-2 mb-3" alt="100x100" src={JS} style={{"width": "150px", "borderRadius":"10px"}} data-holder-rendered="true" />
+                <img className=" z-depth-2 mb-3" alt="100x100" src={JS} style={{"width": "200px", "borderRadius":"10px"}} data-holder-rendered="true" />
                 <h5 className="mb-2"><strong>Jaskaran Singh</strong></h5>
             </div>
             <div className="col-sm">
-                <img className=" z-depth-2 mb-3" alt="100x100" src={AA} style={{"width": "180px", "borderRadius":"10px"}} data-holder-rendered="true" />
+                <img className=" z-depth-2 mb-3" alt="100x100" src={AA} style={{"width": "190px", "borderRadius":"10px"}} data-holder-rendered="true" />
                 <h5 className="mb-2"><strong>Anurag Agarwal</strong></h5>
             </div>
             <div className="col-sm">
-                <img className=" z-depth-2 mb-3" alt="100x100" src={DSJ} style={{"width": "150px", "borderRadius":"10px"}} data-holder-rendered="true" />
+                <img className=" z-depth-2 mb-3" alt="100x100" src={DSJ} style={{"width": "180px", "borderRadius":"10px"}} data-holder-rendered="true" />
                 <h5 className="mb-2"><strong>Deepkamal Singh Jassal</strong></h5>
             </div>
             <div className="col-sm">
-                <img className=" z-depth-2 mb-3" alt="100x100" src={SKS} style={{"width": "150px", "borderRadius":"10px"}} data-holder-rendered="true" />
+                <img className=" z-depth-2 mb-3" alt="100x100" src={SKS} style={{"width": "180px", "borderRadius":"10px"}} data-holder-rendered="true" />
                 <h5 className="mb-2"><strong>Saurabh Kumar Singh</strong></h5>
             </div>
         </div>
@@ -54,20 +55,20 @@ function AboutUs() {
                 <h5 className="mb-2"><strong>Krishanu saini</strong></h5>
             </div>
             <div className="col-sm">
-                <img className=" z-depth-2 mb-3" alt="100x100" src={MT} style={{"width": "150px", "borderRadius":"10px"}} data-holder-rendered="true" />
+                <img className=" z-depth-2 mb-3" alt="100x100" src={MT} style={{"width": "180px", "borderRadius":"10px"}} data-holder-rendered="true" />
                 <h5 className="mb-2"><strong>Mayank tayal</strong></h5>
             </div>
             <div className="col-sm">
-                <img className=" z-depth-2 mb-3" alt="100x100" src={NS} style={{"width": "150px", "borderRadius":"10px"}} data-holder-rendered="true" />
+                <img className=" z-depth-2 mb-3" alt="100x100" src={NS} style={{"width": "160px", "borderRadius":"10px"}} data-holder-rendered="true" />
                 <h5 className="mb-2"><strong>Nishchay Shroff</strong></h5>
             </div>
             <div className="col-sm">
-                <img className=" z-depth-2 mb-3" alt="100x100" src={NL} style={{"width": "150px", "borderRadius":"10px"}} data-holder-rendered="true" />
+                <img className=" z-depth-2 mb-3" alt="100x100" src={NL} style={{"width": "170px", "borderRadius":"10px"}} data-holder-rendered="true" />
                 <h5 className="mb-2"><strong>Nishkarsh luthra</strong></h5>
             </div>
         <div className="row">           
             <div className="col-sm">
-                <img className=" z-depth-2 mb-3" alt="100x100" src={KT} style={{"width": "150px", "borderRadius":"10px"}} data-holder-rendered="true" /> 
+                <img className=" z-depth-2 mb-3" alt="100x100" src={KT} style={{"width": "180px", "borderRadius":"10px"}} data-holder-rendered="true" /> 
                 <h5 className="mb-2"><strong>Karri Trived</strong></h5>
             </div>
         </div>
