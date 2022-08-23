@@ -30,7 +30,12 @@ app.post("/register", (req, res) => {
     phone: req.body.phone,
     difficulty: req.body.difficulty,
   });
-
+  if(newUser.email.split("@").at(-1)!=="iiti.ac.in"){
+    return res.status(400).json({
+      title: "error",
+      error: "Invalid Email",
+    });
+  }
   newUser.save((err) => {
     if (err) {
       return res.status(400).json({
