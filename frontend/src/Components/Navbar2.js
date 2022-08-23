@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Style.css";
-import img1 from "./BBlogo.png";
+import img1 from "./BBlogo2.png";
 
 function Navbar() {
   const handleLogout = () => {
@@ -11,7 +11,7 @@ function Navbar() {
   const token = localStorage.getItem("token");
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark navbg">
       <div className="container">
         <Link to="/">
           <img src={img1} className="navimg" alt="..." />
@@ -39,7 +39,7 @@ function Navbar() {
             </li> */}
             <li className="nav-item">
               <Link to="/about" className="nav-link">
-                Our Teams
+                Our Team
               </Link>
             </li>            
           </ul>
