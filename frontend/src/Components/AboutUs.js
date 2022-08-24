@@ -18,9 +18,11 @@ import SKS from '../images/SKS.jpg'
 import SN from '../images/SN.jpg'
 import TW from '../images/TW.jpg'
 import VS from '../images/VS.jpg'
+import Footer from './Footer'
 
 function AboutUs() {
   return (
+    <>
     <div className="container aboutBody">
         <div className="container mt-4 organizer">
             <h3 className="aboutHead2 mb-2" align="Center"><strong>Organizer</strong></h3>                    
@@ -144,8 +146,12 @@ function AboutUs() {
                 <h5 className="mb-2"><strong>Vineet</strong></h5>
             </div>
         </div>
-    </div>        
+    </div>            
   </div>
+  <br/>
+  <br/>
+  <Footer />
+  </>
   )
 }
 
