@@ -1,6 +1,6 @@
 import React from "react";
 import "./Style2.css";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import Footer2 from "./Footer2";
 import axios from "axios";
 
@@ -18,8 +18,12 @@ function SignUp() {
   const [disabled, setDisabled] = React.useState(true);
   const [difficulty, setDifficulty] = React.useState("beginner");
   const [alert, setAlert] = React.useState("none");
-  const [alertmsg, setAlertMsg] = React.useState("Something went wrong! Please Try Again!");
-  const [passerr,setPasserr] = React.useState("")
+  const [success, setSuccess] = React.useState("none");
+  const [alertmsg, setAlertMsg] = React.useState(
+    "Something went wrong! Please Try Again!"
+  );
+  const [passerr, setPasserr] = React.useState("");
+  const [emailerr, setEmailerr] = React.useState("");
   const handleRegister = () => {
     axios
       .post("https://p-club-iiti-cp.herokuapp.com/register", {
@@ -32,7 +36,7 @@ function SignUp() {
       })
       .then((res) => {
         if (res.status === 200) {
-          window.location.href = "/";
+          setSuccess("block");
         } else {
           console.log("failed");
           setAlert("block");
@@ -50,8 +54,10 @@ function SignUp() {
     else setDisabled(true);
     if (name === "" || email === "" || password === "") setDisabled(true);
     if (email.split("@").at(-1) !== "iiti.ac.in") setDisabled(true);
-    if(password !== confirmPassword) setPasserr("Passwords Dont Match");
+    if (password !== confirmPassword) setPasserr("Passwords Dont Match");
     else setPasserr("");
+    if (!/\S+@iiti.ac.in/.test(email)) setEmailerr("Use IITI Email Address");
+    else setEmailerr("");
   }, [password, confirmPassword]);
 
   return (
@@ -64,9 +70,12 @@ function SignUp() {
         >
           {alertmsg}
         </div>
+        <div className="alert alert-success mt-4" style={{ display: success }}>
+          <h4>Registration Successful!, We have sent a Confirmation Mail on your Email(It may take few minutes)</h4>
+        </div>
         <div className="container outer">
           <div className="whitebox signup_container" id="signContain">
-          <h1 className="text-center heading centerTop">REGISTER</h1>
+            <h1 className="text-center heading centerTop">REGISTER</h1>
             <div className="leftCol">
               <div className="mb-3 inputs" style={{ textAlign: "left" }}>
                 <label className="form-label auth">Name</label>
@@ -84,7 +93,9 @@ function SignUp() {
                 <br />
               </div>
               <div className="mb-3 inputs" style={{ textAlign: "left" }}>
-                <label className="form-label auth">E-Mail <span className="smallx">(use IITI Email only)</span></label>
+                <label className="form-label auth">
+                  E-Mail <span className="smallx">(use IITI Email only)</span>
+                </label>
                 <br />
                 <input
                   type="email"
@@ -132,7 +143,13 @@ function SignUp() {
             <div className="rightCol">
               <div className="mb-3 inputs" style={{ textAlign: "left" }}>
                 <label className="form-label auth">Difficulty</label>
-                <p className="signfaq"> &nbsp;Confused what to choose? <Link to="/" className="signfaq2">Click here</Link></p>                
+                <p className="signfaq">
+                  {" "}
+                  &nbsp;Confused what to choose?{" "}
+                  <Link to="/" className="signfaq2">
+                    Click here
+                  </Link>
+                </p>
                 <select
                   type="text"
                   name="difficulty"
@@ -144,10 +161,13 @@ function SignUp() {
                 >
                   <option value="beginner">Beginner</option>
                   <option value="advanced">Advanced</option>
-                </select>                          
+                </select>
               </div>
               <div className="mb-3 inputs" style={{ textAlign: "left" }}>
-                <label className="form-label auth" style={{ textAlign: "left" }}>
+                <label
+                  className="form-label auth"
+                  style={{ textAlign: "left" }}
+                >
                   Password
                 </label>
                 <br />
@@ -164,7 +184,10 @@ function SignUp() {
                 <br />
               </div>
               <div className="mb-3 inputs" style={{ textAlign: "left" }}>
-                <label className="form-label auth" style={{ textAlign: "left" }}>
+                <label
+                  className="form-label auth"
+                  style={{ textAlign: "left" }}
+                >
                   Confirm Password
                 </label>
                 <br />
@@ -181,9 +204,10 @@ function SignUp() {
                 <br />
               </div>
               <div className="pass">
-              <p>{passerr}</p>
+                <p>{passerr}</p>
+                <p>{emailerr}</p>
+              </div>
             </div>
-            </div>            
             <div className="centerRow">
               <button
                 className="btnsignup"
@@ -191,7 +215,7 @@ function SignUp() {
                 onClick={handleRegister}
                 disabled={disabled}
               >
-              Register
+                Register
               </button>
             </div>
           </div>
