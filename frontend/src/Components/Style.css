@@ -456,6 +456,10 @@ table{
 {  
   padding: 0
 }
+.pass{
+    color: rgb(250, 39, 39);
+    padding-left: 5%;    
+}
 @media(max-width: 992px){
     .slidecont{
         margin-left: 10px;
@@ -493,6 +497,9 @@ table{
     .h4x{
         font-size: 20px;
     }    
+    .pass{
+        font-size: 14px;
+    }    
     .instalink{        
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent; 
@@ -508,6 +515,9 @@ table{
         -moz-background-clip: text;
         -moz-text-fill-color: transparent;
         background-image: linear-gradient(45deg, #0084ff,cyan, #ffffff);        
+    }
+    .alert{
+        font-size: 10px;
     }
 }
 

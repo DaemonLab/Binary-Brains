@@ -3,8 +3,8 @@ import React from 'react'
 function Footer() {
   return (
     <>
-    <footer className="text-center text-white">
-      <h2 className="thanksNote" align="center">Thanks For Visiting!</h2>
+    <footer className="text-center text-white">      
+      <h2 className="pt-3 thanksNote" align="center">Thanks For Visiting!</h2>
       <h6 className='contact'>Contact Details : Jaskaran Singh - <span className="small">8872150472</span></h6>
       <div className="container p-4 pb-0">
         <section>

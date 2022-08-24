@@ -19,6 +19,7 @@ function SignUp() {
   const [difficulty, setDifficulty] = React.useState("beginner");
   const [alert, setAlert] = React.useState("none");
   const [alertmsg, setAlertMsg] = React.useState("Something went wrong! Please Try Again!");
+  const [passerr,setPasserr] = React.useState("")
   const handleRegister = () => {
     axios
       .post("https://p-club-iiti-cp.herokuapp.com/register", {
@@ -49,6 +50,8 @@ function SignUp() {
     else setDisabled(true);
     if (name === "" || email === "" || password === "") setDisabled(true);
     if (email.split("@").at(-1) !== "iiti.ac.in") setDisabled(true);
+    if(password !== confirmPassword) setPasserr("Passwords Dont Match");
+    else setPasserr("");
   }, [password, confirmPassword]);
 
   return (
@@ -64,7 +67,7 @@ function SignUp() {
         <div className="container outer">
           <div className="whitebox signup_container" id="signContain">
           <h1 className="text-center heading centerTop">REGISTER</h1>
-            <div class="leftCol">
+            <div className="leftCol">
               <div className="mb-3 inputs" style={{ textAlign: "left" }}>
                 <label className="form-label auth">Name</label>
                 <br />
@@ -126,7 +129,7 @@ function SignUp() {
                 <br />
               </div>
             </div>
-            <div class="rightCol">
+            <div className="rightCol">
               <div className="mb-3 inputs" style={{ textAlign: "left" }}>
                 <label className="form-label auth">Difficulty</label>
                 <p className="signfaq"> &nbsp;Confused what to choose? <Link to="/" className="signfaq2">Click here</Link></p>                
@@ -177,8 +180,11 @@ function SignUp() {
                 />
                 <br />
               </div>
+              <div className="pass">
+              <p>{passerr}</p>
             </div>
-            <div class="centerRow">
+            </div>            
+            <div className="centerRow">
               <button
                 className="btnsignup"
                 type="submit"

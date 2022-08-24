@@ -593,7 +593,8 @@ footer{
     font-size: 15px;
   }
   .btnx{
-    margin-bottom: 5%;
+    margin-bottom: 1%;
+    font-size: 18px;
   }
   .btnred{
     font-size: 15px;
@@ -718,8 +719,8 @@ footer{
     font-size: 12px;
   }
   .btnx{
-    font-size: 20px;
-    margin-bottom: 5%;
+    font-size: 12px;
+    margin-bottom: 3%;
   }  
   .btnred{
     padding-left: 9%;
@@ -775,11 +776,13 @@ footer{
 }
 @media (max-width: 500px) {
   .btnx{
-    font-size: 13px;
-    padding: 1%;
+    font-size: 10px;
+    margin-bottom: 4%;
+    padding: 0;
+    border-radius: 1px;
     padding-left: 2%;
     padding-right: 2%;
-  }
+  }  
   .prc{
     font-size: 10px;
   }
