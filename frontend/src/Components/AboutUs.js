@@ -51,7 +51,7 @@ function AboutUs() {
         </div>
         <div className="row">
             <div className="col-sm">
-            <img className=" z-depth-2 mb-3" alt="100x100" src={KS} style={{"width": "180px", "borderRadius":"10px"}} data-holder-rendered="true" />
+                <img className="mt-3 z-depth-2 mb-3" alt="100x100" src={KS} style={{"width": "180px", "borderRadius":"10px"}} data-holder-rendered="true" />
                 <h5 className="mb-2"><strong>Krishanu saini</strong></h5>
             </div>
             <div className="col-sm">

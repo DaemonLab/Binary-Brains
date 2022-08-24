@@ -9,7 +9,7 @@ function Schedule() {
           <h2 className="card-title courseDetailsHead">Details Of The Course</h2>
           <div className="container pointsCourse">
             <p className="details">Welcome to <strong>The Binary Brains CP Course</strong> website brought to you by <strong>The Programming Club, IIT Indore</strong>. This is a free CP course for the students of IIT Indore willing to learn Competetive Programming. Offline lectures would be conducted by the seniors of IIT INDORE and also the contests would be held every week based on the topic.</p>
-            <p className="details" align="center"><strong>Deadline for registrations is 31st September.</strong></p>
+            <p className="details" align="center"><strong>Deadline for registrations is 31st August.</strong></p>
             <p className="details-2">&bull; Course will be starting from 3rd of September and will be 11 weeks long.</p>            
             <p className="details-2">&bull; Course is divided in two Batches - Beginner and Advanced.</p>
             <p className="details-2">&bull; The classes will be held on weekends, preferably on Saturday.</p>
