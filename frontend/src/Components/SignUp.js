@@ -38,8 +38,9 @@ function SignUp() {
           setAlertMsg(res.data.error);
         }
       })
-      .catch(() => {
+      .catch((err) => {
         setAlert("block");
+        setAlertMsg(err.response.data.error);
       });
   };
 

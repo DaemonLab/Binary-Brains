@@ -2,6 +2,7 @@ import React from 'react'
 
 function Footer() {
   return (
+    <>
     <footer className="text-center text-white">
       <h2 className="thanksNote" align="center">Thanks For Visiting!</h2>
       <h6 className='contact'>Contact Details : Jaskaran Singh - <span className="small">8872150472</span></h6>
@@ -34,6 +35,7 @@ function Footer() {
         <a className="text-white" href="http://progclub.iiti.ac.in/"> The Programming Club, IIT Indore</a>
       </div>
     </footer>
+    </>
   )
 }
 
