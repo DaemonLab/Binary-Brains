@@ -23,7 +23,6 @@ function SignUp() {
     "Something went wrong! Please Try Again!"
   );
   const [passerr, setPasserr] = React.useState("");
-  const [emailerr, setEmailerr] = React.useState("");
   const handleRegister = () => {
     axios
       .post("https://p-club-iiti-cp.herokuapp.com/register", {
@@ -56,8 +55,6 @@ function SignUp() {
     if (email.split("@").at(-1) !== "iiti.ac.in") setDisabled(true);
     if (password !== confirmPassword) setPasserr("Passwords Dont Match");
     else setPasserr("");
-    if (!/\S+@iiti.ac.in/.test(email)) setEmailerr("Use IITI Email Address");
-    else setEmailerr("");
   }, [password, confirmPassword]);
 
   return (
@@ -205,7 +202,6 @@ function SignUp() {
               </div>
               <div className="pass">
                 <p>{passerr}</p>
-                <p>{emailerr}</p>
               </div>
             </div>
             <div className="centerRow">
