@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Poppins&family=Raleway:wght@400;600&display=swap');
 .signup{  
-  background-color: #f2f0f0;
+  background-color: #182b5c;
   padding-bottom: 50px;
 }
 .loginHead{
@@ -148,17 +148,18 @@
   height: 450px;
   position:relative;  
   background: #212529;
-  border-radius: 5px;
+  border-radius: 25px;
 }
 .whitebox2{
   width: 1800px;
   height: 450px;
   position:relative;    
   background: #212529;
-  border-radius: 5px;
+  border-radius: 25px;
 }
 .signup_container{
-  height: 1050px;    
+  height: 700px;    
+  width: 75vw;
 }
 .signup_container2{  
   height: 420px;    
@@ -316,11 +317,13 @@ input, select{
 .FaqHead{
   font-family: 'Poppins', sans-serif;
   font-size: 35px;
-  background-color: #30D5C8;
+  background-color: #00bbff;
 }
 .courseDetailsHead{
   font-family: 'Poppins', sans-serif;
-  background-color: #30D5C8;
+  background-color: #00bbff;
+  font-weight: bold;
+  
 }
 .prizex{
   position: relative;
@@ -331,8 +334,9 @@ input, select{
 }
 
 .courseDetailsHead2{
-  background-color: #30D5C8;
+  background-color: #00bbff;
   font-family: 'Poppins', sans-serif;
+  font-weight: bold;
 }
 .courseDetailsTime{
   font-family: 'Poppins', sans-serif;
@@ -351,7 +355,7 @@ input, select{
   font-size: 25px;
 }
 .upcomingContestHead{
-  background-color: #30D5C8;
+  background-color: #00bbff;
   font-family: 'Poppins', sans-serif;
 }
 .leaderboardHead{
@@ -377,11 +381,12 @@ input, select{
   padding-left: 5%;
 }
 .thtop{
-  padding-left: 10%;
+  /* padding-left: 10%; */
+  text-align: center;
   font-size: 40px;
   font-weight: 500;
   text-decoration: underline;
-  padding-bottom: 2%;
+  /* padding-bottom: 2%; */
 }
 .ypcont{
   font-family: 'Poppins','sans-serif';
@@ -417,11 +422,18 @@ input, select{
   opacity:.9;
 }
 .card{
-  background-color: #0c407a !important;
+  background-color: #233872 !important;
   color: white !important;
+  border: 0px !important;
+  border-radius: 20px !important;
 }
 .courseDetailsHead,.courseDetailsHead2,.leaderboardHead,.container>h3,.upcomingContestHead{
   color: black !important;
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+  border-radius: 10px;
+  /* height: 7vh; */
+  /* text-align: center; */
 }
 .thanksNote{
   color: white !important;
@@ -485,6 +497,47 @@ table {
 .scrollTable{
   overflow-x: hidden;
 }
+#signContain {
+  height: 700px;
+  background-color: #233872;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-areas:
+      "centerTop centerTop"
+      "leftCol rightCol"
+      "centerRow centerRow";
+}
+.centerTop {
+  grid-area: centerTop;
+  height: 2rem;
+  /* line-height: 25px; */
+  /* padding-bottom: -10px; */
+}
+.leftCol {
+  grid-area: leftCol;
+}
+.rightCol {
+  padding-top: 70px;
+  grid-area: rightCol;
+}
+.centerRow {
+  grid-area: centerRow;
+}
+.aboutHead2{
+  font-size: 2rem;
+  background-color: #00bbff;
+}
+.organizer{
+  padding-top: 20px;
+  width: 95% !important;
+}
+.aboutBody{
+  border-radius: 25px;
+  background-color: #233872;
+}
+footer{
+  background-color: #111f49;
+}
 @media (min-width: 1200px) {
   .courseDetailsHead2{
     font-size: 2rem;
@@ -511,15 +564,23 @@ table {
     font-size: 1rem;
 
   }
-
+  .inputs>label{
+    font-size: 15px;
+  }
 }
 @media (min-width: 300px) {
   .whitebox{
-      width: 350px;
-      padding-left: 20px;
-      padding-right: 20px;
+    width: 90vw;
+    /* width: 350px; */
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
+/* @media (min-width: 650px) {
+.whitebox{
+  width: 95vw;
+}
+} */
 @media(max-width: 992px){
   .contestname{
     font-size: 25px;
@@ -557,7 +618,19 @@ table {
     width:150px;
     height:auto;
   }   
+  .whitebox{
+    height: 90vw;
+  }
 }
+@media(max-width:768px){
+  .inputs>label{
+    font-size: 19.5px;
+  }
+  .rightCol{
+    padding-top: 40px;
+  }
+}
+
 @media(min-width:992px){
   .card-img-top{   
     position: relative;
@@ -626,11 +699,14 @@ table {
   .scrollTable{
     overflow-x: auto;
   }
-  .signup_container{
-    height:1020px
+}
+
+@media(max-width: 485px){
+  .rightCol{
+    padding-top: 70px;
   }
 }
-@media(max-width: 768px){   
+@media(max-width: 768px){  
   .btncont{
     font-size: 15px;
   }
@@ -659,6 +735,11 @@ table {
     transform: translate(36%, 0%);
   } 
 }
+@media(max-width:560px){
+  .rightCol{
+    padding-top: 75px;
+  } 
+}
 @media (max-width: 500px) {
   .btnx{
     font-size: 13px;
@@ -679,10 +760,10 @@ table {
 }
 @media (min-width: 576px) {
   .whitebox{
-      width: 450px;
+      width: 900px;
       padding-left: 20px;
       padding-right: 20px;
-      box-shadow: 3px 3px 15px black;
+      /* box-shadow: 3px 3px 3px black; */
   }
 }
 @media (min-width: 300px) {

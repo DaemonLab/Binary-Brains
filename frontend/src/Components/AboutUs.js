@@ -22,7 +22,7 @@ import VS from '../images/VS.jpg'
 function AboutUs() {
   return (
     <div className="container aboutBody">
-        <div className="container mt-4">
+        <div className="container mt-4 organizer">
             <h3 className="aboutHead2 mb-2" align="Center"><strong>Organizer</strong></h3>                    
             <br/>                   
             <img className=" z-depth-2 mb-3 mt-2 img-o" alt="100x100" src={JS} data-holder-rendered="true" />

@@ -18,6 +18,7 @@ function SignUp() {
   const [disabled, setDisabled] = React.useState(true);
   const [difficulty, setDifficulty] = React.useState("beginner");
   const [alert, setAlert] = React.useState("none");
+  const [alertmsg, setAlertMsg] = React.useState("Something went wrong! Please Try Again!");
   const handleRegister = () => {
     axios
       .post("https://p-club-iiti-cp.herokuapp.com/register", {
@@ -34,10 +35,10 @@ function SignUp() {
         } else {
           console.log("failed");
           setAlert("block");
+          setAlertMsg(res.data.error);
         }
       })
       .catch(() => {
-        console.log("failed");
         setAlert("block");
       });
   };
@@ -57,128 +58,134 @@ function SignUp() {
           role="alert"
           style={{ display: alert }}
         >
-          Something went wrong! Please Try Again!
+          {alertmsg}
         </div>
         <div className="container outer">
-          <div className="whitebox signup_container">
-            <h1 className="text-center heading">REGISTER</h1>
-            <div className="mb-3 inputs" style={{ textAlign: "left" }}>
-              <label className="form-label auth">Name</label>
-              <br />
-              <input
-                type="text"
-                name="name"
-                id="name"
-                className="inputbox"
-                placeholder="Name"
-                style={{ color: "black" }}
-                required
-                onChange={(e) => setName(e.target.value)}
-              />
-              <br />
+          <div className="whitebox signup_container" id="signContain">
+          <h1 className="text-center heading centerTop">REGISTER</h1>
+            <div class="leftCol">
+              <div className="mb-3 inputs" style={{ textAlign: "left" }}>
+                <label className="form-label auth">Name</label>
+                <br />
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  className="inputbox"
+                  placeholder="Name"
+                  style={{ color: "black" }}
+                  required
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <br />
+              </div>
+              <div className="mb-3 inputs" style={{ textAlign: "left" }}>
+                <label className="form-label auth">E-Mail <span className="smallx">(use IITI Email only)</span></label>
+                <br />
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  className="inputbox"
+                  placeholder="Email"
+                  style={{ color: "black" }}
+                  required
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <br />
+              </div>
+              <div className="mb-3 inputs" style={{ textAlign: "left" }}>
+                <label className="form-label auth">Phone</label>
+                <br />
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  className="inputbox"
+                  placeholder="Phone"
+                  style={{ color: "black" }}
+                  required
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+                <br />
+              </div>
+              <div className="mb-3 inputs" style={{ textAlign: "left" }}>
+                <label className="form-label auth">Codeforces Username</label>
+                <br />
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  className="inputbox"
+                  placeholder="Codeforces Username"
+                  style={{ color: "black" }}
+                  required
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+                <br />
+              </div>
             </div>
-            <div className="mb-3 inputs" style={{ textAlign: "left" }}>
-              <label className="form-label auth">E-Mail <span className="smallx">(use IITI Email only)</span></label>
-              <br />
-              <input
-                type="email"
-                name="email"
-                id="email"
-                className="inputbox"
-                placeholder="Email"
-                style={{ color: "black" }}
-                required
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <br />
+            <div class="rightCol">
+              <div className="mb-3 inputs" style={{ textAlign: "left" }}>
+                <label className="form-label auth">Difficulty</label>
+                <p className="signfaq"> &nbsp;Confused what to choose? <Link to="/" className="signfaq2">Click here</Link></p>                
+                <select
+                  type="text"
+                  name="difficulty"
+                  id="difficulty"
+                  className="inputbox"
+                  style={{ color: "black" }}
+                  required
+                  onChange={(e) => setDifficulty(e.target.value)}
+                >
+                  <option value="beginner">Beginner</option>
+                  <option value="advanced">Advanced</option>
+                </select>                          
+              </div>
+              <div className="mb-3 inputs" style={{ textAlign: "left" }}>
+                <label className="form-label auth" style={{ textAlign: "left" }}>
+                  Password
+                </label>
+                <br />
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  className="inputbox"
+                  placeholder="Password"
+                  style={{ color: "black" }}
+                  required
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <br />
+                <div className="mb-3 inputs" style={{ textAlign: "left" }}></div>
+                <label className="form-label auth" style={{ textAlign: "left" }}>
+                  Confirm Password
+                </label>
+                <br />
+                <input
+                  type="password"
+                  name="confirm_password"
+                  id="confirm_password"
+                  className="inputbox"
+                  placeholder="Confirm Password"
+                  style={{ color: "black" }}
+                  required
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+                <br />
+              </div>
             </div>
-            <div className="mb-3 inputs" style={{ textAlign: "left" }}>
-              <label className="form-label auth">Phone</label>
-              <br />
-              <input
-                type="tel"
-                name="phone"
-                id="phone"
-                className="inputbox"
-                placeholder="Phone"
-                style={{ color: "black" }}
-                required
-                onChange={(e) => setPhone(e.target.value)}
-              />
-              <br />
-            </div>
-            <div className="mb-3 inputs" style={{ textAlign: "left" }}>
-              <label className="form-label auth">Codeforces Username</label>
-              <br />
-              <input
-                type="text"
-                name="username"
-                id="username"
-                className="inputbox"
-                placeholder="Codeforces Username"
-                style={{ color: "black" }}
-                required
-                onChange={(e) => setUsername(e.target.value)}
-              />
-              <br />
-            </div>
-            <div className="mb-3 inputs" style={{ textAlign: "left" }}>
-              <label className="form-label auth">Difficulty</label>
-              <p className="signfaq"> &nbsp;Confused what to choose? <Link to="/" className="signfaq2">Click here</Link></p>                
-              <select
-                type="text"
-                name="difficulty"
-                id="difficulty"
-                className="inputbox"
-                style={{ color: "black" }}
-                required
-                onChange={(e) => setDifficulty(e.target.value)}
+            <div class="centerRow">
+              <button
+                className="btnsignup"
+                type="submit"
+                onClick={handleRegister}
+                disabled={disabled}
               >
-                <option value="beginner">Beginner</option>
-                <option value="advanced">Advanced</option>
-              </select>                          
-            </div>
-            <div className="mb-3 inputs" style={{ textAlign: "left" }}>
-              <label className="form-label auth" style={{ textAlign: "left" }}>
-                Password
-              </label>
-              <br />
-              <input
-                type="password"
-                name="password"
-                id="password"
-                className="inputbox"
-                placeholder="Password"
-                style={{ color: "black" }}
-                required
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <br />
-              <div className="mb-3 inputs" style={{ textAlign: "left" }}></div>
-              <label className="form-label auth" style={{ textAlign: "left" }}>
-                Confirm Password
-              </label>
-              <br />
-              <input
-                type="password"
-                name="confirm_password"
-                id="confirm_password"
-                className="inputbox"
-                placeholder="Confirm Password"
-                style={{ color: "black" }}
-                required
-                onChange={(e) => setConfirmPassword(e.target.value)}
-              />
-              <br />
-            </div>
-            <button
-              className="btnsignup"
-              type="submit"
-              onClick={handleRegister}
-              disabled={disabled}
-            >
               Register
-            </button>
+              </button>
+            </div>
           </div>
         </div>
       </div>
