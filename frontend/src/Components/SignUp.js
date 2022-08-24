@@ -201,7 +201,7 @@ function SignUp() {
                 <br />
               </div>
               <div className="pass">
-                <p>{passerr}</p>
+                <p>&nbsp;{passerr}</p>
               </div>
             </div>
             <div className="centerRow">
