@@ -158,7 +158,8 @@ function SignUp() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <br />
-                <div className="mb-3 inputs" style={{ textAlign: "left" }}></div>
+              </div>
+              <div className="mb-3 inputs" style={{ textAlign: "left" }}>
                 <label className="form-label auth" style={{ textAlign: "left" }}>
                   Confirm Password
                 </label>

@@ -735,10 +735,39 @@ footer{
     transform: translate(36%, 0%);
   } 
 }
-@media(max-width:560px){
+@media(max-width:565px) and (min-width:560px){
   .rightCol{
-    padding-top: 75px;
+    padding-top: 14px;
   } 
+}
+@media(max-width:489px){
+  .rightCol{
+    padding-top: 10px;
+  } 
+}
+@media(max-width:405px){
+  .rightCol{
+    padding-top: 12px;
+  } 
+  .signfaq{
+    font-size: 14px;
+  }
+}
+@media(max-width:388px){
+  .rightCol{
+    padding-top: 0px;
+  } 
+  .leftCol{
+    padding-top: 5px;
+  }
+}
+@media(max-width:358px){
+  .rightCol{
+    padding-top: 20px;
+  } 
+  .leftCol{
+    padding-top: 0px;
+  }
 }
 @media (max-width: 500px) {
   .btnx{
@@ -834,5 +863,23 @@ footer{
   .registerButton{
     /* margin-right: 0; */
     margin-left: 2vw;
+  }
+}
+@media(max-width: 565px){
+  #signContain{
+    height: 875px;
+    grid-template-columns: 75vw;
+    grid-template-areas: 
+    "centerTop"
+    "leftCol"
+    "rightCol"
+    "centerRow";
+  }
+  .rightCol{
+    padding-top: 0;
+    /* top: -25px; */
+  }
+  .leftCol{
+    height: 420px;
   }
 }
