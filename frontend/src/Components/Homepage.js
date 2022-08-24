@@ -14,7 +14,7 @@ function Homepage() {
   return (
     <div>             
       <div className="alert alert-success mt-4">
-        <h4>Registration Successful!</h4>
+        <h4 className='msgreg'>Registration Successful!</h4>
       </div>
       <Poster />        
       <Schedule /> 
