@@ -6,6 +6,7 @@ const cors = require("cors");
 const axios = require("axios");
 const config = require("./config");
 const nodemailer = require("./nodemailer.config");
+const bcrypt = require("bcryptjs");
 
 const User = require("./models/User.js");
 const Contest = require("./models/Contest.js");
@@ -29,10 +30,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.post("/register", (req, res) => {
   const token = jwt.sign({ email: req.body.email }, config.secret);
+  const passwordHash = bcrypt.hashSync(req.body.password, 10);
   const newUser = new User({
     name: req.body.name,
     email: req.body.email,
-    password: req.body.password,
+    password: passwordHash,
     codeforces_handle: req.body.codeforces_handle,
     phone: req.body.phone,
     difficulty: req.body.difficulty,
@@ -60,24 +62,24 @@ app.post("/login", (req, res) => {
   User.findOne({ email: req.body.email }, (err, user) => {
     if (user.status != "Active") {
       return res.status(401).json({
-        message: "Pending Account. Please Verify Your Email!",
-        error: "Email Not Activated!",
+        title: "error",
+        error: "Pending Account. Please Verify Your Email!",
       });
     }
     if (err)
       return res.status(500).json({
-        title: "Error",
-        error: err,
+        title: "error",
+        error: "Something went wrong. Please try again!",
       });
     if (!user) {
       return res.status(400).json({
-        title: "User not found",
+        title: "error",
         error: "Invalid Username or Password",
       });
     }
-    if (req.body.password != user.password) {
+    if (!bcrypt.compareSync(req.body.password, user.password)) {
       return res.status(401).json({
-        title: "Login Failed",
+        title: "error",
         error: "Invalid Username or Password",
       });
     }
@@ -91,13 +93,19 @@ app.post("/login", (req, res) => {
 
 app.post("/confirm", (req, res) => {
   User.findOne({ confirmationCode: req.body.code }, (err, user) => {
+    if (!user) {
+      return res.status(400).json({
+        title: "error",
+        error: "Invalid Code",
+      });
+    }
     user.status = "Active";
     user.save((err) => {
       if (err) {
         res.status(500).send({ message: err });
         return res.status(401).json({
-          title: "Not Authorized, Please Login Again",
-          error: err,
+          title: "error",
+          error: "Not Authorized, Please Login Again",
         });
       }
       return res.status(200).json({
@@ -107,8 +115,8 @@ app.post("/confirm", (req, res) => {
     if (err) {
       res.status(500).send({ message: err });
       return res.status(401).json({
-        title: "Not Authorized, Please Login Again",
-        error: err,
+        title: "error",
+        error: "Not Authorized, Please Login Again",
       });
     }
   });
@@ -118,16 +126,16 @@ app.get("/profile", (req, res) => {
   jwt.verify(req.headers.token, "secretkey", (err, dec) => {
     if (err) {
       return res.status(401).json({
-        title: "Not Authorized, Please Login Again",
-        error: err,
+        title: "error",
+        error: "Not Authorized, Please Login Again",
       });
     }
 
     User.findOne({ _id: dec.userId }, (err, user) => {
       if (err)
         return res.status(400).json({
-          title: "Error",
-          error: err,
+          title: "error",
+          error: "Something went wrong. Please try again!",
         });
 
       return res.status(200).json({
@@ -198,11 +206,11 @@ app.post("/notes", (req, res) => {
     if (err) {
       return res.status(400).json({
         title: "error",
-        error: "CONTEST already exists!",
+        error: "Notes already exists!",
       });
     }
     return res.status(200).json({
-      title: "Contest Created",
+      title: "Notes Created",
     });
   });
 });
@@ -227,8 +235,8 @@ app.post("/updatePoints", (req, res) => {
           (err, data) => {
             if (err)
               return res.status(400).json({
-                title: "Error",
-                error: err,
+                title: "error",
+                error: "Something went wrong. Please try again!",
               });
           }
         );
@@ -239,6 +247,10 @@ app.post("/updatePoints", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
+      return res.status(400).json({
+        title: "error",
+        error: "Something went wrong. Please try again!",
+      });
     });
 });
 
@@ -246,8 +258,8 @@ app.get("/profile", (req, res) => {
   User.findOne({ _id: dec.userId }, (err, user) => {
     if (err)
       return res.status(400).json({
-        title: "Error",
-        error: err,
+        title: "error",
+        error: "Not Authorized., Please Login Again!",
       });
 
     return res.status(200).json({
@@ -268,8 +280,8 @@ app.get("/leaderboard", (req, res) => {
     (err, users) => {
       if (err)
         return res.status(400).json({
-          title: "Error",
-          error: err,
+          title: "error",
+          error: "Something went wrong. Please try again!",
         });
       const beginnerUsers = [];
       const advancedUsers = [];
@@ -303,8 +315,8 @@ app.get("/contests", (req, res) => {
   Contest.find({}, (err, contests) => {
     if (err)
       return res.status(400).json({
-        title: "Error",
-        error: err,
+        title: "error",
+        error: "Something went wrong, Please try again!",
       });
     return res.status(200).json({
       title: "Success",
@@ -317,8 +329,8 @@ app.post("/getnotes", (req, res) => {
   Notes.find({ category: req.body.category }, (err, notes) => {
     if (err)
       return res.status(400).json({
-        title: "Error",
-        error: err,
+        title: "error",
+        error: "Something went wrong, Please try again!",
       });
     return res.status(200).json({
       title: "Success",
@@ -331,8 +343,8 @@ app.post("/getdailyproblem", (req, res) => {
   DailyProblem.find({ category: req.body.category }, (err, dailyproblems) => {
     if (err)
       return res.status(400).json({
-        title: "Error",
-        error: err,
+        title: "error",
+        error: "Something went wrong, Please try again!",
       });
     return res.status(200).json({
       title: "Success",
