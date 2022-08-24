@@ -892,3 +892,8 @@ footer{
     height: 420px;
   }
 }
+@media(max-width: 311px){
+  .leftCol{
+    height: 490px;
+  }
+}

@@ -471,6 +471,9 @@ table{
     .aboutHead2{
         font-size: 30px;
     }
+    .msgreg{
+        font-size: 18px;
+    }
 }
 
 @media (max-width:500px){
@@ -485,6 +488,9 @@ table{
     .slidecont{
         padding-left: 0px;
         padding-right: 0px;
+    }
+    .msgreg{        
+        font-size: 15px;
     }
 }
 @media(max-width:500px){
@@ -528,6 +534,15 @@ table{
 }
 
 @media(max-width:768px){
+    .details{
+        font-size: 20px;
+    }
+    .details-2{
+        font-size: 18px;
+    }
+    .tda{
+        font-size: 15px;
+    }
     .btninsta h5{
         font-size: 15px;
     }
