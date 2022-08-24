@@ -18,6 +18,7 @@ function SignUp() {
   const [disabled, setDisabled] = React.useState(true);
   const [difficulty, setDifficulty] = React.useState("beginner");
   const [alert, setAlert] = React.useState("none");
+  const [alertmsg, setAlertMsg] = React.useState("Something went wrong! Please Try Again!");
   const handleRegister = () => {
     axios
       .post("https://p-club-iiti-cp.herokuapp.com/register", {
@@ -34,10 +35,10 @@ function SignUp() {
         } else {
           console.log("failed");
           setAlert("block");
+          setAlertMsg(res.data.error);
         }
       })
       .catch(() => {
-        console.log("failed");
         setAlert("block");
       });
   };
@@ -57,7 +58,7 @@ function SignUp() {
           role="alert"
           style={{ display: alert }}
         >
-          Something went wrong! Please Try Again!
+          {alertmsg}
         </div>
         <div className="container outer">
           <div className="whitebox signup_container" id="signContain">

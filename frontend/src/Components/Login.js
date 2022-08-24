@@ -12,6 +12,7 @@ function Login() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [alert, setAlert] = React.useState("none");
+  const [alertmsg, setAlertMsg] = React.useState("Something went wrong! Please Try Again!");
   const handleLogin = () => {
     axios
       .post("https://p-club-iiti-cp.herokuapp.com/login", {
@@ -26,6 +27,7 @@ function Login() {
         } else {
           console.log("failed");
           setAlert("block");
+          setAlertMsg(res.data.error);
         }
       })
       .catch(() => {
@@ -42,7 +44,7 @@ function Login() {
           role="alert"
           style={{ display: alert }}
         >
-          Something went wrong! Please Try Again!
+          {setAlertMsg}
         </div>
         <div className="container outer">
           <div className=" logincont">
