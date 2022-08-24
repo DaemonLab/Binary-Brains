@@ -30,9 +30,10 @@ function Login() {
           setAlertMsg(res.data.error);
         }
       })
-      .catch(() => {
+      .catch((err) => {
         console.log("failed");
         setAlert("block");
+        setAlertMsg(err.response.data.error);
       });
   };
 
