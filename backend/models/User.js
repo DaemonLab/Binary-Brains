@@ -32,6 +32,10 @@ const userSchema = mongoose.Schema({
   ],
   phone: Number,
   difficulty: String,
+  discordId : {
+    type : String,
+    default: null,
+  },
 });
 
 const User = mongoose.model("User", userSchema);
