@@ -22,7 +22,7 @@ function Schedule() {
           </div>
           <h3 className="courseDetailsHead2" align="Center">Difference between Beginner and Advanced</h3>                   
           <div className="container tabletop">
-            <table className='tabtop'>
+            <table className='tabtop leaderboard'>
               <tbody>
               <tr>
                 <th className='thtop'>Beginner</th>                

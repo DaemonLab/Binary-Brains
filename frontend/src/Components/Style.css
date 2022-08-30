@@ -75,6 +75,9 @@ table{
     background-color: #142454;
     color: white;
 }
+.head{
+    padding-left: 20px;
+}
 .btnpastdp{    
     color:white;
     font-size: 25px;
@@ -87,7 +90,7 @@ table{
     border: none;
     box-shadow: 2px 2px 5px black;    
     width: 30%;
-    transform: translate(110%,0);
+    transform: translate(115%,0);
 }
 .btnxxx:hover{
     color: #e4e4e4;
@@ -177,16 +180,15 @@ table{
     max-width: 50%;
     transform: translate(50%,0%);
 }
-
 .slidecont{    
     border: solid 1px white;
     border-radius: 15px;
-    padding-top: 20px;
+    padding-top: 20px;    
     padding-bottom: 10px;
-    margin-left: 25px;
-    margin-right: 25px;     
+    margin-left: 20px;
+    margin-right: 20px;     
     text-align: center;
-    color: white;
+    color: white;    
 }
 .btnx{        
     position: absolute;
@@ -208,7 +210,7 @@ table{
 .btnmore{
     position: relative;
     color: white;
-    background-color: rgb(44, 50, 76);
+    background-color: #1d3c98;
     box-shadow: 2px 2px 5px black;
     border: none;    
     margin-bottom: 10px;
@@ -233,7 +235,7 @@ table{
     padding-top: 10px;
     padding-bottom: 10px;
     left:50%;    
-    transform: translate(-50%,100%);
+    transform: translate(-50%,80%);
 }
 
 .btncont{    
@@ -298,7 +300,16 @@ table{
     ;
     color: rgb(214, 214, 214);
 }
-
+.pointsHead{    
+    background-color: #00bbff;
+    color: black;
+    font-size: 40px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
 .contestname{
     /* text-decoration: underline; */
     margin-left: 4%;
@@ -356,19 +367,28 @@ table{
 .responsive{
     overflow-x: auto;
 }
+.thx{
+    text-align: center;
+    color: white;
+    padding-top: 0;
+}
 
 .th1{
     text-align: center;
     font-size: 30px;   
     padding-bottom: 10px;
 }
-
+.h1x{
+    color: white;
+    font-size: 35px;
+    padding-bottom: 20px;
+}
 .td1{
     text-align: center;
 }
 
 .h2x{
-    color: white;
+    color: white !important;
     margin-top: 20px;
 }
 
@@ -435,9 +455,16 @@ table{
     border-radius: 10px;
     padding-top: 8px;
 }
-.history{
-    width:40%;
-    float: right;
+.history{    
+    margin-right: auto;
+    width:45%;    
+}
+.history2{   
+    float: inline-end; 
+    width:45%;        
+}
+.flex{
+    display: flex;
 }
 .th2{    
     text-align: center;
@@ -461,6 +488,9 @@ table{
     padding-left: 5%;    
 }
 @media(max-width: 992px){
+    .pointsHead{
+        font-size: 28px;
+    }
     .slidecont{
         margin-left: 10px;
         margin-right: 10px;
@@ -474,6 +504,11 @@ table{
     .msgreg{
         font-size: 18px;
     }
+    .h1x{
+        font-size: 25px;
+    }
+    
+  
 }
 
 @media (max-width:500px){
@@ -531,9 +566,24 @@ table{
     .leaderboardHead-2{
         font-size: 23px;
     }
+    .td2{
+        font-size: 14px;
+    }
 }
-
+@media(min-width:500px){
+    .col-sm-3{
+        width: 21% !important;
+    }    
+}
+@media(max-width:500px){
+    .col-sm-3{
+        width: 94% !important;
+    }    
+}
 @media(max-width:768px){
+    .pointsHead{
+        font-size: 23px;
+    }
     .details{
         font-size: 20px;
     }
@@ -567,6 +617,9 @@ table{
     }
     .btndp{
         font-size: 20px;
+    }
+    .btnnav2{
+        font-size: 17px;
     }
 }
 @media(max-width:450px){

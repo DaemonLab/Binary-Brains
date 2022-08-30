@@ -8,7 +8,7 @@ function Rankings() {
   const today = new Date();
   const [contests, setContests] = React.useState(data);
   const [beginner, setbeginner] = React.useState(data2);
-  const [advanced, setadvanced] = React.useState(data2);
+  const [advanced, setadvanced] = React.useState(data2);    
   React.useEffect(() => {
     axios.get("https://p-club-iiti-cp.herokuapp.com/leaderboard").then((res) => {
       if (res.status === 200) {
@@ -30,23 +30,23 @@ function Rankings() {
         <div className="card-body">
           <h2 className="card-title upcomingContestHead">Upcoming Contests</h2>
           <hr />
-          <div className="">
-            {contests.map((contest) => {
-              const date = new Date(contest.date);
-              return date > today ? (
-                <>
-                  <div className="card-body contestbody" key={1}>
-                    <h3 className="contestname">{` Contest ${contest.contest} - ${contest.name}`}</h3>
-                    <h4 className="sm contestInfo">
-                      ({contest.category}) {contest.date}
-                    </h4>
-                    <button className="btncont">CF Page</button>
-                  </div>
-                </>
-              ) : (
-                <></>
-              );
-            })}
+          <div className="">                 
+              {contests.map((contest) => {
+                const date = new Date(contest.date);              
+                return date > today ? (
+                  <>                
+                    <div className="card-body contestbody" key={1}>
+                      <h3 className="contestname">{` Contest ${contest.contest} - ${contest.name}`}</h3>
+                      <h4 className="sm contestInfo">
+                        ({contest.category}) {contest.date}
+                      </h4>
+                      <button className="btncont">CF Page</button>
+                    </div>                  
+                  </>
+                ) : (
+                  <></>
+                );
+              })}                                          
           </div>
         </div>
         <div className="container">
@@ -59,11 +59,11 @@ function Rankings() {
 
       <div className="card contestcard-2 col-sm-12">
         <div className="container ">
-          <h2 className="card-title contesttitle-2 leaderboardHead">
+          <h2 className="card-title contesttitle-2 mt-3 upcomingContestHead">
             Leaderboard
           </h2>
           <hr />
-          <h3 className="leaderboardHead" align="center">
+          <h3 className="upcomingContestHead" align="center">
             Beginner
           </h3>
           <div className="responsive">
@@ -86,11 +86,11 @@ function Rankings() {
               </tbody>
             </table>
           </div>
-          <h3 className="leaderboardHead" align="center">
+          <h3 className="upcomingContestHead" align="center">
             Advanced
           </h3>
           <div className="responsive leaderboard">
-            <table>
+            <table className="leaderboard">
               <tbody>
                 <tr>
                   <th className="th1 leaderTH">Name</th>

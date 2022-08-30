@@ -9,8 +9,7 @@ function Yourprofile() {
   const token = localStorage.getItem("token");
   if (!token) {
     window.location.href = "/login";
-  }
-  const [posts, setPosts] = React.useState(data2);
+  }  
   const [state, setState] = React.useState(false);
   const [notes, setNotes] = React.useState([]);
   const [dailyproblem, setDailyProblem] = React.useState([]);
@@ -81,20 +80,66 @@ function Yourprofile() {
   // }, []);
   return (
     <div>
-      <div className="container ypcont mt-4 pb-5">
-        <div className="history card2 responsive">
-          <h4 className="mt-2 leaderboardHead-2" align="center">
+      <div className="container mt-4 pb-5">
+        <div className="card ">        
+        <h2 align="center" className="upcomingContestHead" style={{fontWeight:"bold"}}>
+          Your Details
+        </h2>
+        <br />
+        <div className="container">
+          <div className="head">
+            <h4 className="h1x">Welcome:- {state.name}</h4>
+            <h4 className="h1x">CF Username:- {state.username}</h4>        
+            <h4 className="h1x">Points:- {state.points} { /*<Link to="/viewprize"><button className="btnpts">Redeem</button></Link>*/ }</h4>
+          </div>
+        <br />
+        <br />
+        <div className="flex">
+        <div className="history card responsive">
+          <h4 className="mt-2 pointsHead" align="center">
             Points History
           </h4>
           <hr />
           <table className="typ">
             <tbody>
               <tr>
-                <th className="th2">Points</th>
-                <th className="th2">Date</th>
+                <th className="thx">Points</th>
+                <th className="thx">Date</th>
               </tr>
               {points.length === 0 ? (
-                <></>
+                <tr>
+                  <td className="td2">Nothing Here</td>
+                  <td className="td2">Nothing Here</td>
+                </tr>
+              ) : (
+                points.map((pt, id) => {
+                  return (
+                    <tr key={id}>
+                      <td className="td2 leaderTD">{pt.points}</td>
+                      <td className="td2 leaderTD">{pt.date}</td>
+                    </tr>
+                  );
+                })
+              )}
+            </tbody>
+          </table>
+        </div>        
+        <div className="history2 card responsive">
+          <h4 className="mt-2 pointsHead" align="center">
+            Points History
+          </h4>
+          <hr />
+          <table className="typ">
+            <tbody>
+              <tr>
+                <th className="thx">Points</th>
+                <th className="thx">Date</th>
+              </tr>
+              {points.length === 0 ? (
+                <tr>
+                  <td className="td2">Nothing Here</td>
+                  <td className="td2">Nothing Here</td>
+               </tr>
               ) : (
                 points.map((pt, id) => {
                   return (
@@ -108,22 +153,16 @@ function Yourprofile() {
             </tbody>
           </table>
         </div>
-        <h2 align="center" style={{ color: "white" }}>
-          Your Details
-        </h2>
-        <br />
-        <h3 className="h2x">Welcome {state.name}</h3>
-        <h3 className="h2x">CF Username:- {state.username}</h3>
-        <h3 className="h2x">Points:- {state.points} <Link to="/viewprize"><button className="btnpts">Redeem</button></Link></h3>
-        <br />
-        <br />
-        {dailyproblem.length !== 0 ? (
-          <>
-            <hr style={{ color: "white" }} />
-            <h2 className="stm">Daily Problem</h2>
+        </div>
+        </div>
+        </div>
+        <hr style={{ color: "white" }} />
+       <div className="card">            
+            <h2 className="stm upcomingContestHead">Daily Problem</h2>
             <div className="card carddp container">
               {dailyproblem.length !== 0 ? (
-                dailyproblem.map((post, id) => {
+                <>
+                {dailyproblem.map((post, id) => {
                   return (
                     <div className="dp" key={id}>
                       <h3>
@@ -131,29 +170,30 @@ function Yourprofile() {
                         <button className="btndp">{post.link}</button>
                       </h3>
                       <hr />
-                    </div>
+                    </div>                    
                   );
-                })
+                })}
+                <Link to="/dailyprob" state={{dailyproblem: dailyproblem}}>
+                  <button className="btnpastdp">View Past Problems</button>
+                </Link>
+              </>
               ) : (
-                <></>
-              )}
-              <Link to="/dailyprob" state={{dailyproblem: dailyproblem}}>
-                <button className="btnpastdp">View Past Problems</button>
-              </Link>
+                <h4 align="center">No Problems Today!</h4>
+              )}              
             </div>
-          </>
-        ) : (
-          <></>
-        )}
-        <hr style={{ color: "white" }} />
-        <h2 className="stm">Study Material</h2>
-        <div className="container">
-          <div className="row">
+            </div>
+        
+        
+        <hr style={{ color: "white" }} />      
+        <div className="card pb-5">
+        <h2 className="stm upcomingContestHead">Study Material</h2>
+        <div className="container smcont">
+          <div className="row ">
             {notes.length !== 0 ? (
               notes.map((note) => {
                 const date = new Date(note.date);
                 return (
-                  <div className="col-sm-3 slidecont">
+                  <div className="col-sm-3 slidecont mt-3">
                     <h3>{note.name}</h3>
                     <h4>
                       <a href={note.link} target={"_blank"}>
@@ -165,10 +205,15 @@ function Yourprofile() {
                 );
               })
             ) : (
-              <></>
+              <><h4 align="center" style={{color:"white"}}>No Material Added Yet</h4></>
             )}
           </div>
-          <button className="btndrive">Drive Link</button>
+          {notes.length !== 0 ? (
+            <button className="btndrive">Drive Link</button>
+          ) : (
+            <></>
+          )}          
+        </div>
         </div>
       </div>
       <Footer />

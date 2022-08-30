@@ -202,7 +202,7 @@ function Viewprizes() {
                 </div>           
             </div>
         </div>
-        <div className="end"></div>
+        <div className="loginend"></div>
     </div>
   )
 }

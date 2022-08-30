@@ -38,7 +38,7 @@ function Navbar() {
                 Home
               </Link>
             </li>
-            {token ? (
+            {/* {!token ? (
               <li className="nav-item">
                 <Link to="/contests" className="nav-link">
                   Contests
@@ -46,7 +46,7 @@ function Navbar() {
               </li>
             ) : (
               <></>
-            )}
+            )} */}
              {/* <li className="nav-item">
               <Link to="/viewprize" className="nav-link">
                 Prizes
@@ -59,22 +59,7 @@ function Navbar() {
             </li>
           </ul> 
         </div>
-        {token ? (
-          <Link to="yourprofile">
-            <button className="btnnav">Your Profile</button>
-          </Link>
-        ) : (
-          <></>
-        )}
-        {token ? (
-          <Link to="yourprofile">
-            <button className="btnnav" onClick={handleLogout}>
-              Logout
-            </button>
-          </Link>
-        ) : (
-          <></>
-        )}
+        
         { width < "992" ? (          
             <Link to="">
                 <button className="btnnav2 toleft">Home</button>
@@ -89,13 +74,29 @@ function Navbar() {
           ):(
           <></>
           )}
-        {/* {!token ? (
+        {token ? (
+          <Link to="yourprofile">
+            <button className="btnnav2">Your Profile</button>
+          </Link>
+        ) : (
+          <></>
+        )}
+        {token ? (
+          <Link to="yourprofile">
+            <button className="btnnav2" onClick={handleLogout}>
+              Logout
+            </button>
+          </Link>
+        ) : (
+          <></>
+        )}
+        {!token ? (
           <Link to="login">
             <button className="btnnav2">Login</button>
           </Link>
         ) : (
           <></>
-        )} */}
+        )}
         {!token ? (
           <Link to="signup">
             <button className=" btnnav2">Register</button>

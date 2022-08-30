@@ -1,6 +1,6 @@
 import * as React from "react";
 import Footer from "./Footer";
-import data from "./data";
+import data2 from "./data2";
 import axios from "axios";
 import moment from "moment";
 
@@ -10,7 +10,7 @@ function Contests() {
     window.location.href = "/login";
   }
   const today = new Date();
-  const [contests, setContests] = React.useState(data);
+  const [contests, setContests] = React.useState(data2);
   React.useEffect(() => {
     axios.get("https://p-club-iiti-cp.herokuapp.com/contests").then((res) => {
       if (res.status === 200) {
@@ -20,8 +20,8 @@ function Contests() {
   }, []);
   return (
     <div>
-      <div className="container">
-        <h4 className="upc">Upcoming</h4>
+      <div className="container mt-3">
+        <h3 className="upcomingContestHead" style={{fontWeight:"bold"}} align="center">Upcoming</h3>
         {contests.map((contest) => {
           const date = new Date(contest.date);
           return date > today ? (
@@ -45,7 +45,7 @@ function Contests() {
             <></>
           );
         })}
-        <h4 className="upc2">Past Contests</h4>
+        <h3 className="upcomingContestHead" style={{fontWeight:"bold"}} align="center">Past Contests</h3>
         {contests.map((contest) => {
           const date = new Date(contest.date);
           return date <= today ? (

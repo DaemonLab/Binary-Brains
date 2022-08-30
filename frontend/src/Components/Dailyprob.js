@@ -12,13 +12,13 @@ function Dailyprob() {
   const location = useLocation();
   const dailyprob = location.state.dailyproblem;
   const [posts, setPosts] = React.useState(dailyprob);
-  //   React.useEffect(() => {
-  //     axios.post("https://p-club-iiti-cp.herokuapp.com/getdailyproblems").then((res) => {
-  //       if (res.status === 200) {
-  //         setPosts(res.data.dailyproblems);
-  //       }
-  //     });
-  //   }, []);
+    // React.useEffect(() => {
+    //   axios.post("https://p-club-iiti-cp.herokuapp.com/getdailyproblems").then((res) => {
+    //     if (res.status === 200) {
+    //       setPosts(res.data.dailyproblems);
+    //     }
+    //   });
+    // }, []);
   return (
     <div>
       <div className="container contpast">

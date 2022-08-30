@@ -48,10 +48,10 @@ function Login() {
           {setAlertMsg}
         </div>
         <div className="container outer">
-          <div className=" logincont">
+          {/* <div className=" logincont">
             <h2 className="loginHead">You will be able to login once registrations are over!<br/> (From 1st September)</h2>
-          </div>
-          {/* <div className="whitebox2 signup_container2">
+          </div> */}
+          <div className="whitebox2 signup_container2">
             <h1 className="text-center heading">LOGIN</h1>
             <div className="mb-3 inputs" style={{ textAlign: "left" }}>
               <label className="form-label auth">Username</label>
@@ -86,8 +86,9 @@ function Login() {
             <button className="btnlogin" type="submit" onClick={handleLogin}>
               Login
             </button>
-          </div> */}
+          </div>
         </div>
+        <div className="loginend"></div> 
       </div>
     </div>
   );
