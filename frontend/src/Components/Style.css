@@ -367,6 +367,11 @@ table{
 .responsive{
     overflow-x: auto;
 }
+.typ{
+    border-collapse: separate !important;
+    border-spacing: 0 0.5em;
+    font-family: 'Poppins';
+}
 .thx{
     text-align: center;
     color: white;

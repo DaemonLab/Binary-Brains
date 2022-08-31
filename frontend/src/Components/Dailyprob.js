@@ -10,8 +10,8 @@ function Dailyprob() {
   }
   const today = new Date();
   const location = useLocation();
-  const dailyprob = location.state.dailyproblem;
-  const [posts, setPosts] = React.useState(dailyprob);
+  // const dailyprob = location.state.dailyproblem;
+  const [posts, setPosts] = React.useState(data2);
     // React.useEffect(() => {
     //   axios.post("https://p-club-iiti-cp.herokuapp.com/getdailyproblems").then((res) => {
     //     if (res.status === 200) {
@@ -22,7 +22,7 @@ function Dailyprob() {
   return (
     <div>
       <div className="container contpast">
-        <h3 className="h2x">Today's Problems</h3>
+        <h3 className="upcomingContestHead" align="center">Today's Problems</h3>
         <div className="card carddp container mt-4">
           {posts.map((post, id) => {
             const date = new Date(post.date);
@@ -39,7 +39,7 @@ function Dailyprob() {
             }
           })}
         </div>
-        <h3 className="h2x">Past Problems</h3>
+        <h3 className="upcomingContestHead" align="center">Past Problems</h3>
         <div className="card carddp container mt-4">
           {posts.map((post, id) => {
             const date = new Date(post.date);
@@ -56,8 +56,7 @@ function Dailyprob() {
             }
           })}
         </div>
-      </div>
-      <div className="end"></div>
+      </div>      
     </div>
   );
 }

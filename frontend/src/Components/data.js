@@ -1,26 +1,18 @@
 export default [
     {
         id: 1,
-        name: "Coders",
+        username: "Coders",
         rank1: "john",
         rank2: "mark",
         rank3: "chris",
-        date: "22-2-22",
+        link: "22-2-22",
     },
     {
         id: 2,
-        name: "Programmers",
+        username: "Programmers",
         rank1: "max",
         rank2: "reed",
         rank3: "brown",
-        date: "25-5-22",
-    },    
-    {
-        id: 3,
-        name: "New Contest",
-        rank1: "jake",
-        rank2: "jim",
-        rank3: "brown",
-        date: "25-8-22",
-    },        
+        link: "25-5-22",
+    },              
 ]

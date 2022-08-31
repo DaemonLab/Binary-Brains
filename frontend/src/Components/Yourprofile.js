@@ -1,6 +1,7 @@
 import Footer from "./Footer";
 import axios from "axios";
 import * as React from "react";
+import data from "./data";
 import data2 from "./data2";
 import { Link } from "react-router-dom";
 import moment from "moment";
@@ -11,9 +12,9 @@ function Yourprofile() {
     window.location.href = "/login";
   }  
   const [state, setState] = React.useState(false);
-  const [notes, setNotes] = React.useState([]);
-  const [dailyproblem, setDailyProblem] = React.useState([]);
-  const [points, setPoints] = React.useState([]);
+  const [notes, setNotes] = React.useState(data2);
+  const [dailyproblem, setDailyProblem] = React.useState(data);
+  const [points, setPoints] = React.useState(data2);
   React.useEffect(() => {
     (async () => {
       const res1 = await axios.get("https://p-club-iiti-cp.herokuapp.com/profile", {
@@ -126,33 +127,56 @@ function Yourprofile() {
         </div>        
         <div className="history2 card responsive">
           <h4 className="mt-2 pointsHead" align="center">
-            Points History
+            Points System
           </h4>
           <hr />
           <table className="typ">
             <tbody>
               <tr>
                 <th className="thx">Points</th>
-                <th className="thx">Date</th>
+                <th className="thx">Rank</th>
+              </tr>              
+              <tr>
+                <td className="td2 leaderTD">100</td>
+                <td className="td2 leaderTD">1</td>
               </tr>
-              {points.length === 0 ? (
-                <tr>
-                  <td className="td2">Nothing Here</td>
-                  <td className="td2">Nothing Here</td>
-               </tr>
-              ) : (
-                points.map((pt, id) => {
-                  return (
-                    <tr key={id}>
-                      <td className="td2 leaderTD">{pt.points}</td>
-                      <td className="td2 leaderTD">{pt.date}</td>
-                    </tr>
-                  );
-                })
-              )}
+              <tr>
+                <td className="td2 leaderTD">80</td>
+                <td className="td2 leaderTD">2</td>
+              </tr>
+              <tr>
+                <td className="td2 leaderTD">60</td>
+                <td className="td2 leaderTD">3</td>
+              </tr>
+              <tr>
+                <td className="td2 leaderTD">40</td>
+                <td className="td2 leaderTD">4</td>
+              </tr>                  
+              <tr>
+                <td className="td2 leaderTD">40</td>
+                <td className="td2 leaderTD">5</td>
+              </tr>
+              <tr>
+                <td className="td2 leaderTD">15</td>
+                <td className="td2 leaderTD">6-10</td>
+              </tr>
+              <tr>
+                <td className="td2 leaderTD">7</td>
+                <td className="td2 leaderTD">11-20</td>
+              </tr>
+              <tr>
+                <td className="td2 leaderTD">3</td>
+                <td className="td2 leaderTD">21-40</td>
+              </tr>
+              <tr>
+                <td className="td2 leaderTD">1</td>
+                <td className="td2 leaderTD"><span className="small" style={{fontSize:"13px"}}>Atleast 1 question</span></td>
+              </tr>
             </tbody>
-          </table>
-        </div>
+          </table>    
+          <br/>
+          <p align="center" className="small">1 point per day if all daily problems are completed.</p>
+        </div>                                
         </div>
         </div>
         </div>
@@ -172,14 +196,17 @@ function Yourprofile() {
                       <hr />
                     </div>                    
                   );
-                })}
-                <Link to="/dailyprob" state={{dailyproblem: dailyproblem}}>
-                  <button className="btnpastdp">View Past Problems</button>
-                </Link>
+                })}                
               </>
               ) : (
-                <h4 align="center">No Problems Today!</h4>
-              )}              
+                <div>
+                  <h4 align="center">No Problems Today!</h4>
+                  <br/>
+                </div>
+              )}   
+              <Link to="/dailyprob" state={{dailyproblem: dailyproblem}}>
+                  <button className="btnpastdp">View Past Problems</button>
+                </Link>           
             </div>
             </div>
         
