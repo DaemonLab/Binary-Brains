@@ -7,11 +7,11 @@ const axios = require("axios");
 const config = require("./config");
 const nodemailer = require("./nodemailer.config");
 const bcrypt = require("bcryptjs");
-
 const User = require("./models/User.js");
 const Contest = require("./models/Contest.js");
 const Notes = require("./models/Notes.js");
 const DailyProblem = require("./models/DailyProblem.js");
+const Items = require("./models/Items");
 
 const connectionurl =
   "mongodb+srv://admin:admin@cluster0.oumfbze.mongodb.net/?retryWrites=true&w=majority";
@@ -217,12 +217,47 @@ app.post("/notes", (req, res) => {
 
 app.post("/updatePoints", (req, res) => {
   base_url = `https://codeforces.com/api/contest.standings?contestId=${req.body.contest}&from=1&count=10`;
+  // daily_url = `https://codeforces.com/api/user.status?handle=${req.body.codeforces_handle}`;
+  //
+  User.find({ difficulty: req.body.difficulty }, (err, users) => {
+    if (err)
+      //huhu
+      users.map((user) => {
+        daily_url = `https://codeforces.com/api/user.status?handle=${user.codeforces_handle}`;
+        axios.get(daily_url).then((data) => {
+          data.data.result.forEach((prblm) => {
+            if (prblm.id === req.body.id && prblm.verdict === "OK") {
+              User.findOneAndUpdate(
+                { codeforces_handle: req.body.codeforces_handle },
+                {
+                  $inc: { total_points: 10 },
+                  $push: {
+                    history: {
+                      date: date_obj.toISOString(),
+                      points: 10,
+                    },
+                  },
+                },
+                (err, data) => {
+                  if (err)
+                    return res.status(400).json({
+                      title: "error",
+                      error: "Something went wrong. Please try again!",
+                    });
+                }
+              );
+            }
+          });
+        });
+      });
+  });
+
   axios
     .get(base_url)
     .then((data) => {
       data.data.result.rows.forEach((row) => {
         User.findOneAndUpdate(
-          { codeforces_handle: row.party.members[0].handle },
+          { name: row.party.members[0].handle },
           {
             $inc: { total_points: (11 - row.rank) * 10 },
             $push: {
@@ -252,6 +287,43 @@ app.post("/updatePoints", (req, res) => {
         error: "Something went wrong. Please try again!",
       });
     });
+});
+
+app.post("/:id/:itemId/add", async (req, res) => {
+  const { id, itemId } = req.params;
+  const user = await User.findById(id).populate("items");
+  const item = await Items.findById(id);
+  if (item.itemPrice > user.total_points) {
+    return res.status(400).json({
+      title: "error",
+      error: "Not enough points!",
+    });
+  } else {
+    User.updateOne(
+      { _id: id },
+      {
+        $push: { items: new ObjectId(itemId) },
+        $inc: { total_points: -item.itemPrice },
+      }
+    );
+  }
+  user.save();
+});
+
+app.delete("/:id/:itemId/delete", (req, res) => {
+  const { id, itemId } = req.params;
+  const user = User.findById(id).populate("items");
+  const item = Items.findById(id);
+  if (user.items.includes(item)) {
+    User.updateOne(
+      { _id: id },
+      {
+        $pull: { items: item },
+        $inc: { total_points: item.itemPrice },
+      }
+    );
+  }
+  user.save();
 });
 
 app.get("/profile", (req, res) => {
@@ -353,7 +425,7 @@ app.post("/getdailyproblem", (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`P-Club app listening on port ${PORT}`);
 });

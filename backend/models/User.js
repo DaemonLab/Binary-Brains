@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Items = require("Items.js");
 
 const userSchema = mongoose.Schema({
   name: String,
@@ -32,6 +33,7 @@ const userSchema = mongoose.Schema({
   ],
   phone: Number,
   difficulty: String,
+  items: [{ type: ObjectId, ref: "Items" }],
 });
 
 const User = mongoose.model("User", userSchema);
