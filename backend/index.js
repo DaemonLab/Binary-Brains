@@ -293,7 +293,11 @@ app.post("/:id/:itemId/add", async (req, res) => {
   const { id, itemId } = req.params;
   const user = await User.findById(id).populate("items");
   const item = await Items.findById(id);
-  if (item.itemPrice > user.total_points) {
+  let totalPrice = 0;
+  user.item.forEach((item) => {
+    totalPrice += item.itemPrice;
+  });
+  if (totalPrice + item.itemPrice > user.total_points) {
     return res.status(400).json({
       title: "error",
       error: "Not enough points!",
