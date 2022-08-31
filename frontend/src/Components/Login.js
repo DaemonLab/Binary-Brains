@@ -31,7 +31,7 @@ function Login() {
         }
       })
       .catch((err) => {
-        console.log("failed");
+        console.log("failed2");
         setAlert("block");
         setAlertMsg(err.response.data.error);
       });

@@ -12,6 +12,7 @@ const User = require("./models/User.js");
 const Contest = require("./models/Contest.js");
 const Notes = require("./models/Notes.js");
 const DailyProblem = require("./models/DailyProblem.js");
+const Items = require("./models/Items");
 
 const connectionurl =
   "mongodb+srv://admin:admin@cluster0.oumfbze.mongodb.net/?retryWrites=true&w=majority";
@@ -60,21 +61,23 @@ app.post("/register", (req, res) => {
 
 app.post("/login", (req, res) => {
   User.findOne({ email: req.body.email }, (err, user) => {
-    if (user.status != "Active") {
-      return res.status(401).json({
-        title: "error",
-        error: "Pending Account. Please Verify Your Email!",
-      });
-    }
-    if (err)
+    console.log(user);
+    if (err) {
       return res.status(500).json({
         title: "error",
         error: "Something went wrong. Please try again!",
       });
+    }
     if (!user) {
       return res.status(400).json({
         title: "error",
         error: "Invalid Username or Password",
+      });
+    }
+    if (user.status != "Active") {
+      return res.status(401).json({
+        title: "error",
+        error: "Pending Account. Please Verify Your Email!",
       });
     }
     if (!bcrypt.compareSync(req.body.password, user.password)) {
@@ -83,6 +86,7 @@ app.post("/login", (req, res) => {
         error: "Invalid Username or Password",
       });
     }
+    let token = jwt.sign({ userId: user._id }, "secretkey");
     return res.status(200).json({
       title: "Login Successful",
       token: token,
@@ -212,6 +216,48 @@ app.post("/notes", (req, res) => {
     return res.status(200).json({
       title: "Notes Created",
     });
+  });
+});
+
+app.post("/updatedaily", (req, res) => {
+  User.find({ difficulty: req.body.difficulty }, (err, users) => {
+    users.map((user) => {
+      daily_url = `https://codeforces.com/api/user.status?handle=${user.codeforces_handle}`;
+      axios.get(daily_url).then((data) => {
+        data.data.result.forEach((prblm) => {
+          if (prblm.id === req.body.id && prblm.verdict === "OK") {
+            User.findOneAndUpdate(
+              { codeforces_handle: req.body.codeforces_handle },
+              {
+                $inc: { total_points: 10 },
+                $push: {
+                  history: {
+                    date: date_obj.toISOString(),
+                    points: 10,
+                  },
+                },
+              },
+              (err, data) => {
+                if (err)
+                  return res.status(400).json({
+                    title: "error",
+                    error: "Something went wrong. Please try again!",
+                  });
+              }
+            );
+          }
+        });
+      });
+    });
+    if (err) {
+      return res.status(400).json({
+        title: "error",
+        error: "Something went wrong. Please try again!",
+      });
+    }
+  });
+  return res.status(200).json({
+    title: "Success",
   });
 });
 
@@ -351,6 +397,47 @@ app.post("/getdailyproblem", (req, res) => {
       dailyproblems: dailyproblems,
     });
   });
+});
+
+app.post("/:id/:itemId/add", async (req, res) => {
+  const { id, itemId } = req.params;
+  const user = await User.findById(id).populate("items");
+  const item = await Items.findById(id);
+  let totalPrice = 0;
+  user.item.forEach((item) => {
+    totalPrice += item.itemPrice;
+  });
+  if (totalPrice + item.itemPrice > user.total_points) {
+    return res.status(400).json({
+      title: "error",
+      error: "Not enough points!",
+    });
+  } else {
+    User.updateOne(
+      { _id: id },
+      {
+        $push: { items: new ObjectId(itemId) },
+        $inc: { total_points: -item.itemPrice },
+      }
+    );
+  }
+  user.save();
+});
+
+app.delete("/:id/:itemId/delete", (req, res) => {
+  const { id, itemId } = req.params;
+  const user = User.findById(id).populate("items");
+  const item = Items.findById(id);
+  if (user.items.includes(item)) {
+    User.updateOne(
+      { _id: id },
+      {
+        $pull: { items: item },
+        $inc: { total_points: item.itemPrice },
+      }
+    );
+  }
+  user.save();
 });
 
 const PORT = process.env.PORT || 5000;
