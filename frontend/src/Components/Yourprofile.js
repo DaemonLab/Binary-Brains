@@ -137,45 +137,45 @@ function Yourprofile() {
                 <th className="thx">Rank</th>
               </tr>              
               <tr>
-                <td className="td2 leaderTD">100</td>
+                <td className="td2 leaderTD">1000</td>
                 <td className="td2 leaderTD">1</td>
               </tr>
               <tr>
-                <td className="td2 leaderTD">80</td>
+                <td className="td2 leaderTD">800</td>
                 <td className="td2 leaderTD">2</td>
               </tr>
               <tr>
-                <td className="td2 leaderTD">60</td>
+                <td className="td2 leaderTD">600</td>
                 <td className="td2 leaderTD">3</td>
               </tr>
               <tr>
-                <td className="td2 leaderTD">40</td>
+                <td className="td2 leaderTD">400</td>
                 <td className="td2 leaderTD">4</td>
               </tr>                  
               <tr>
-                <td className="td2 leaderTD">40</td>
+                <td className="td2 leaderTD">400</td>
                 <td className="td2 leaderTD">5</td>
               </tr>
               <tr>
-                <td className="td2 leaderTD">15</td>
+                <td className="td2 leaderTD">150</td>
                 <td className="td2 leaderTD">6-10</td>
               </tr>
               <tr>
-                <td className="td2 leaderTD">7</td>
+                <td className="td2 leaderTD">70</td>
                 <td className="td2 leaderTD">11-20</td>
               </tr>
               <tr>
-                <td className="td2 leaderTD">3</td>
+                <td className="td2 leaderTD">30</td>
                 <td className="td2 leaderTD">21-40</td>
               </tr>
               <tr>
-                <td className="td2 leaderTD">1</td>
+                <td className="td2 leaderTD">10</td>
                 <td className="td2 leaderTD"><span className="small" style={{fontSize:"13px"}}>Atleast 1 question</span></td>
               </tr>
             </tbody>
           </table>    
           <br/>
-          <p align="center" className="small">1 point per day if all daily problems are completed.</p>
+          <p align="center" className="small">10 point per day if all daily problems are completed.</p>
         </div>                                
         </div>
         </div>
