@@ -1,10 +1,24 @@
 import * as React from "react";
 import "./Style2.css";
+import {useState, useEffect} from "react";
 import Footer2 from "./Footer2";
 import axios from "axios";
 
+
+function useWindowSize() {
+  const [size, setSize] = useState([window.innerHeight, window.innerWidth]);
+  useEffect(() =>{
+    const handleResize = () => {
+      setSize([window.innerHeight, window.innerWidth]);
+    }
+    window.addEventListener("resize", handleResize);
+  },[])
+  return size;
+}
+
 function Login() {
   const token = localStorage.getItem("token");
+  const [height,width] = useWindowSize();
   if (token) {
     window.location.href = "/yourprofile";
   }
@@ -38,7 +52,7 @@ function Login() {
   };
 
   return (
-    <div>
+    <div style={{height:`${height}px`}}>
       <div className="login">
         <div
           className="alert alert-danger"
@@ -54,13 +68,13 @@ function Login() {
           <div className="whitebox2 signup_container2">
             <h1 className="text-center heading">LOGIN</h1>
             <div className="mb-3 inputs" style={{ textAlign: "left" }}>
-              <label className="form-label auth">Username</label>
+              <label className="form-label auth">Email</label>
               <br />
               <input
                 type="text"
                 name="username"
                 className="inputbox"
-                placeholder="Username"
+                placeholder="Email"
                 style={{ color: "black" }}
                 required
                 onChange={(e) => setEmail(e.target.value)}
@@ -87,8 +101,7 @@ function Login() {
               Login
             </button>
           </div>
-        </div>
-        <div className="loginend"></div> 
+        </div>        
       </div>
     </div>
   );

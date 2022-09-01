@@ -38,7 +38,7 @@ function Navbar() {
                 Home
               </Link>
             </li>
-            {/* {!token ? (
+            {!token ? (
               <li className="nav-item">
                 <Link to="/contests" className="nav-link">
                   Contests
@@ -46,7 +46,7 @@ function Navbar() {
               </li>
             ) : (
               <></>
-            )} */}
+            )}
              {/* <li className="nav-item">
               <Link to="/viewprize" className="nav-link">
                 Prizes
@@ -55,6 +55,11 @@ function Navbar() {
             <li className="nav-item">
               <Link to="/about" className="nav-link">
                 Our Team
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/timeline" className="nav-link">
+                Schedule
               </Link>
             </li>
           </ul> 

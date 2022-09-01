@@ -3,6 +3,7 @@ import './App.css';
 import './Components/Style.css';
 import Homepage from './Components/Homepage';
 import AboutUs from './Components/AboutUs';
+import Navbar from './Components/Navbar';
 import Navbar2 from './Components/Navbar2';
 import Contests from './Components/Contests';
 import Login from './Components/Login';
@@ -12,6 +13,7 @@ import Viewprizes from './Components/Viewprizes';
 import FAQs from './Components/FAQs';
 import Dailyprob from './Components/Dailyprob';
 import Confirmation from './Components/Confirmation';
+import Timeline from './Components/Timeline'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -21,7 +23,7 @@ function App() {
     <div>      
       <Router>
       <div className="back">
-      <Navbar2 />      
+      <Navbar />      
         <Routes>        
           <Route path="" element={<Homepage />} /> 
           <Route path="contests" element={<Contests />} />                 
@@ -33,6 +35,7 @@ function App() {
           <Route path="faq" element={<FAQs />}/>
           <Route path="viewprize" element={<Viewprizes />}/>
           <Route path="confirmation/:code" element={<Confirmation />}/>
+          <Route path="timeline" element={<Timeline />}/>
           <Route path="*" />
         </Routes>                          
         </div>
