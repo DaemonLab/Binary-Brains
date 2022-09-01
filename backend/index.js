@@ -45,7 +45,7 @@ app.post("/register", (req, res) => {
     if (err) {
       return res.status(400).json({
         title: "error",
-        error: "EMAIL already exists!",
+        error: "Email already exists!",
       });
     }
     nodemailer.sendConfirmationEmail(
@@ -262,19 +262,48 @@ app.post("/updatedaily", (req, res) => {
 });
 
 app.post("/updatePoints", (req, res) => {
-  base_url = `https://codeforces.com/api/contest.standings?contestId=${req.body.contest}&from=1&count=10`;
+  base_url = `https://codeforces.com/api/contest.standings?contestId=${req.body.contest}&from=1`;
   axios
     .get(base_url)
     .then((data) => {
       data.data.result.rows.forEach((row) => {
+        const pointsInc = 0;
+        switch (true) {
+          case row.rank == 1:
+            pointsInc = 1000;
+            break;
+          case row.rank == 2:
+            pointsInc = 800;
+            break;
+          case row.rank == 3:
+            pointsInc = 600;
+            break;
+          case row.rank == 4 || row.rank == 5:
+            pointsInc = 400;
+            break;
+          case row.rank > 5 && row.rank <= 10:
+            pointsInc = 150;
+            break;
+          case row.rank > 10 && row.rank <= 20:
+            pointsInc = 70;
+            break;
+          case row.rank > 20 && row.rank <= 40:
+            pointsInc = 30;
+            break;
+          case row.rank > 40 && row.points > 0:
+            pointsInc = 10;
+            break;
+          default:
+            pointsInc = 0;
+        }
         User.findOneAndUpdate(
           { codeforces_handle: row.party.members[0].handle },
           {
-            $inc: { total_points: (11 - row.rank) * 10 },
+            $inc: { total_points: pointInc },
             $push: {
               history: {
                 date: date_obj.toISOString(),
-                points: (11 - row.rank) * 10,
+                points: pointInc,
               },
             },
           },
@@ -318,43 +347,20 @@ app.get("/profile", (req, res) => {
   });
 });
 
-app.get("/leaderboard", (req, res) => {
-  User.find(
-    {},
-    null,
-    { sort: { total_points: "desc" }, limit: 10 },
-    (err, users) => {
-      if (err)
-        return res.status(400).json({
-          title: "error",
-          error: "Something went wrong. Please try again!",
-        });
-      const beginnerUsers = [];
-      const advancedUsers = [];
-      users.forEach((user) => {
-        if (user.difficulty === "beginner") {
-          const beginnerUser = {
-            points: user.total_points,
-            username: user.codeforces_handle,
-            name: user.name,
-          };
-          beginnerUsers.push(beginnerUser);
-        } else {
-          const advancedUser = {
-            points: user.total_points,
-            username: user.codeforces_handle,
-            name: user.name,
-          };
-          advancedUsers.push(advancedUser);
-        }
-      });
-      return res.status(200).json({
-        title: "Success",
-        beginnerUsers: beginnerUsers,
-        advancedUsers: advancedUsers,
-      });
-    }
-  );
+app.get("/leaderboard", async (req, res) => {
+  const beginnerUsers = await User.find({ difficulty: "beginner" }, null, {
+    sort: { total_points: "desc" },
+    limit: 5,
+  });
+  const advancedUsers = await User.find({ difficulty: "advanced" }, null, {
+    sort: { total_points: "desc" },
+    limit: 5,
+  });
+  return res.status(200).json({
+    title: "Success",
+    beginnerUsers: beginnerUsers,
+    advancedUsers: advancedUsers,
+  });
 });
 
 app.get("/contests", (req, res) => {
