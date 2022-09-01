@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 
 function Dailyprob() {
   const token = localStorage.getItem("token");
-  if (token) {
+  if (!token) {
     window.location.href = "/login";
   }
   const today = new Date();

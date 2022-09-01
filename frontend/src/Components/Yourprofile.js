@@ -8,13 +8,13 @@ import moment from "moment";
 
 function Yourprofile() {
   const token = localStorage.getItem("token");
-  if (token) {
+  if (!token) {
     window.location.href = "/login";
   }  
   const [state, setState] = React.useState(false);
-  const [notes, setNotes] = React.useState(data2);
-  const [dailyproblem, setDailyProblem] = React.useState(data);
-  const [points, setPoints] = React.useState(data2);
+  const [notes, setNotes] = React.useState([]);
+  const [dailyproblem, setDailyProblem] = React.useState([]);
+  const [points, setPoints] = React.useState([]);
   React.useEffect(() => {
     (async () => {
       const res1 = await axios.get("https://p-club-iiti-cp.herokuapp.com/profile", {
