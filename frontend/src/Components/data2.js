@@ -33,7 +33,7 @@ export default [
         desc:"uygfwgifue ygr grsth jgiorelkhmgkr;k hgsarios",
         points:22,
         date:"20-2-22",   
-        link:"urqiegiuhi./fekjh.ekj"
+        link:"Solve Problem >"
     }, 
     {
         id:5,
@@ -42,7 +42,7 @@ export default [
         desc:"uygfwgifue ygr grsth jgiorelkhmgkr;k hgsarios",
         points:22,
         date:"20-2-22",   
-        link:"urqiegiuhi./fekjh.ekj"
+        link:"Solve Problem >"
     }, 
     {
         id:6,
@@ -51,7 +51,7 @@ export default [
         desc:"uygfwgifue ygr grsth jgiorelkhmgkr;k hgsarios",
         points:22,        
         date:"20-2-22",   
-        link:"urqiegiuhi./fekjh.ekj"
+        link:"Solve Problem >"
     }, 
     {
         id:7,
@@ -60,7 +60,7 @@ export default [
         desc:"uygfwgifue ygr grsth jgiorelkhmgkr;k hgsarios",
         points:22,
         date:"20-2-22",   
-        link:"urqiegiuhi./fekjh.ekj"
+        link:"Solve Problem >"
     }, 
     {
         id:8,
@@ -69,7 +69,7 @@ export default [
         desc:"uygfwgifue ygr grsth jgiorelkhmgkr;k hgsarios",
         points:22,
         date:"20-2-22",   
-        link:"urqiegiuhi./fekjh.ekj"
+        link:"Solve Problem >"
     }, 
     {
         id:9,
@@ -78,7 +78,7 @@ export default [
         desc:"uygfwgifue ygr grsth jgiorelkhmgkr;k hgsarios",
         points:22,
         date:"20-2-22",   
-        link:"urqiegiuhi./fekjh.ekj"
+        link:"Solve Problem >"
     }, 
     {
         id:10,
@@ -87,6 +87,6 @@ export default [
         desc:"uygfwgifue ygr grsth jgiorelkhmgkr;k hgsarios",
         points:22,
         date:"20-2-22",   
-        link:"urqiegiuhi./fekjh.ekj"
+        link:"Solve Problem >"
     },     
 ]

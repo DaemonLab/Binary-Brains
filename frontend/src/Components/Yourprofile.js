@@ -8,7 +8,7 @@ import moment from "moment";
 
 function Yourprofile() {
   const token = localStorage.getItem("token");
-  if (!token) {
+  if (token) {
     window.location.href = "/login";
   }  
   const [state, setState] = React.useState(false);
@@ -191,7 +191,7 @@ function Yourprofile() {
                     <div className="dp" key={id}>
                       <h3>
                         Daily {post.username}
-                        <button className="btndp">{post.link}</button>
+                        <a href="{post.link}"><button className="btnviewp">Solve Problem</button></a>
                       </h3>
                       <hr />
                     </div>                    

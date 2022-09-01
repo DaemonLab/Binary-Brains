@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 
 function Dailyprob() {
   const token = localStorage.getItem("token");
-  if (!token) {
+  if (token) {
     window.location.href = "/login";
   }
   const today = new Date();
@@ -22,7 +22,7 @@ function Dailyprob() {
   return (
     <div>
       <div className="container contpast">
-        <h3 className="upcomingContestHead" align="center">Today's Problems</h3>
+        <h3 className="upcomingContestHead mt-4" align="center">Today's Problems</h3>
         <div className="card carddp container mt-4">
           {posts.map((post, id) => {
             const date = new Date(post.date);
@@ -31,9 +31,10 @@ function Dailyprob() {
                 <div className="dp" key={id}>
                   {id != 0 ? <hr /> : <></>}
                   <h3>Daily {post.name}</h3>
+                  <a href="{post.link}"><button className="btnviewp">Solve Problem</button></a>
                   <p>{post.date}</p>
                 </div>
-              );
+              ); 
             } else {
               return <></>;
             }
@@ -48,6 +49,7 @@ function Dailyprob() {
                 <div className="dp" key={id}>
                   {id != 0 ? <hr /> : <></>}
                   <h3>Daily {post.name}</h3>
+                  <a href="{post.link}"><button className="btnviewp">Solve Problem</button></a>
                   <p>{post.date}</p>
                 </div>
               );
