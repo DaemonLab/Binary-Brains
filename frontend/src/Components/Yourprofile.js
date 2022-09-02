@@ -305,7 +305,7 @@ function Yourprofile() {
                       </>
                       ) : (
                         <div>
-                          <h4 align="center">No Problems Today!</h4>
+                          <h4 className="h1x" align="center">No Problems Today!</h4>
                           <br/>
                         </div>
                       )}   
@@ -338,7 +338,7 @@ function Yourprofile() {
                         );
                       })
                     ) : (
-                      <><h4 align="center" style={{color:"white"}}>No Material Added Yet</h4></>
+                      <><h4 className="h1x" align="center" style={{color:"white"}}>No Material Added Yet</h4></>
                     )}
                   </div>
                   {notes.length !== 0 ? (

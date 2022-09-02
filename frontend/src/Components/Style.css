@@ -418,8 +418,10 @@ table{
 }
 .h1x{
     color: white;
-    font-size: 35px;
     padding-bottom: 20px;
+}
+.h1x,.thx,.td2{
+    font-size: 1.5rem;
 }
 .td1{
     text-align: center;
@@ -556,8 +558,8 @@ table{
     .msgreg{
         font-size: 18px;
     }
-    .h1x{
-        font-size: 25px;
+    .h1x,.thx,.td2{
+        font-size: 1.3rem;
     }
     
   
@@ -573,9 +575,9 @@ table{
     .pointsHead{
         font-size: 20px !important;
     }
-    .h1x{
+    /* .h1x{
         font-size: 22px;
-    }
+    } */
     .btnnav{
         font-size: 15px;
     }
@@ -702,5 +704,8 @@ table{
     }
     .btnpastdp{
         font-size: 15px;
+    }
+    .h1x,.thx,.td2{
+        font-size: 1.15rem;
     } 
 }
