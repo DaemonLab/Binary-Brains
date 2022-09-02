@@ -29,6 +29,8 @@ function Yourprofile() {
   const [notes, setNotes] = React.useState([]);
   const [dailyproblem, setDailyProblem] = React.useState([]);
   const [points, setPoints] = React.useState([]);
+  const [todaysProblems, setTodaysProblems] = React.useState([]);
+  const today = new Date();
   React.useEffect(() => {
     (async () => {
       const res1 = await axios.get("https://p-club-iiti-cp.herokuapp.com/profile", {
@@ -46,6 +48,14 @@ function Yourprofile() {
       setState(res1.data);
       setNotes(res2.data.notes);
       setDailyProblem(res3.data.dailyproblems);
+      let todaysProblem = [];
+      res3.data.dailyproblems.forEach((problem)=>{
+        const date = new Date(problem.date);
+        if(date.toDateString()==today.toDateString()){
+          todaysProblem.push(problem);
+        }
+      });
+      setTodaysProblems(todaysProblem);
       setPoints(res1.data.history);
     })();
   }, []);
@@ -134,10 +144,11 @@ function Yourprofile() {
                           </tr>
                         ) : (
                           points.map((pt, id) => {
+                            const hisDate = new Date(pt.date);
                             return (
                               <tr key={id}>
                                 <td className="td2 leaderTD">{pt.points}</td>
-                                <td className="td2 leaderTD">{pt.date}</td>
+                                <td className="td2 leaderTD">{moment(hisDate).format("DD-MM-YYYY")}</td>
                               </tr>
                             );
                           })
@@ -218,10 +229,11 @@ function Yourprofile() {
                         </tr>
                       ) : (
                         points.map((pt, id) => {
+                          const hisDate = new Date(pt.date);
                           return (
                             <tr key={id}>
                               <td className="td2 leaderTD">{pt.points}</td>
-                              <td className="td2 leaderTD">{pt.date}</td>
+                              <td className="td2 leaderTD">{moment(hisDate).format("DD-MM-YYYY")}</td>
                             </tr>
                           );
                         })
@@ -289,9 +301,9 @@ function Yourprofile() {
               <div className="card">            
                     <h2 className="stm upcomingContestHead" style={{fontWeight:"bold"}}>Daily Problem</h2>
                     <div className="card carddp container">
-                      {dailyproblem.length !== 0 ? (
+                      {todaysProblems.length !== 0 ? (
                         <>
-                        {dailyproblem.map((post, id) => {
+                        {todaysProblems.map((post, id) => {
                           return (
                             <div className="dp" key={id}>
                               <h3>

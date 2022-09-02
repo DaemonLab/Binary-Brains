@@ -2,6 +2,7 @@ import React from "react";
 import data from "./data";
 import data2 from "./data2";
 import { useLocation } from "react-router-dom";
+import moment from "moment";
 
 function Dailyprob() {
   const token = localStorage.getItem("token");
@@ -10,8 +11,8 @@ function Dailyprob() {
   }
   const today = new Date();
   const location = useLocation();
-  // const dailyprob = location.state.dailyproblem;
-  const [posts, setPosts] = React.useState([]);
+  const dailyprob = location.state.dailyproblem;
+  const [posts, setPosts] = React.useState(dailyprob);
     // React.useEffect(() => {
     //   axios.post("https://p-club-iiti-cp.herokuapp.com/getdailyproblems").then((res) => {
     //     if (res.status === 200) {
@@ -32,7 +33,7 @@ function Dailyprob() {
                   {id != 0 ? <hr /> : <></>}
                   <h3>Daily {post.name}</h3>
                   <a href="{post.link}"><button className="btnviewp">Solve Problem</button></a>
-                  <p>{post.date}</p>
+                  <p>{moment(date).format("DD-MM-YYYY")}</p>
                 </div>
               ); 
             } else {
@@ -50,7 +51,7 @@ function Dailyprob() {
                   {id != 0 ? <hr /> : <></>}
                   <h3>Daily {post.name}</h3>
                   <a href="{post.link}"><button className="btnviewp">Solve Problem</button></a>
-                  <p>{post.date}</p>
+                  <p>{moment(date).fromNow()}</p>
                 </div>
               );
             } else {

@@ -10,11 +10,20 @@ function Contests() {
     window.location.href = "/login";
   }
   const today = new Date();
-  const [contests, setContests] = React.useState(data2);
+  const [upcomingContests, setUpcomingContests] = React.useState([]);
+  const [pastContests, setPastContests] = React.useState([]);
   React.useEffect(() => {
     axios.get("https://p-club-iiti-cp.herokuapp.com/contests").then((res) => {
       if (res.status === 200) {
-        setContests(res.data.contests);
+        let upcomingContest = [];
+        let pastContest = [];
+        res.data.contests.forEach((contest)=>{
+          const date = new Date(contest.date);
+          if(date>=today) upcomingContest.push(contest);
+          else pastContest.push(contest);
+        });
+        setPastContests(pastContest);
+        setUpcomingContests(upcomingContest);
       }
     });
   }, []);
@@ -22,15 +31,15 @@ function Contests() {
     <div>
       <div className="container mt-3">
         <h3 className="upcomingContestHead" style={{fontWeight:"bold"}} align="center">Upcoming</h3>
-        {contests.map((contest) => {
+        {upcomingContests.map((contest) => {
           const date = new Date(contest.date);
-          return date > today ? (
+          return upcomingContests.length!==0 ? (
             <>
               <div class="card">
                 <div class="card-body">
                   <h3 class="card-title">{`${contest.name}`}</h3>
                   <p class="card-text">{contest.desc}</p>
-                  <p>Time: {date.toISOString()}</p>
+                  <p>Time: {moment(date).format("DD-MM-YYYY")}</p>
                   <a
                     href={`https://codeforces.com/contest/${contest.contest}`}
                     class="btnxxx"
@@ -46,9 +55,9 @@ function Contests() {
           );
         })}
         <h3 className="upcomingContestHead" style={{fontWeight:"bold"}} align="center">Past Contests</h3>
-        {contests.map((contest) => {
+        {pastContests.map((contest) => {
           const date = new Date(contest.date);
-          return date <= today ? (
+          return pastContests!==0 ? (
             <>
               <div class="card">
                 <div class="card-body">
