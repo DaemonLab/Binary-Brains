@@ -108,11 +108,11 @@ function Yourprofile() {
                 <br />
                 <div className="container">
                   <div className="head">
-                    <h4 className="h1x">Welcome:- {state.name}</h4>
+                    <h4 className="h1x" style={{textTransform:"capitalize"}}>Welcome:- {state.name}</h4>
                     <h4 className="h1x">CF Username:- {state.username}</h4>        
                     <h4 className="h1x">Points:- {state.points} { /*<Link to="/viewprize"><button className="btnpts">Redeem</button></Link>*/ }</h4>
-                  </div>
-                <br />
+                    <h4 className="h1x" style={{textTransform:"capitalize"}}>Difficulty:- {state.difficulty}</h4>        
+                  </div>                
                 <br />
                 {width < 768 ? (
                   <div className="">
@@ -184,10 +184,14 @@ function Yourprofile() {
                           <td className="td2 leaderTD">70</td>
                           <td className="td2 leaderTD">11-20</td>
                         </tr>
+                        { state.difficulty == 'beginner'?(
                         <tr>
                           <td className="td2 leaderTD">30</td>
                           <td className="td2 leaderTD">21-40</td>
                         </tr>
+                        ) : (
+                        <></>
+                        )}
                         <tr>
                           <td className="td2 leaderTD">10</td>
                           <td className="td2 leaderTD"><span className="small" style={{fontSize:"13px"}}>Atleast<br/>1 question</span></td>
@@ -295,8 +299,8 @@ function Yourprofile() {
                           return (
                             <div className="dp" key={id}>
                               <h3>
-                                Daily {post.username}
-                                <a href="{post.link}"><button className="btnviewp">Solve Problem</button></a>
+                                Problem {post.name}
+                                <a href={post.link} target={"_blank"}><button className="btnviewp">Solve Problem</button></a>
                               </h3>
                               <hr />
                             </div>                    
@@ -313,9 +317,7 @@ function Yourprofile() {
                           <button className="btnpastdp">View Past Problems</button>
                         </Link>           
                     </div>
-                    </div>
-                
-                
+                  </div>                                
                 <hr style={{ color: "white" }} />      
                 <div className="card pb-5">
                 <h2 className="stm upcomingContestHead" style={{fontWeight:"bold"}}>Study Material</h2>
@@ -329,7 +331,7 @@ function Yourprofile() {
                             <h5>{note.name}</h5>
                             <br/>
                             <p>
-                              <a href={note.link} target={"_blank"} style={{textDecoration: "none", color:"white", }}>
+                              <a href={note.link} target={"_blank"} style={{textDecoration: "none", color:"white"}}>
                                 View Material
                               </a>
                             </p>                            
