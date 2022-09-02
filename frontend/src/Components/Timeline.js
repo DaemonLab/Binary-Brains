@@ -2,20 +2,35 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 
-function Schedule() {  
 
+function useWindowSize() {
+  const [size, setSize] = React.useState([window.innerHeight, window.innerWidth]);
+  React.useEffect(() =>{
+    const handleResize = () => {
+      setSize([window.innerHeight, window.innerWidth]);
+    }
+    window.addEventListener("resize", handleResize);
+  },[])
+  return size;
+}
+
+function Schedule() {  
+  const [height,width] = useWindowSize();
   const [state, setState] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
   React.useEffect(() => {
     (async () => {
       const res1 = await axios.get("https://p-club-iiti-cp.herokuapp.com/profile", {
         headers: { token: localStorage.getItem("token") },
       });
-      setState(res1.data)
+      setState(res1.data);
+      setLoading(true);
     })();
   },[]);
 
   return (
     <div className='container mt-4' style={{height:"1100px"}}>
+      {loading ? (
       <div className="card">       
         <div className="card-body">    
         <h2 className="upcomingContestHead" align="center">Schedule Of The Course</h2>
@@ -30,15 +45,15 @@ function Schedule() {
                       <ul>
                         <li className="usli">Topic - C++ Basics I</li>
                         <li className="usli">Tutor - Jaskaran Singh</li>
-                        <li className="usli">Venue - Maitreya Hall</li>
-                        <li className="usli">Time - 4:30pm</li>
+                        <li className="usli">Venue - Gargi Seminar Hall</li>
+                        <li className="usli">Time - 10:15-11:45am</li>
                       </ul>
                     ) : (
                       <ul>
                         <li className="usli">Topic - Binary Search + Interactive Problems</li>
                         <li className="usli">Tutor - Nishkarsh Luthra</li>
-                        <li className="usli">Venue - Maitreya Hall</li>
-                        <li className="usli">Time - 4:30pm</li>
+                        <li className="usli">Venue - POD 1-D 105</li>
+                        <li className="usli">Time - 10:15-11:45am</li>
                       </ul>
                     )}
                     </div>
@@ -51,6 +66,11 @@ function Schedule() {
           <br />               
           <br/>             
         </div>
+      ): (
+        <div className="loadcont" style={{height:`${height}px`}}>
+          <h2 align="center" className="mt-5" style={{color:"white"}}>Loading...</h2>
+        </div>
+      )}
       </div>
   ) 
 }

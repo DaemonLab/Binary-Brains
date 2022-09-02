@@ -326,12 +326,13 @@ function Yourprofile() {
                         const date = new Date(note.date);
                         return (
                           <div className="col-sm-3 slidecont mt-3">
-                            <h3>{note.name}</h3>
-                            <h4>
-                              <a href={note.link} target={"_blank"}>
-                                Link
+                            <h5>{note.name}</h5>
+                            <br/>
+                            <p>
+                              <a href={note.link} target={"_blank"} style={{textDecoration: "none", color:"white", }}>
+                                View Material
                               </a>
-                            </h4>
+                            </p>                            
                             <p>{moment(date).format("DD-MM-YYYY")}</p>
                           </div>
                         );

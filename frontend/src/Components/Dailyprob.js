@@ -58,7 +58,8 @@ function Dailyprob() {
             }
           })}
         </div>
-      </div>      
+      </div> 
+      <div className="loginend"></div>      
     </div>
   );
 }

@@ -39,19 +39,21 @@ function Navbar() {
               <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
             </li>
             {token ? (
-              <li className="nav-item">
-                <Link className="nav-link" to="/contests">Contests <span className="sr-only">(current)</span></Link>
-              </li>
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/contests">Contests <span className="sr-only">(current)</span></Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/timeline">Schedule <span className="sr-only">(current)</span></Link>
+                </li> 
+              </>
               ) : (
                 <></>
               )
               }
             <li className="nav-item">
               <Link className="nav-link" to="/about">Our Teams<span className="sr-only">(current)</span></Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/timeline">Schedule <span className="sr-only">(current)</span></Link>
-            </li>            
+            </li>                       
             { width < "992" && !token ? (            
                 <>
                   <li className="nav-item">
@@ -66,7 +68,7 @@ function Navbar() {
                 )
               }
               { width < "992" && token ? (            
-              <>
+              <>                
                 <li className="nav-item">
                   <Link className="nav-link" to="/yourprofile">Your Profile <span className="sr-only">(current)</span></Link>
                 </li>
@@ -94,7 +96,7 @@ function Navbar() {
           )
         }
         { width >= "992" && token ? (            
-            <>
+            <>              
               <Link to="/yourprofile">
                 <button className="btnnav2">Your Profile</button>
               </Link>                            
