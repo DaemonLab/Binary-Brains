@@ -118,18 +118,18 @@ function Yourprofile() {
                 <br />
                 <div className="container">
                   <div className="head">
-                    <h4 className="h1x" style={{textTransform:"capitalize"}}>Welcome:- {state.name}</h4>
-                    <h4 className="h1x">CF Username:- {state.username}</h4>        
-                    <h4 className="h1x">Points:- {state.points} { /*<Link to="/viewprize"><button className="btnpts">Redeem</button></Link>*/ }</h4>
-                    <h4 className="h1x" style={{textTransform:"capitalize"}}>Difficulty:- {state.difficulty}</h4>        
+                    <h4 className="h1x" style={{textTransform:"capitalize"}}>Welcome:  {state.name}</h4>
+                    <h4 className="h1x">CF Username:  {state.username}</h4>        
+                    <h4 className="h1x" style={{textTransform:"capitalize"}}>Difficulty:  {state.difficulty}</h4>        
+                    <h4 className="h1x">Points:  {state.points} { /*<Link to="/viewprize"><button className="btnpts">Redeem</button></Link>*/ }</h4>
                   </div>                
                 <br />
                 {width < 768 ? (
                   <div className="">
                   <div className=" card responsive">
-                    <h4 className="mt-2 pointsHead-2" align="center">
+                    <h2 className="mt-2 pointsHead-2" align="center">
                       Points History
-                    </h4>
+                    </h2>
                     <hr />
                     <table className="typ">
                       <tbody>
@@ -157,9 +157,9 @@ function Yourprofile() {
                     </table>
                   </div>        
                   <div className="card responsive">
-                    <h4 className="mt-2 pointsHead-2" align="center">
+                    <h2 className="mt-2 pointsHead-2" align="center">
                       Points System
-                    </h4>
+                    </h2>
                     <hr />
                     <table className="typ">
                       <tbody>
@@ -216,9 +216,9 @@ function Yourprofile() {
                 ):(
                   <div className="flex">
                 <div className="history card responsive">
-                  <h4 className="mt-2 pointsHead" align="center">
+                  <h2 className="mt-2 pointsHead" align="center">
                     Points History
-                  </h4>
+                  </h2>
                   <hr />
                   <table className="typ">
                     <tbody>
@@ -246,9 +246,9 @@ function Yourprofile() {
                   </table>
                 </div>        
                 <div className="history2 card responsive">
-                  <h4 className="mt-2 pointsHead" align="center">
+                  <h2 className="mt-2 pointsHead" align="center">
                     Points System
-                  </h4>
+                  </h2>
                   <hr />
                   <table className="typ">
                     <tbody>
