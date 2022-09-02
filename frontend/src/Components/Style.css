@@ -28,7 +28,9 @@
     background-color: rgb(43, 47, 50);
     height:200px
 }
-
+.loadcont{
+    font-family: 'Poppins';
+}
 .aboutBody{
     background-color: #233872;
     color: white !important;
@@ -328,6 +330,16 @@ table{
     padding-top: 2px;
     padding-bottom: 2px;
 }
+.pointsHead-2{    
+    background-color: #00bbff;
+    color: black;
+    font-size: 28px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
 .contestname{
     /* text-decoration: underline; */
     margin-left: 4%;
@@ -362,7 +374,10 @@ table{
 .cardcontent{
     word-spacing: 50px;
 }
-
+.usHead{
+    font-size: 35px;
+    font-family: 'Poppins';
+}
 .contestcont{
     display: flex;    
 }
@@ -497,6 +512,9 @@ table{
     float: inline-end; 
     width:45%;        
 }
+.usli{
+    font-size: 25px !important;
+}
 .flex{
     display: flex;
 }
@@ -546,6 +564,18 @@ table{
 }
 
 @media (max-width:500px){
+    .usli{
+        font-size: 19px !important;
+    }
+    .usHead{
+        font-size: 25px;
+    }
+    .pointsHead{
+        font-size: 20px !important;
+    }
+    .h1x{
+        font-size: 22px;
+    }
     .btnnav{
         font-size: 15px;
     }

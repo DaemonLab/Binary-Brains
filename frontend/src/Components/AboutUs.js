@@ -1,4 +1,5 @@
 import React from 'react'
+import LazyLoad from 'react-lazy-load'
 import AA from '../images/AA.jpg'
 import AK from '../images/AK.jpg'
 import DSJ from '../images/DSJ.jpg'
@@ -35,25 +36,35 @@ function AboutUs() {
         <br/>    
         <div className="row">
             <div className="col-sm">
-                <img className=" z-depth-2 mb-3" alt="100x100" src={JS} style={{"width": "180px","height":"180px", "borderRadius":"10px"}} data-holder-rendered="true" />
+                <LazyLoad>
+                    <img className=" z-depth-2 mb-3" alt="100x100" src={JS} style={{"width": "180px","height":"180px", "borderRadius":"10px"}} data-holder-rendered="true" />
+                </LazyLoad>
                 <h5 className="mb-2"><strong>Jaskaran Singh</strong></h5>
             </div>
             <div className="col-sm">
-                <img className=" z-depth-2 mb-3" alt="100x100" src={AA} style={{"width": "180px","height":"180px","borderRadius":"10px"}} data-holder-rendered="true" />
+                <LazyLoad>
+                    <img className=" z-depth-2 mb-3" alt="100x100" src={AA} style={{"width": "180px","height":"180px","borderRadius":"10px"}} data-holder-rendered="true" />
+                </LazyLoad>
                 <h5 className="mb-2"><strong>Anurag Agarwal</strong></h5>
             </div>
             <div className="col-sm">
-                <img className=" z-depth-2 mb-3" alt="100x100" src={DSJ} style={{"width": "180px","height":"180px", "borderRadius":"10px"}} data-holder-rendered="true" />
+                <LazyLoad>
+                    <img className=" z-depth-2 mb-3" alt="100x100" src={DSJ} style={{"width": "180px","height":"180px", "borderRadius":"10px"}} data-holder-rendered="true" />
+                </LazyLoad>
                 <h5 className="mb-2"><strong>Deepkamal Singh Jassal</strong></h5>
             </div>
             <div className="col-sm">
-                <img className=" z-depth-2 mb-3" alt="100x100" src={SKS} style={{"width": "180px","height":"180px", "borderRadius":"10px"}} data-holder-rendered="true" />
+                <LazyLoad>
+                    <img className=" z-depth-2 mb-3" alt="100x100" src={SKS} style={{"width": "180px","height":"180px", "borderRadius":"10px"}} data-holder-rendered="true" />
+                </LazyLoad>
                 <h5 className="mb-2"><strong>Saurabh Kumar Singh</strong></h5>
             </div>
         </div>
         <div className="row">
             <div className="col-sm">
-                <img className="z-depth-2 mb-3" alt="100x100" src={KS} style={{"width": "180px","height":"180px","borderRadius":"10px"}} data-holder-rendered="true" />
+                <LazyLoad>
+                    <img className="z-depth-2 mb-3" alt="100x100" src={KS} style={{"width": "180px","height":"180px","borderRadius":"10px"}} data-holder-rendered="true" />
+                </LazyLoad>
                 <h5 className="mb-2"><strong>Krishanu saini</strong></h5>
             </div>
             <div className="col-sm">

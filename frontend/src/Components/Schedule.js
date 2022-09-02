@@ -1,7 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-function Schedule() {  
+function Schedule() {    
+  
   return (
     <div className='container'>
       <div className="card" >       
@@ -75,7 +76,7 @@ function Schedule() {
                         <li>Dynamic Programming III</li>
                         <li>Graphs I</li>
                         <li>Graphs II</li>
-                        <li>Range Questions</li>
+                        <li>Range Queries</li>
                     </ul>
                     </div>
                   </td>

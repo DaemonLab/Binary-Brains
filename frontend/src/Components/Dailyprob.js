@@ -11,7 +11,7 @@ function Dailyprob() {
   const today = new Date();
   const location = useLocation();
   // const dailyprob = location.state.dailyproblem;
-  const [posts, setPosts] = React.useState(data2);
+  const [posts, setPosts] = React.useState([]);
     // React.useEffect(() => {
     //   axios.post("https://p-club-iiti-cp.herokuapp.com/getdailyproblems").then((res) => {
     //     if (res.status === 200) {
