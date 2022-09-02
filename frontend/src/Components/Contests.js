@@ -26,58 +26,70 @@ function Contests() {
         setUpcomingContests(upcomingContest);
       }
     });
-  }, []);
+  }, []);  
   return (
     <div>
-      <div className="container mt-3">
-        <h3 className="upcomingContestHead" style={{fontWeight:"bold"}} align="center">Upcoming</h3>
-        {upcomingContests.map((contest) => {
-          const date = new Date(contest.date);
-          return upcomingContests.length!==0 ? (
-            <>
-              <div class="card">
-                <div class="card-body">
-                  <h3 class="card-title">{`${contest.name}`}</h3>
-                  <p class="card-text">{contest.desc}</p>
-                  <p>Time: {moment(date).format("DD-MM-YYYY")}</p>
-                  <a
-                    href={`https://codeforces.com/contest/${contest.contest}`}
-                    class="btnxxx"
-                    target={"_blank"}
-                  >
-                    Contest(CF link)
-                  </a>
-                </div>
+      <div className="container mt-4">
+        <h3 className="upcomingContestHead mb-4" style={{fontWeight:"bold"}} align="center">Upcoming Contests</h3>
+        {upcomingContests.length !== 0 ? (
+            upcomingContests.map((contest) => {
+              const date = new Date(contest.date);
+              return (
+                <>
+                  <div class="card">
+                    <div class="card-body">
+                      <h3 class="card-title">{`${contest.name}`}</h3>
+                      <p class="card-text">{contest.desc}</p>
+                      <p>Time: {moment(date).format("DD-MM-YYYY")}</p>
+                      <a
+                        href={`https://codeforces.com/contest/${contest.contest}`}
+                        class="btnxxx"
+                        target={"_blank"}
+                      >
+                        Contest(CF link)
+                      </a>
+                    </div>
+                  </div>                  
+                </>
+              );
+            })
+            ):(
+              <div>
+                <br/>
+                <h4 align="center" className="mb-4" style={{color:"white", fontSize:"35px"}}>No Contests Right Now</h4>
+                <br/>
               </div>
-            </>
-          ) : (
-            <></>
-          );
-        })}
-        <h3 className="upcomingContestHead" style={{fontWeight:"bold"}} align="center">Past Contests</h3>
-        {pastContests.map((contest) => {
-          const date = new Date(contest.date);
-          return pastContests!==0 ? (
-            <>
-              <div class="card">
-                <div class="card-body">
-                  <h3 class="card-title">{`${contest.contest}: ${contest.name}`}</h3>
-                  <p class="card-text">{contest.desc}</p>
-                  <p>Time: {moment(date).fromNow()}</p>
-                  <a
-                    href={`https://codeforces.com/contest/${contest.contest}`}
-                    class="btnxxx"
-                    target={"_blank"}
-                  >
-                    Contest(CF link)
-                  </a>
-                </div>
+            )}
+        <h3 className="upcomingContestHead mb-4" style={{fontWeight:"bold"}} align="center">Past Contests</h3>
+        {pastContests.length !== 0 ? (
+            pastContests.map((contest) => {
+              const date = new Date(contest.date);
+              return (
+                <>
+                  <div class="card">
+                    <div class="card-body">
+                      <h3 class="card-title">{`${contest.name}`}</h3>
+                      <p class="card-text">{contest.desc}</p>
+                      <p>Time: {moment(date).format("DD-MM-YYYY")}</p>
+                      <a
+                        href={`https://codeforces.com/contest/${contest.contest}`}
+                        class="btnxxx"
+                        target={"_blank"}
+                      >
+                        Contest(CF link)
+                      </a>
+                    </div>
+                  </div>
+                </>
+              );
+            })
+            ):(
+              <div>
+                <br/>
+                  <h4 align="center" className="mb-4" style={{color:"white", fontSize:"35px"}}>No Contests Right Now</h4>
+                <br/>
               </div>
-            </>
-          ) : (
-            <></>
-          );
-        })}
+            )}
       </div>
       <Footer />
     </div>

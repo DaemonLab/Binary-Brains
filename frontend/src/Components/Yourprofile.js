@@ -210,7 +210,7 @@ function Yourprofile() {
                       </tbody>
                     </table>    
                     <br/>
-                    <p align="center" className="small">10 point per day if all daily problems are completed.</p>
+                    <p align="center" className="small">10 points per day if all daily problems are completed.</p>
                   </div>                                
                   </div>
                 ):(
@@ -284,10 +284,14 @@ function Yourprofile() {
                         <td className="td2 leaderTD">70</td>
                         <td className="td2 leaderTD">11-20</td>
                       </tr>
-                      <tr>
-                        <td className="td2 leaderTD">30</td>
-                        <td className="td2 leaderTD">21-40</td>
-                      </tr>
+                      { state.difficulty === 'beginner' ? (
+                        <tr>
+                          <td className="td2 leaderTD">30</td>
+                          <td className="td2 leaderTD">21-40</td>
+                        </tr>
+                        ) : (
+                          <></>
+                      )}
                       <tr>
                         <td className="td2 leaderTD">10</td>
                         <td className="td2 leaderTD"><span className="small" style={{fontSize:"13px"}}>Atleast 1 question</span></td>
@@ -295,13 +299,13 @@ function Yourprofile() {
                     </tbody>
                   </table>    
                   <br/>
-                  <p align="center" className="small">10 point per day if all daily problems are completed.</p>
+                  <p align="center" className="small">10 points per day if all daily problems are completed.</p>
                 </div>                                
                 </div>
                 )}
                 </div>
                 </div>
-                <hr style={{ color: "white" }} />
+                {/* <hr style={{ color: "white" }} />
               <div className="card">            
                     <h2 className="stm upcomingContestHead" style={{fontWeight:"bold"}}>Daily Problem</h2>
                     <div className="card carddp container">
@@ -361,7 +365,7 @@ function Yourprofile() {
                     <></>
                   )}          
                 </div>
-                </div>
+                </div> */}
               </div>
               <Footer />
             </div>
@@ -370,7 +374,6 @@ function Yourprofile() {
               <h2 align="center" className="mt-5" style={{color:"white"}}>Loading...</h2>
             </div>
           )
-
         }      
     </div>  
     )    

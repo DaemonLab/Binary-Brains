@@ -6,7 +6,7 @@ import axios from "axios";
 
 function Rankings() {
   const today = new Date();
-  const [contests, setContests] = React.useState(data);
+  const [upcomingContests, setUpcomingContests] = React.useState([]);
   const [beginner, setbeginner] = React.useState(data2);
   const [advanced, setadvanced] = React.useState(data2);    
   React.useEffect(() => {
@@ -18,7 +18,12 @@ function Rankings() {
     });
     axios.get("https://p-club-iiti-cp.herokuapp.com/contests").then((res) => {
       if (res.status === 200) {
-        setContests(res.data.contests);
+        let upcomingContest = [];      
+        res.data.contests.forEach((contest)=>{
+          const date = new Date(contest.date);
+          if(date >= today) upcomingContest.push(contest);          
+        });      
+        setUpcomingContests(upcomingContest);
       }
     });
   }, []);
@@ -30,31 +35,37 @@ function Rankings() {
         <div className="card-body">
           <h2 className="card-title upcomingContestHead">Upcoming Contests</h2>
           <hr />
-          <div className="">                 
-              {contests.map((contest) => {
+          <div className="">    
+          { upcomingContests.length !== 0 ? (              
+              upcomingContests.map((contest) => {
                 const date = new Date(contest.date);              
-                return date > today ? (
+                return (
                   <>                
                     <div className="card-body contestbody" key={1}>
                       <h3 className="contestname">{` Contest ${contest.contest} - ${contest.name}`}</h3>
                       <h4 className="sm contestInfo">
                         ({contest.category}) {contest.date}
                       </h4>
-                      <button className="btncont">CF Page</button>
+                      <a href={contest.link}><button className="btncont">View Contest</button></a>
                     </div>                  
                   </>
-                ) : (
-                  <></>
-                );
-              })}                                          
+              ) 
+              })
+            ) : (
+              <div>
+                <br/>
+                  <h4 align="center" className="mb-4" style={{color:"white", fontSize:"35px"}}>No Contests Right Now</h4>
+                <br/>
+              </div>
+            )}                                          
           </div>
         </div>
-        <div className="container">
+        {/* <div className="container">
           <hr />
         </div>
         <Link to="contests">
           <button className="btnmore">View All</button>
-        </Link>
+        </Link> */}
       </div>
 
       <div className="card contestcard-2 col-sm-12">
