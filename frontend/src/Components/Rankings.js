@@ -14,6 +14,7 @@ function Rankings() {
       if (res.status === 200) {
         setbeginner(res.data.beginnerUsers);
         setadvanced(res.data.advancedUsers);
+        console.log(res.data.beginnerUsers, res.data.advancedUsers)
       }
     });
     axios.get("https://p-club-iiti-cp.herokuapp.com/contests").then((res) => {
@@ -89,8 +90,8 @@ function Rankings() {
                   return (
                     <tr key={id}>
                       <td className="td1 leaderTD">{rank.name}</td>
-                      <td className="td1 leaderTD">{rank.username}</td>
-                      <td className="td1 leaderTD">{rank.points}</td>
+                      <td className="td1 leaderTD">{rank.codeforces_handle}</td>
+                      <td className="td1 leaderTD">{rank.total_points}</td>
                     </tr>
                   );
                 })}
@@ -112,8 +113,8 @@ function Rankings() {
                   return (
                     <tr key={id}>
                       <td className="td1 leaderTD">{rank.name}</td>
-                      <td className="td1 leaderTD">{rank.username}</td>
-                      <td className="td1 leaderTD">{rank.points}</td>
+                      <td className="td1 leaderTD">{rank.codeforces_handle}</td>
+                      <td className="td1 leaderTD">{rank.total_points}</td>
                     </tr>
                   );
                 })}
