@@ -11,23 +11,21 @@ function Schedule() {
             <table className='tabtop leaderboard scrollTable'>
               <tbody>
                 <tr>
-                  <th className='thtop'>Beginner</th>                                  
-                </tr>                          
+                  <th className='thtop'>Beginner</th>
+                  <th className='thtop'>Advacned</th>
+                </tr>                                                        
                 <tr>
                   <td className="tdtop">
                     <div className="anythinglisting4">
                     <ul>
-                        <li>C++ Basics I</li>
-                        <li>C++ Basics II</li>
-                        <li>Time Complexity And Basic Problem Solving</li>
-                        <li>Recursion Backtracking</li>
-                        <li>Searching Sorting And Two Pointers</li>
-                        <li>STL I</li>
-                        <li>STL II</li>
-                        <li>Prefix Sum, Circular Arrys And Difference Arrays</li>
-                        <li>Number Theory I</li>
-                        <li>Number Theory II</li>
-                        <li>Bit Manipulation</li>
+                        <li>C++ Basics I</li>                        
+                    </ul>
+                    </div>
+                  </td>
+                  <td className="tdtop">
+                    <div className="anythinglisting4">
+                    <ul>
+                        <li>C++ Basics I</li>                        
                     </ul>
                     </div>
                   </td>                                 

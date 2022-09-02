@@ -71,7 +71,7 @@ function Navbar() {
                   <Link className="nav-link" to="/yourprofile">Your Profile <span className="sr-only">(current)</span></Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/" onClick={handleLogout()}>Logout <span className="sr-only">(current)</span></Link>
+                  <Link className="nav-link" to="/" onClick={handleLogout}>Logout <span className="sr-only">(current)</span></Link>
                 </li>
               </>
               ) : (
@@ -99,7 +99,7 @@ function Navbar() {
                 <button className="btnnav2">Your Profile</button>
               </Link>                            
               <Link to="/">
-                <button className=" btnnav2" onClick={handleLogout()}>Logout</button>
+                <button className=" btnnav2" onClick={handleLogout}>Logout</button>
               </Link>                     
             </>
           ) : (
