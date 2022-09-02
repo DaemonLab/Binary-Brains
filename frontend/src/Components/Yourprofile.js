@@ -29,6 +29,8 @@ function Yourprofile() {
   const [notes, setNotes] = React.useState([]);
   const [dailyproblem, setDailyProblem] = React.useState([]);
   const [points, setPoints] = React.useState([]);
+  const [todaysProblems, setTodaysProblems] = React.useState([]);
+  const today = new Date();
   React.useEffect(() => {
     (async () => {
       const res1 = await axios.get("https://p-club-iiti-cp.herokuapp.com/profile", {
@@ -46,6 +48,14 @@ function Yourprofile() {
       setState(res1.data);
       setNotes(res2.data.notes);
       setDailyProblem(res3.data.dailyproblems);
+      let todaysProblem = [];
+      res3.data.dailyproblems.forEach((problem)=>{
+        const date = new Date(problem.date);
+        if(date.toDateString()==today.toDateString()){
+          todaysProblem.push(problem);
+        }
+      });
+      setTodaysProblems(todaysProblem);
       setPoints(res1.data.history);
     })();
   }, []);
@@ -108,11 +118,11 @@ function Yourprofile() {
                 <br />
                 <div className="container">
                   <div className="head">
-                    <h4 className="h1x">Welcome:- {state.name}</h4>
+                    <h4 className="h1x" style={{textTransform:"capitalize"}}>Welcome:- {state.name}</h4>
                     <h4 className="h1x">CF Username:- {state.username}</h4>        
                     <h4 className="h1x">Points:- {state.points} { /*<Link to="/viewprize"><button className="btnpts">Redeem</button></Link>*/ }</h4>
-                  </div>
-                <br />
+                    <h4 className="h1x" style={{textTransform:"capitalize"}}>Difficulty:- {state.difficulty}</h4>        
+                  </div>                
                 <br />
                 {width < 768 ? (
                   <div className="">
@@ -134,10 +144,11 @@ function Yourprofile() {
                           </tr>
                         ) : (
                           points.map((pt, id) => {
+                            const hisDate = new Date(pt.date);
                             return (
                               <tr key={id}>
                                 <td className="td2 leaderTD">{pt.points}</td>
-                                <td className="td2 leaderTD">{pt.date}</td>
+                                <td className="td2 leaderTD">{moment(hisDate).format("DD-MM-YYYY")}</td>
                               </tr>
                             );
                           })
@@ -184,10 +195,14 @@ function Yourprofile() {
                           <td className="td2 leaderTD">70</td>
                           <td className="td2 leaderTD">11-20</td>
                         </tr>
+                        { state.difficulty == 'beginner'?(
                         <tr>
                           <td className="td2 leaderTD">30</td>
                           <td className="td2 leaderTD">21-40</td>
                         </tr>
+                        ) : (
+                        <></>
+                        )}
                         <tr>
                           <td className="td2 leaderTD">10</td>
                           <td className="td2 leaderTD"><span className="small" style={{fontSize:"13px"}}>Atleast<br/>1 question</span></td>
@@ -218,10 +233,11 @@ function Yourprofile() {
                         </tr>
                       ) : (
                         points.map((pt, id) => {
+                          const hisDate = new Date(pt.date);
                           return (
                             <tr key={id}>
                               <td className="td2 leaderTD">{pt.points}</td>
-                              <td className="td2 leaderTD">{pt.date}</td>
+                              <td className="td2 leaderTD">{moment(hisDate).format("DD-MM-YYYY")}</td>
                             </tr>
                           );
                         })
@@ -289,14 +305,14 @@ function Yourprofile() {
               <div className="card">            
                     <h2 className="stm upcomingContestHead" style={{fontWeight:"bold"}}>Daily Problem</h2>
                     <div className="card carddp container">
-                      {dailyproblem.length !== 0 ? (
+                      {todaysProblems.length !== 0 ? (
                         <>
-                        {dailyproblem.map((post, id) => {
+                        {todaysProblems.map((post, id) => {
                           return (
                             <div className="dp" key={id}>
                               <h3>
-                                Daily {post.username}
-                                <a href="{post.link}"><button className="btnviewp">Solve Problem</button></a>
+                                Problem {post.name}
+                                <a href={post.link} target={"_blank"}><button className="btnviewp">Solve Problem</button></a>
                               </h3>
                               <hr />
                             </div>                    
@@ -313,9 +329,7 @@ function Yourprofile() {
                           <button className="btnpastdp">View Past Problems</button>
                         </Link>           
                     </div>
-                    </div>
-                
-                
+                  </div>                                
                 <hr style={{ color: "white" }} />      
                 <div className="card pb-5">
                 <h2 className="stm upcomingContestHead" style={{fontWeight:"bold"}}>Study Material</h2>
@@ -329,7 +343,7 @@ function Yourprofile() {
                             <h5>{note.name}</h5>
                             <br/>
                             <p>
-                              <a href={note.link} target={"_blank"} style={{textDecoration: "none", color:"white", }}>
+                              <a href={note.link} target={"_blank"} style={{textDecoration: "none", color:"white"}}>
                                 View Material
                               </a>
                             </p>                            

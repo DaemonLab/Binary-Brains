@@ -59,7 +59,7 @@ function Login() {
           role="alert"
           style={{ display: alert }}
         >
-          {setAlertMsg}
+          {alertmsg}
         </div>
         <div className="container outer">
           {/* <div className=" logincont">
