@@ -61,7 +61,7 @@ function Navbar() {
         </div>
         
         { width < "992" ? (          
-            <Link to="">
+            <Link to="/">
                 <button className="btnnav2 toleft">Home</button>
             </Link>
           ):(

@@ -54,13 +54,13 @@ function Login() {
           <div className="whitebox2 signup_container2">
             <h1 className="text-center heading">LOGIN</h1>
             <div className="mb-3 inputs" style={{ textAlign: "left" }}>
-              <label className="form-label auth">Username</label>
+              <label className="form-label auth">Email</label>
               <br />
               <input
                 type="text"
                 name="username"
                 className="inputbox"
-                placeholder="Username"
+                placeholder="Email"
                 style={{ color: "black" }}
                 required
                 onChange={(e) => setEmail(e.target.value)}

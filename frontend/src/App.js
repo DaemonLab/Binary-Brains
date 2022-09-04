@@ -3,6 +3,7 @@ import './App.css';
 import './Components/Style.css';
 import Homepage from './Components/Homepage';
 import AboutUs from './Components/AboutUs';
+import Navbar from './Components/Navbar';
 import Navbar2 from './Components/Navbar2';
 import Contests from './Components/Contests';
 import Login from './Components/Login';
@@ -21,7 +22,7 @@ function App() {
     <div>      
       <Router>
       <div className="back">
-      <Navbar2 />      
+      <Navbar />      
         <Routes>        
           <Route path="" element={<Homepage />} /> 
           <Route path="contests" element={<Contests />} />                 
