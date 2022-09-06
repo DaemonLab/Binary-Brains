@@ -305,7 +305,7 @@ function Yourprofile() {
                 )}
                 </div>
                 </div>
-                {/* <hr style={{ color: "white" }} />
+                <hr style={{ color: "white" }} />
               <div className="card">            
                     <h2 className="stm upcomingContestHead" style={{fontWeight:"bold"}}>Daily Problem</h2>
                     <div className="card carddp container">
@@ -365,7 +365,7 @@ function Yourprofile() {
                     <></>
                   )}          
                 </div>
-                </div> */}
+                </div>
               </div>
               <Footer />
             </div>

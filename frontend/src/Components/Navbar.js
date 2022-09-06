@@ -40,9 +40,9 @@ function Navbar() {
             </li>
             {token ? (
               <>
-                {/* <li className="nav-item">
+                <li className="nav-item">
                   <Link className="nav-link" to="/contests">Contests <span className="sr-only">(current)</span></Link>
-                </li> */}
+                </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/timeline">Schedule <span className="sr-only">(current)</span></Link>
                 </li> 
