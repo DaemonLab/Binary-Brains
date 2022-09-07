@@ -34,27 +34,49 @@ function Schedule() {
       <div className="card">       
         <div className="card-body">    
         <h2 className="upcomingContestHead" align="center">Schedule Of The Course</h2>
-        <h4 align="center" className="mt-4 usHead" >Upcoming Session</h4>
+        <h4 align="center" className="mt-4 usHead" style={{paddingLeft:"40px"}}>Upcoming Session</h4>
             <div className="responsive scrollTable">
             <table className='tabtop leaderboard scrollTable'>
               <tbody>                
                 <tr>
                   <td className="tdtop">
-                    <div className="anythinglisting4">
+                    <div className="anythinglisting4">                      
                     { state.difficulty == 'beginner' ? (
-                      <ul>
-                        <li className="usli">Topic - C++ Basics I</li>
-                        <li className="usli">Tutor - Jaskaran Singh</li>
+                      <div>
+                        <h3 align="center">Saturday</h3>
+                        <ul>
+                          <li className="usli">Topic - C++ Basics II</li>
+                          <li className="usli">Tutor - Nischay Shroff</li>                          
+                          <li className="usli">Venue - Gargi Seminar Hall</li>
+                          <li className="usli">Time - 5:00-6:30pm</li>
+                        </ul>
+                        <br/>
+                        <h3 align="center">Sunday</h3>
+                        <ul>
+                        <li className="usli">Topic - Time Complexity + Basic problem solving</li>
+                        <li className="usli">Tutor - Krishanu Saini</li>                        
                         <li className="usli">Venue - Gargi Seminar Hall</li>
-                        <li className="usli">Time - 10:15-11:45am</li>
+                        <li className="usli">Time - 11:30-1:00pm</li>
                       </ul>
+                    </div>
                     ) : (
-                      <ul>
-                        <li className="usli">Topic - Binary Search + Interactive Problems</li>
-                        <li className="usli">Tutor - Nishkarsh Luthra</li>
-                        <li className="usli">Venue - POD 1-D 105</li>
-                        <li className="usli">Time - 10:15-11:45am</li>
-                      </ul>
+                      <div>
+                        <h3 align="center">Saturday</h3>
+                        <ul>
+                          <li className="usli">Topic - Number Theory I</li>
+                          <li className="usli">Tutor - Nishkarsh Luthra</li>
+                          <li className="usli">Venue - Sandipani Seminar Hall</li>
+                          <li className="usli">Time - 5:00-6:30pm</li>
+                        </ul>
+                        <br/>
+                        <h3 align="center">Sunday</h3>
+                        <ul>
+                          <li className="usli">Topic - Number Theory II</li>
+                          <li className="usli">Tutor - Nishkarsh Luthra</li>
+                          <li className="usli">Venue - Sandipani Seminar Hall</li>
+                          <li className="usli">Time - 11:30-1:00pm</li>
+                        </ul>
+                      </div>
                     )}
                     </div>
                   </td>                                  
